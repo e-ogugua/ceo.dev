@@ -21,7 +21,7 @@ const nextConfig = {
     minimumCacheTTL: 60,
   },
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false, // Disable CSS optimization to prevent critters module error
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   compiler: {
