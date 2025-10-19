@@ -1,8 +1,12 @@
 {
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
   "/about/page": "app/about/page.js",
-  "/portfolio-ventures/page": "app/portfolio-ventures/page.js",
-  "/learn/page": "app/learn/page.js",
   "/blog/page": "app/blog/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/learn/[slug]/page": "app/learn/[slug]/page.js",
+  "/learn/page": "app/learn/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/portfolio-ventures/page": "app/portfolio-ventures/page.js",
+  "/page": "app/page.js"
 }

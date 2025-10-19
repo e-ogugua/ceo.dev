@@ -1,3 +1,97 @@
 {
-  "pages": {}
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/app/_not-found/page-8975b8b0ef0d3c06.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/app/layout-310341ff5fd71ceb.js"
+    ],
+    "/api/contact/route": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/app/api/contact/route-075e7a6125aa7163.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/about/page-909dcd77f5470ae0.js"
+    ],
+    "/blog/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/blog/page-ecf83220e58705da.js"
+    ],
+    "/learn/[slug]/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/learn/[slug]/page-c1acc9ed2f53ac56.js"
+    ],
+    "/learn/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/learn/page-2406e37e67c3496b.js"
+    ],
+    "/blog/[slug]/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/blog/[slug]/page-2293969ec35802e3.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/contact/page-b3184f90007fbb68.js"
+    ],
+    "/portfolio-ventures/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/portfolio-ventures/page-e4c028ab6e0c0b06.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-30b9dd9193356b11.js",
+      "static/chunks/65853ea0-e77080bd4ed7c8e9.js",
+      "static/chunks/303-3798509c41bb1499.js",
+      "static/chunks/main-app-dad4cc03247f49a9.js",
+      "static/chunks/721-865d0c3d6fb35192.js",
+      "static/chunks/408-8b14e13c0be91291.js",
+      "static/chunks/app/page-636f5c6597e09782.js"
+    ]
+  }
 }
