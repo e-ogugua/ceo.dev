@@ -10,19 +10,20 @@ export const metadata: Metadata = {
   keywords: [
     'Software Engineer', 'Business Strategist', 'Full Stack Developer', 'React Developer',
     'Next.js Developer', 'TypeScript Developer', 'Entrepreneur', 'Web Development',
-    'Portfolio', 'Emmanuel Ogugua', 'CEO Portfolio', 'Tech Entrepreneur', 'Modern Web Apps'
+    'Portfolio', 'Emmanuel Ogugua', 'CEO Portfolio', 'Tech Entrepreneur', 'Modern Web Apps',
+    'AI Integration', 'Machine Learning', 'Cloud Architecture', 'DevOps', 'Agile Development'
   ],
   authors: [{ name: 'Emmanuel Chukwuka Ogugua' }],
   creator: 'Emmanuel Chukwuka Ogugua',
   publisher: 'CEO Portfolio',
-  metadataBase: new URL('https://ceo.dev'),
+  metadataBase: new URL('https://ceodev.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Emmanuel Chukwuka Ogugua - Software Engineer & Business Strategist',
     description: 'Professional software engineer and business strategist specializing in full-stack development, modern web applications, and entrepreneurial ventures.',
-    url: 'https://ceo.dev',
+    url: 'https://ceodev.vercel.app',
     siteName: 'CEO Portfolio',
     images: [
       {
@@ -61,6 +62,10 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
+  other: {
+    'theme-color': '#0f172a',
+    'msapplication-TileColor': '#0f172a',
+  },
 }
 
 export const viewport: Viewport = {
@@ -71,6 +76,7 @@ export const viewport: Viewport = {
     { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
     { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
   ],
+  colorScheme: 'light dark',
 }
 
 export default function RootLayout({
@@ -83,6 +89,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -93,7 +101,7 @@ export default function RootLayout({
               alternateName: 'CEO Emmanuel',
               jobTitle: 'Software Engineer & Business Strategist',
               description: 'Professional software engineer and business strategist specializing in full-stack development, modern web applications, and entrepreneurial ventures.',
-              url: 'https://ceo.dev',
+              url: 'https://ceodev.vercel.app',
               sameAs: [
                 'https://twitter.com/emmachuka',
                 'https://www.linkedin.com/in/emmanuelogugua',
@@ -114,7 +122,10 @@ export default function RootLayout({
                 'Next.js',
                 'TypeScript',
                 'Entrepreneurship',
-                'Modern Web Development'
+                'Modern Web Development',
+                'AI Integration',
+                'Cloud Computing',
+                'DevOps'
               ],
               hasOccupation: {
                 '@type': 'Occupation',
@@ -123,13 +134,61 @@ export default function RootLayout({
                   '@type': 'City',
                   name: 'Enugu, Nigeria'
                 }
-              }
+              },
+              alumniOf: {
+                '@type': 'EducationalOrganization',
+                name: 'University (Details Available on LinkedIn)'
+              },
+              worksFor: [
+                {
+                  '@type': 'Organization',
+                  name: 'CEOTR Ltd',
+                  url: 'https://ceotr-ltd.com'
+                },
+                {
+                  '@type': 'Organization',
+                  name: 'PoshPOULE Farms Ltd',
+                  url: 'https://poshpoule-farms.com'
+                }
+              ]
             })
           }}
         />
+        {/* Preload critical fonts */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          as="style"
+          onLoad={(e) => {
+            const link = e.target as HTMLLinkElement;
+            link.onload = null;
+            link.rel = 'stylesheet';
+          }}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          />
+        </noscript>
       </head>
-      <body suppressHydrationWarning>
-        {children}
+      <body suppressHydrationWarning className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-900 antialiased">
+        <div className="relative">
+          {/* Subtle background pattern */}
+          <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30 pointer-events-none" />
+
+          {/* Main content */}
+          <div className="relative z-10">
+            {children}
+          </div>
+        </div>
+
+        {/* Performance monitoring script */}
+        <script
+          defer
+          data-domain="ceodev.vercel.app"
+          src="https://plausible.io/js/script.js"
+        />
       </body>
     </html>
   )
