@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export function PersonaChart() {
   return (
@@ -34,49 +35,13 @@ export function PersonaChart() {
             className="lg:col-span-1 flex justify-center"
           >
             <div className="relative w-64 h-64">
-              {/* Software Engineer slice (65%) */}
-              <div className="absolute inset-0">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="40"
-                    fill="none"
-                    stroke="rgb(59, 130, 246)"
-                    strokeWidth="12"
-                    strokeDasharray="251.2 376.8"
-                    strokeLinecap="round"
-                    className="drop-shadow-lg"
-                  />
-                </svg>
-              </div>
-
-              {/* Business Strategist slice (35%) */}
-              <div className="absolute inset-0">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="40"
-                    fill="none"
-                    stroke="rgb(147, 51, 234)"
-                    strokeWidth="12"
-                    strokeDasharray="138.16 376.8"
-                    strokeLinecap="round"
-                    className="drop-shadow-lg"
-                  />
-                </svg>
-              </div>
-
-              {/* Center circle */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-slate-800/80 backdrop-blur-sm rounded-full border-2 border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">CEO</div>
-                    <div className="text-xs text-gray-400">Persona</div>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/images/aboutImagePieChartSection.webp"
+                alt="Persona pie chart showing 65% Software Engineer and 35% Business Strategist"
+                width={256}
+                height={256}
+                className="w-full h-full object-contain"
+              />
             </div>
           </motion.div>
 

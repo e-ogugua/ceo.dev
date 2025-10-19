@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Code, Briefcase, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 const personas = [
   {
     id: 1,
@@ -15,7 +15,8 @@ const personas = [
     ctaLink: '/portfolio-ventures',
     icon: Code,
     gradient: 'from-blue-500 to-cyan-500',
-    bgGradient: 'from-blue-900/20 to-cyan-900/20'
+    bgGradient: 'from-blue-900/20 to-cyan-900/20',
+    image: '/images/DevEngineerHeroimage2.webp'
   },
   {
     id: 2,
@@ -28,7 +29,8 @@ const personas = [
     cta2Link: '/about',
     icon: TrendingUp,
     gradient: 'from-purple-500 to-pink-500',
-    bgGradient: 'from-purple-900/20 to-pink-900/20'
+    bgGradient: 'from-purple-900/20 to-pink-900/20',
+    image: '/images/bizStrategistHeroimage.webp'
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const personas = [
     ctaLink: '/portfolio-ventures',
     icon: Briefcase,
     gradient: 'from-green-500 to-emerald-500',
-    bgGradient: 'from-green-900/20 to-emerald-900/20'
+    bgGradient: 'from-green-900/20 to-emerald-900/20',
+    image: '/images/bizStrategistHeroimage1.webp'
   }
 ]
 
@@ -143,51 +146,61 @@ export function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
-              className={`max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r ${current.bgGradient} backdrop-blur-sm border border-white/10`}
+              className={`max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r ${current.bgGradient} backdrop-blur-sm border border-white/10 relative overflow-hidden`}
             >
-              <div className="flex items-center justify-center mb-6">
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${current.gradient} flex items-center justify-center text-white`}>
-                  <current.icon size={32} aria-hidden="true" />
-                </div>
+              <div className="absolute inset-0 opacity-10">
+                <Image
+                  src={current.image}
+                  alt={current.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-center mb-6">
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${current.gradient} flex items-center justify-center text-white`}>
+                    <current.icon size={32} aria-hidden="true" />
+                  </div>
+                </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
-                {current.title}
-              </h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
+                  {current.title}
+                </h2>
 
-              <p className="text-lg md:text-xl text-gray-300 mb-4">
-                {current.subtitle}
-              </p>
+                <p className="text-lg md:text-xl text-gray-300 mb-4">
+                  {current.subtitle}
+                </p>
 
-              <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-balance">
-                {current.description}
-              </p>
+                <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-balance">
+                  {current.description}
+                </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href={current.ctaLink}>
-                  <motion.button
-                    className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label={`${current.cta} for ${current.title}`}
-                  >
-                    {current.cta}
-                    <ArrowRight size={20} aria-hidden="true" />
-                  </motion.button>
-                </Link>
-
-                {current.cta2 && (
-                  <Link href={current.cta2Link}>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href={current.ctaLink}>
                     <motion.button
-                      className="btn-secondary w-full sm:w-auto"
+                      className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      aria-label={current.cta2}
+                      aria-label={`${current.cta} for ${current.title}`}
                     >
-                      {current.cta2}
+                      {current.cta}
+                      <ArrowRight size={20} aria-hidden="true" />
                     </motion.button>
                   </Link>
-                )}
+
+                  {current.cta2 && (
+                    <Link href={current.cta2Link}>
+                      <motion.button
+                        className="btn-secondary w-full sm:w-auto"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        aria-label={current.cta2}
+                      >
+                        {current.cta2}
+                      </motion.button>
+                    </Link>
+                  )}
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>
