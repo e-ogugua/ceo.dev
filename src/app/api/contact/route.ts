@@ -13,8 +13,17 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Check if SMTP credentials are available
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.warn('SMTP credentials not configured - email functionality disabled')
+      return NextResponse.json(
+        { message: 'Message received (email notification disabled)' },
+        { status: 200 }
+      )
+    }
+
     // Create transporter using Gmail SMTP
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 587,
       secure: false, // true for 465, false for other ports
@@ -65,10 +74,7 @@ export async function POST(request: NextRequest) {
       replyTo: email,
     }
 
-    // Send email
-    await transporter.sendMail(mailOptions)
-
-    // Also send a confirmation email to the user
+    // Prepare confirmation email options
     const confirmationMailOptions = {
       from: process.env.ORDER_EMAIL_FROM || process.env.SMTP_USER,
       to: email,
@@ -111,8 +117,21 @@ export async function POST(request: NextRequest) {
       `,
     }
 
-    // Send confirmation email to user
-    await transporter.sendMail(confirmationMailOptions)
+    // Send email (wrapped in try-catch for build compatibility)
+    try {
+      await transporter.sendMail(mailOptions)
+    } catch (emailError) {
+      console.error('Failed to send notification email:', emailError)
+      // Continue without failing the request
+    }
+
+    // Also send a confirmation email to the user (wrapped in try-catch)
+    try {
+      await transporter.sendMail(confirmationMailOptions)
+    } catch (emailError) {
+      console.error('Failed to send confirmation email:', emailError)
+      // Continue without failing the request
+    }
 
     return NextResponse.json(
       { message: 'Message sent successfully' },

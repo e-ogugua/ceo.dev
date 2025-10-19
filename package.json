@@ -18,7 +18,6 @@
   ],
   "author": "Chukwuka Emmanuel Ogugua",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@supabase/supabase-js": "^2.75.1",
     "@types/nodemailer": "^7.0.2",
