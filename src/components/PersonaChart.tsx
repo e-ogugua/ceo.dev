@@ -36,7 +36,7 @@ export function PersonaChart() {
           >
             <div className="relative w-64 h-64">
               <Image
-                src="/images/aboutImagePieChartSection.webp"
+                src="/images/aboutImagePieChartSection.png"
                 alt="Persona pie chart showing 65% Software Engineer and 35% Business Strategist"
                 fill
                 sizes="256px"

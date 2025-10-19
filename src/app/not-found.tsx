@@ -1,0 +1,54 @@
+'use client'
+
+import Link from 'next/link'
+import { Home, ArrowLeft, Search } from 'lucide-react'
+
+export default function NotFound() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center px-4">
+      <div className="max-w-md w-full bg-white/90 backdrop-blur-xl rounded-2xl border border-slate-200/60 shadow-2xl p-8 text-center">
+        <div className="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+          <Search className="w-8 h-8 text-blue-600" />
+        </div>
+
+        <h1 className="text-6xl font-bold text-slate-900 mb-4">404</h1>
+
+        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+          Page Not Found
+        </h2>
+
+        <p className="text-slate-600 mb-8 leading-relaxed">
+          The page you're looking for doesn't exist or has been moved to a different location.
+        </p>
+
+        <div className="space-y-3">
+          <Link
+            href="/"
+            className="w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-700 hover:to-slate-800 text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/25 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+          >
+            <Home size={20} />
+            Go Home
+          </Link>
+
+          <button
+            onClick={() => window.history.back()}
+            className="w-full border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-slate-700 hover:text-slate-900 px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+          >
+            <ArrowLeft size={20} />
+            Go Back
+          </button>
+        </div>
+
+        <div className="mt-8 pt-6 border-t border-slate-200">
+          <p className="text-sm text-slate-500">
+            Looking for something specific?{' '}
+            <Link href="/contact" className="text-ceo-600 hover:text-ceo-700 font-semibold">
+              Contact us
+            </Link>{' '}
+            for assistance.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
