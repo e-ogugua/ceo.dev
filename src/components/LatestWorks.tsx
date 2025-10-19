@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, ArrowRight, Eye, Github } from 'lucide-react'
+import { ExternalLink, ArrowRight, Eye } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
