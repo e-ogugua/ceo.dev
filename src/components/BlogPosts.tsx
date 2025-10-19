@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Clock, Calendar, User, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 const blogPosts = [
   {
     id: 1,
@@ -14,7 +14,8 @@ const blogPosts = [
     publishedDate: '2024-01-15',
     author: 'Emmanuel Chukwuka Ogugua',
     featured: true,
-    slug: 'gardening-problem-solving'
+    slug: 'gardening-problem-solving',
+    image: '/images/blogPostBeyondTheScreens.webp'
   },
   {
     id: 2,
@@ -25,7 +26,8 @@ const blogPosts = [
     publishedDate: '2024-01-10',
     author: 'Emmanuel Chukwuka Ogugua',
     featured: true,
-    slug: 'digital-farmer-poshpoule'
+    slug: 'digital-farmer-poshpoule',
+    image: '/images/blogPostDigitalFarmer.webp'
   },
   {
     id: 3,
@@ -36,7 +38,8 @@ const blogPosts = [
     publishedDate: '2024-01-08',
     author: 'Emmanuel Chukwuka Ogugua',
     featured: false,
-    slug: 'tech-stack-2025'
+    slug: 'tech-stack-2025',
+    image: '/images/blogGotoTechStack.webp'
   },
   {
     id: 4,
@@ -47,29 +50,8 @@ const blogPosts = [
     publishedDate: '2024-01-05',
     author: 'Emmanuel Chukwuka Ogugua',
     featured: false,
-    slug: 'farm-to-code-architecture'
-  },
-  {
-    id: 5,
-    title: 'Building Authentic Brands: Lessons from Nigerian Markets to Global Tech',
-    excerpt: 'How my experience in Nigerian markets shaped my approach to building authentic technology brands that resonate with real people and solve genuine problems.',
-    category: 'Business Strategy',
-    readTime: '11 min read',
-    publishedDate: '2024-01-03',
-    author: 'Emmanuel Chukwuka Ogugua',
-    featured: true,
-    slug: 'authentic-brands-nigerian-markets'
-  },
-  {
-    id: 6,
-    title: 'The Entrepreneur\'s Garden: Cultivating Business Growth Through Patience and Care',
-    excerpt: 'Using gardening metaphors to explore business development, discussing how patience, nurturing, and strategic timing lead to sustainable entrepreneurial success.',
-    category: 'Personal Growth',
-    readTime: '9 min read',
-    publishedDate: '2024-01-01',
-    author: 'Emmanuel Chukwuka Ogugua',
-    featured: false,
-    slug: 'entrepreneurs-garden'
+    slug: 'farm-to-code-architecture',
+    image: '/images/blogPostBridgingTheGap.webp'
   }
 ]
 
@@ -118,6 +100,24 @@ export function BlogPosts() {
                   </span>
                 </div>
               )}
+
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                {/* Category badge */}
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm rounded-full border border-white/20">
+                    {post.category}
+                  </span>
+                </div>
+              </div>
 
               {/* Content */}
               <div className="p-6">

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Clock, BookOpen } from 'lucide-react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 const learningResources = [
   {
     id: 1,
@@ -14,7 +14,8 @@ const learningResources = [
     difficulty: 'Advanced',
     tags: ['Next.js', 'Performance', 'React', 'Optimization'],
     featured: true,
-    slug: 'nextjs-performance-optimization'
+    slug: 'nextjs-performance-optimization',
+    image: '/images/learnCardMastetringNext.webp'
   },
   {
     id: 2,
@@ -25,7 +26,8 @@ const learningResources = [
     difficulty: 'Intermediate',
     tags: ['AI', 'Web Development', 'APIs', 'Machine Learning'],
     featured: true,
-    slug: 'ai-integration-patterns'
+    slug: 'ai-integration-patterns',
+    image: '/images/learnBuildingProjectsWithAiIntegration.webp'
   },
   {
     id: 3,
@@ -36,7 +38,8 @@ const learningResources = [
     difficulty: 'Intermediate',
     tags: ['React', 'Architecture', 'State Management', 'Best Practices'],
     featured: false,
-    slug: 'scalable-react-applications'
+    slug: 'scalable-react-applications',
+    image: '/images/learnBrandStorytelling.webp'
   },
   {
     id: 4,
@@ -47,7 +50,8 @@ const learningResources = [
     difficulty: 'Beginner',
     tags: ['Branding', 'Entrepreneurship', 'Marketing', 'Strategy'],
     featured: true,
-    slug: 'strategic-brand-building'
+    slug: 'strategic-brand-building',
+    image: '/images/learnEffectiveRemoteProjectMangement.webp'
   },
   {
     id: 5,
@@ -58,7 +62,8 @@ const learningResources = [
     difficulty: 'Intermediate',
     tags: ['Leadership', 'Remote Work', 'Team Management', 'Productivity'],
     featured: false,
-    slug: 'remote-team-management'
+    slug: 'remote-team-management',
+    image: '/images/learnCardMastetringNext.webp'
   },
   {
     id: 6,
@@ -69,7 +74,8 @@ const learningResources = [
     difficulty: 'Advanced',
     tags: ['Career Growth', 'Leadership', 'Technical Leadership', 'Mentorship'],
     featured: true,
-    slug: 'developer-to-tech-leader'
+    slug: 'developer-to-tech-leader',
+    image: '/images/learnTheCleanCode.webp'
   }
 ]
 
@@ -118,6 +124,32 @@ export function LearningCards() {
                   </span>
                 </div>
               )}
+
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={resource.image}
+                  alt={resource.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                {/* Category badge */}
+                <div className="absolute top-4 right-4">
+                  <span className={`px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm rounded-full border border-white/20 ${
+                    resource.category === 'Technical'
+                      ? 'bg-blue-500/20 text-blue-400 border border-blue-400/30'
+                      : resource.category === 'Business'
+                      ? 'bg-purple-500/20 text-purple-400 border border-purple-400/30'
+                      : resource.category === 'Leadership'
+                      ? 'bg-green-500/20 text-green-400 border border-green-400/30'
+                      : 'bg-orange-500/20 text-orange-400 border border-orange-400/30'
+                  }`}>
+                    {resource.category}
+                  </span>
+                </div>
+              </div>
 
               {/* Content */}
               <div className="p-6">
