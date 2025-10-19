@@ -4,13 +4,13 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const timelineImages = [
-  { id: 1, title: 'Curious Kid', image: '/images/curiousKidAboutImage1.png', year: 'Early Years' },
-  { id: 2, title: 'Early 2000s', image: '/images/aboutImage2Early2000s.png', year: '2000s' },
-  { id: 3, title: 'Hacking Years', image: '/images/aboutImage3EarlyHackingYrs.png', year: '2010s' },
-  { id: 4, title: 'Group Project', image: '/images/aboutImage4GroupProject.png', year: 'University' },
-  { id: 5, title: 'Road Biking', image: '/images/AboutImage5Roadbiking.png', year: 'Active Life' },
-  { id: 6, title: 'Strategic Leader', image: '/images/aboutImage6StrategistLeader.png', year: 'Leadership' },
-  { id: 7, title: 'In Office', image: '/images/aboutImage7InOffice.png', year: 'Present' }
+  { id: 1, title: 'Curious Kid', image: '/images/curiousKidAboutImage1.webp', year: 'Early Years' },
+  { id: 2, title: 'Early 2000s', image: '/images/aboutImage2Early2000s.webp', year: '2000s' },
+  { id: 3, title: 'Hacking Years', image: '/images/aboutImage3EarlyHackingYrs.webp', year: '2010s' },
+  { id: 4, title: 'Group Project', image: '/images/aboutImage4GroupProject.webp', year: 'University' },
+  { id: 5, title: 'Road Biking', image: '/images/AboutImage5Roadbiking.webp', year: 'Active Life' },
+  { id: 6, title: 'Strategic Leader', image: '/images/aboutImage6StrategistLeader.webp', year: 'Leadership' },
+  { id: 7, title: 'In Office', image: '/images/aboutImage7InOffice.webp', year: 'Present' }
 ]
 
 export function Timeline() {

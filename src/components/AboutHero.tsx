@@ -60,7 +60,7 @@ export function AboutHero() {
           >
             <div className="relative">
               <Image
-                src="/images/shortAboutSideimage1.png"
+                src="/images/shortAboutSideimage1.webp"
                 alt="Emmanuel Ogugua"
                 width={400}
                 height={400}

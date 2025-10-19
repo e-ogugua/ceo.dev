@@ -10,7 +10,7 @@ const latestWorks = [
     id: 1,
     title: 'Emmdra',
     description: 'Nigerian lifestyle and e-commerce platform empowering users through authentic fashion and creative workshops.',
-    image: '/images/EmmdraScreenshot1.png',
+    image: '/images/EmmdraScreenshot1.webp',
     category: 'E-commerce & Lifestyle',
     liveUrl: 'https://emmdra-empire.vercel.app/',
     detailsUrl: '/portfolio-ventures#emmdra'
@@ -19,7 +19,7 @@ const latestWorks = [
     id: 2,
     title: 'PoshPOULE Farms Suite',
     description: 'Comprehensive farm management and e-commerce platform for organic poultry and fresh produce.',
-    image: '/images/poshpouleFarmsErpSuiteScreenshot4.png',
+    image: '/images/poshpouleFarmsErpSuiteScreenshot4.webp',
     category: 'Agriculture & ERP',
     liveUrl: 'https://poshpoule-farms.vercel.app',
     detailsUrl: '/portfolio-ventures#poshpoule'
@@ -28,7 +28,7 @@ const latestWorks = [
     id: 3,
     title: 'CEOTR Ltd ERP Suite',
     description: 'Enterprise resource planning platform for construction, IT, and business management solutions.',
-    image: '/images/ceotrScreenshot1.png',
+    image: '/images/ceotrScreenshot1.webp',
     category: 'Business & ERP',
     liveUrl: 'https://ceotr-ltd-erp-suite.vercel.app/',
     detailsUrl: '/portfolio-ventures#ceotr'
@@ -37,7 +37,7 @@ const latestWorks = [
     id: 4,
     title: 'Zereths',
     description: 'Modern web platform for cake ordering, recipes, and bakery services with custom design options.',
-    image: '/images/ZerethScreenshot1.png',
+    image: '/images/ZerethScreenshot1.webp',
     category: 'Food & Bakery',
     liveUrl: 'https://zereth-cakes-hub.vercel.app/',
     detailsUrl: '/portfolio-ventures#zereth'
