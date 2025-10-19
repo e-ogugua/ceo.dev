@@ -1,0 +1,16 @@
+{
+  "name": "CEO Dev Portfolio",
+  "short_name": "CEO Dev",
+  "description": "Portfolio of Emmanuel C. Ogugua",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
