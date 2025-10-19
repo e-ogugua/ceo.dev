@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Calendar, Star } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
 import Link from 'next/link'
 
 const developmentProjects = [

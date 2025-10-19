@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowLeft, Clock, Calendar, BookOpen, Share2, Twitter, Linkedin, Facebook } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar, Share2, Twitter, Linkedin, Facebook } from 'lucide-react'
 import Link from 'next/link'
 
 const articles = {
@@ -1058,7 +1058,7 @@ export function ArticleContent({ slug }: ArticleContentProps) {
       <section className="py-20 pt-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Article Not Found</h1>
-          <p className="text-gray-300 mb-8">The article you're looking for doesn't exist.</p>
+          <p className="text-gray-300 mb-8">The article you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/learn">
             <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold">
               Back to Learning Hub

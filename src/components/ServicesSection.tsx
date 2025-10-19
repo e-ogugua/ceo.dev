@@ -136,7 +136,7 @@ export function ServicesSection() {
 
                 {/* Features */}
                 <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-white mb-4">What's Included</h4>
+                  <h4 className="text-lg font-semibold text-white mb-4">What&apos;s Included</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {service.features.map((feature, i) => (
                       <div key={i} className="flex items-center text-gray-300">
@@ -178,7 +178,7 @@ export function ServicesSection() {
           <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-white/10 rounded-xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">Need a Custom Solution?</h3>
             <p className="text-gray-300 mb-6">
-              Every project is unique. Let's discuss your specific requirements and create a tailored solution that perfectly fits your needs and budget.
+              Every project is unique. Let&apos;s discuss your specific requirements and create a tailored solution that perfectly fits your needs and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact?service=custom-solution">

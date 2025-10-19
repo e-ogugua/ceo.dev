@@ -102,7 +102,7 @@ export function RandomFacts() {
           className="text-center mt-12"
         >
           <p className="text-gray-400 italic">
-            "These facets of my personality fuel my creativity and drive my passion for both technology and life."
+            &quot;These facets of my personality fuel my creativity and drive my passion for both technology and life.&quot;
           </p>
         </motion.div>
       </div>

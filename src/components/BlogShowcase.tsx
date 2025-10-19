@@ -41,7 +41,7 @@ export function BlogShowcase() {
                   <div className="text-center">
                     <BookOpen className="w-16 h-16 text-green-400 mx-auto mb-4" />
                     <div className="text-2xl font-bold text-white mb-2">CEOwrites</div>
-                    <div className="text-sm text-gray-400">Emmanuel's Blog Hub</div>
+                    <div className="text-sm text-gray-400">Emmanuel&apos;s Blog Hub</div>
                   </div>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export function BlogShowcase() {
           >
             <div>
               <h3 className="text-3xl font-bold text-white mb-4">
-                CEOwrites - Emmanuel's Blog Hub
+                CEOwrites - Emmanuel&apos;s Blog Hub
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 A comprehensive blog platform showcasing authentic insights on business strategy, technology trends, leadership, and personal growth from tech entrepreneur Emmanuel Ogugua.
@@ -70,7 +70,7 @@ export function BlogShowcase() {
             </div>
 
             <div className="bg-slate-800/30 backdrop-blur-sm border border-white/10 rounded-lg p-6">
-              <h4 className="text-lg font-semibold text-white mb-4">What You'll Find</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">What You&apos;ll Find</h4>
               <div className="space-y-3">
                 <div className="flex items-start text-gray-300">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-3 mt-2"></div>

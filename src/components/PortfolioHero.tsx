@@ -21,7 +21,7 @@ export function PortfolioHero() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Explore the intersection of my technical expertise and strategic vision. This page showcases key software development projects where I've crafted innovative solutions, alongside entrepreneurial ventures where I've driven growth and built compelling brands from the ground up.
+            Explore the intersection of my technical expertise and strategic vision. This page showcases key software development projects where I&apos;ve crafted innovative solutions, alongside entrepreneurial ventures where I&apos;ve driven growth and built compelling brands from the ground up.
           </p>
         </motion.div>
 

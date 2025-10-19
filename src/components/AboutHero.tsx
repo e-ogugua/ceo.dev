@@ -28,11 +28,11 @@ export function AboutHero() {
               </p>
 
               <p>
-                With a passion for crafting innovative digital experiences and driving entrepreneurial ventures, I'm dedicated to building the future—one line of code and one strategic vision at a time.
+                With a passion for crafting innovative digital experiences and driving entrepreneurial ventures, I&apos;m dedicated to building the future—one line of code and one strategic vision at a time.
               </p>
 
               <p>
-                Since 2005, I've thrived on solving complex problems with simple, beautiful, and intuitive designs. When I'm not immersed in code or strategy, you'll find me exploring hobbies like cooking, gardening, cycling, and sharpening my mind with puzzles and chess games.
+                Since 2005, I&apos;ve thrived on solving complex problems with simple, beautiful, and intuitive designs. When I&apos;m not immersed in code or strategy, you&apos;ll find me exploring hobbies like cooking, gardening, cycling, and sharpening my mind with puzzles and chess games.
               </p>
             </div>
 

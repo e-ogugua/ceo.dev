@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowLeft, Clock, Calendar, User, Share2, Twitter, Linkedin, Facebook } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar, Share2, Twitter, Linkedin, Facebook } from 'lucide-react'
 import Link from 'next/link'
 
 const blogPosts = {
@@ -1115,7 +1115,7 @@ export function BlogPostContent({ slug }: BlogPostContentProps) {
       <section className="py-20 pt-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Blog Post Not Found</h1>
-          <p className="text-gray-300 mb-8">The blog post you're looking for doesn't exist.</p>
+          <p className="text-gray-300 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/blog">
             <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold">
               Back to Blog

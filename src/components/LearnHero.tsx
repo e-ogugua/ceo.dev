@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Lightbulb, Users, TrendingUp, Code, Briefcase } from 'lucide-react'
+import { Code, Briefcase, Users } from 'lucide-react'
 
 export function LearnHero() {
   return (

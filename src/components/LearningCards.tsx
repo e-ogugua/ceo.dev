@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Clock, BookOpen, TrendingUp, ArrowRight, ExternalLink } from 'lucide-react'
+import { ExternalLink, ArrowRight, Clock, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 
 const learningResources = [

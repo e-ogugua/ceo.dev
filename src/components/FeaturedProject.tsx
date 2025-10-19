@@ -65,7 +65,7 @@ export function FeaturedProject() {
                 EmmanuelOS SWART Dashboard
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                My personal developer command center that showcases, monitors, and manages some of the apps I've built — a unified system-wide analytics and portfolio dashboard.
+                My personal developer command center that showcases, monitors, and manages some of the apps I&apos;ve built — a unified system-wide analytics and portfolio dashboard.
               </p>
             </div>
 

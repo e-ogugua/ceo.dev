@@ -116,7 +116,7 @@ export function PersonaChart() {
 
               <div className="mt-6 p-4 bg-blue-400/10 rounded-lg border border-blue-400/20">
                 <p className="text-blue-300 italic">
-                  "Building robust, scalable, and intuitive digital solutions."
+                  &quot;Building robust, scalable, and intuitive digital solutions.&quot;
                 </p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export function PersonaChart() {
 
               <div className="mt-6 p-4 bg-purple-400/10 rounded-lg border border-purple-400/20">
                 <p className="text-purple-300 italic">
-                  "Driving business growth through strategic vision and compelling brand narratives."
+                  &quot;Driving business growth through strategic vision and compelling brand narratives.&quot;
                 </p>
               </div>
             </div>

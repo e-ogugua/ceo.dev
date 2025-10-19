@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, MessageCircle, Zap } from 'lucide-react'
+import { Mail, MessageCircle, Zap, Clock } from 'lucide-react'
 
 export function ContactHero() {
   return (
@@ -15,13 +15,13 @@ export function ContactHero() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Let's Work{' '}
+            Let&apos;s Work{' '}
             <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
               Together
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Ready to bring your ideas to life? Whether you need custom software development, strategic business consulting, or team training, I'm here to help you achieve your goals with expertise and dedication.
+            Ready to bring your ideas to life? Whether you need custom software development, strategic business consulting, or team training, I&apos;m here to help you achieve your goals with expertise and dedication.
           </p>
         </motion.div>
 
@@ -110,7 +110,7 @@ export function ContactHero() {
             <div className="text-5xl">🚀</div>
             <div className="text-left">
               <div className="text-xl font-semibold text-white mb-2">Ready to Get Started?</div>
-              <div className="text-gray-400">Fill out the form below and let's discuss your project</div>
+              <div className="text-gray-400">Fill out the form below and let&apos;s discuss your project</div>
             </div>
             <div className="flex items-center space-x-2 text-green-400">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>

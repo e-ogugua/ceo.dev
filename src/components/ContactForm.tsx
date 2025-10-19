@@ -142,7 +142,7 @@ export function ContactForm() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 text-balance">
-            Ready to start your project? Fill out the form below and I'll get back to you within 24 hours.
+            Ready to start your project? Fill out the form below and I&apos;ll get back to you within 24 hours.
           </p>
         </motion.div>
 
@@ -166,7 +166,7 @@ export function ContactForm() {
                   <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
                   <div className="flex-1">
                     <span className="text-green-400 font-medium">
-                      Message sent successfully! I'll get back to you within 24 hours.
+                      Message sent successfully! I&apos;ll get back to you within 24 hours.
                     </span>
                   </div>
                   <button
@@ -310,7 +310,7 @@ export function ContactForm() {
                   <option value="15k-50k">$15,000 - $50,000</option>
                   <option value="50k-100k">$50,000 - $100,000</option>
                   <option value="over-100k">Over $100,000</option>
-                  <option value="discuss">Let's discuss</option>
+                  <option value="discuss">Let&apos;s discuss</option>
                 </select>
               </div>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Users, TrendingUp, Lightbulb, Coffee, Heart } from 'lucide-react'
+import { BookOpen, TrendingUp, Heart } from 'lucide-react'
 
 export function BlogHero() {
   return (
