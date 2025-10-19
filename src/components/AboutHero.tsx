@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function AboutHero() {
   return (
@@ -16,14 +17,14 @@ export function AboutHero() {
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               About{' '}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                 Emmanuel
               </span>
             </h1>
 
-            <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
                 I am a versatile Software Engineer and Strategic Business Strategist based in Enugu state, Nigeria. My expertise lies in bridging the gap between complex technical solutions and impactful business growth.
               </p>
@@ -44,9 +45,15 @@ export function AboutHero() {
               viewport={{ once: true }}
               className="mt-8"
             >
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
-                View My Full Story
-              </button>
+              <Link href="/story">
+                <motion.button
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View My Full Story
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -62,14 +69,16 @@ export function AboutHero() {
               <Image
                 src="/images/shortAboutSideimage1.webp"
                 alt="Emmanuel Ogugua"
-                width={400}
-                height={400}
-                className="w-full h-96 object-cover rounded-2xl backdrop-blur-sm border border-white/10"
+                fill
+                sizes="400px"
+                loading="eager"
+                className="object-cover rounded-2xl"
+                priority
               />
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full opacity-20 animate-pulse delay-1000"></div>
+              <div className="absolute -top-2 -right-2 w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full opacity-15 animate-pulse"></div>
+              <div className="absolute -bottom-2 -left-2 w-14 h-14 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-15 animate-pulse delay-1000"></div>
             </div>
           </motion.div>
         </div>

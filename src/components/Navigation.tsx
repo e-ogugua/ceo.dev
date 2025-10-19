@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import NextImage from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -28,10 +30,12 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      const scrolled = window.scrollY > 50
+      setIsScrolled(scrolled)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Set initial state
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -61,179 +65,182 @@ export function Navigation() {
 
   return (
     <>
+      {/* Main Navigation Bar */}
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-slate-900/95 backdrop-blur-lg border-b border-white/10'
-            : 'bg-transparent'
+            ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/50 shadow-lg'
+            : 'bg-white/80 backdrop-blur-lg border-b border-slate-200/30'
         }`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <motion.div
-              className="flex-shrink-0"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link href="/" className="flex items-center group" aria-label="Go to homepage">
-                <Image
-                  src="/ChukwukaEmmanuelOguguaLogo.webp"
-                  alt="Chukwuka Emmanuel Ogugua Logo"
-                  width={40}
-                  height={40}
-                  className="transition-transform group-hover:rotate-3"
-                />
-                <span className="ml-2 text-white font-semibold text-lg hidden sm:block">
-                  Chukwuka Emmanuel Ogugua
-                </span>
-              </Link>
-            </motion.div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                {navigationItems.map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Link
-                      href={item.href}
-                      className={`px-3 py-2 text-sm font-medium transition-all duration-200 relative group ${
-                        isActiveLink(item.href)
-                          ? 'text-white'
-                          : 'text-gray-300 hover:text-white'
-                      }`}
-                      aria-current={isActiveLink(item.href) ? 'page' : undefined}
-                    >
-                      {item.name}
-                      <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 ${
-                        isActiveLink(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
-                      }`}></span>
-                    </Link>
-                  </motion.div>
-                ))}
+        <div className="max-w-7xl mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-20">
+              {/* Logo Section */}
+              <div className="flex-shrink-0">
+                <Link
+                  href="/"
+                  className="flex items-center group transition-transform duration-200"
+                  aria-label="Go to Emmanuel Chukwuka Ogugua homepage"
+                >
+                  <div className="relative w-24 h-24 bg-white/10 backdrop-blur-sm border border-slate-200/20 rounded-xl p-2">
+                    <NextImage
+                      src="/images/ChukwukaEmmanuelOguguaLogo.png"
+                      alt="Chukwuka Emmanuel Ogugua Logo - Software Engineer and Business Strategist"
+                      fill
+                      sizes="96px"
+                      className="object-cover transition-transform duration-200 group-hover:rotate-3"
+                    />
+                  </div>
+                </Link>
               </div>
-            </div>
 
-            {/* Social Icons */}
-            <div className="hidden md:flex items-center space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 p-2 rounded-full hover:bg-white/10"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  aria-label={`Visit ${social.name} profile`}
-                >
-                  <social.icon size={20} />
-                </motion.a>
-              ))}
-            </div>
+              {/* Desktop Navigation Menu */}
+              <div className="hidden md:block">
+                <nav className="flex items-center space-x-8">
+                  {navigationItems.map((item, index) => (
+                    <div
+                      key={item.name}
+                      className="relative"
+                    >
+                      <Link
+                        href={item.href}
+                        className={`px-3 py-2 text-sm font-medium transition-all duration-200 relative group ${
+                          isActiveLink(item.href)
+                            ? 'text-slate-900'
+                            : 'text-slate-600 hover:text-cyan-600'
+                        }`}
+                        aria-current={isActiveLink(item.href) ? 'page' : undefined}
+                        aria-describedby={`${item.name.toLowerCase()}-description`}
+                      >
+                        {item.name}
+                        <span
+                          className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-300 ${
+                            isActiveLink(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                          }`}
+                          aria-hidden="true"
+                        />
+                      </Link>
+                      <div
+                        id={`${item.name.toLowerCase()}-description`}
+                        className="sr-only"
+                      >
+                        Navigate to {item.name} section of the website
+                      </div>
+                    </div>
+                  ))}
+                </nav>
+              </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <motion.button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-400 hover:text-white focus:outline-none focus:text-white p-2"
-                whileTap={{ scale: 0.9 }}
-                aria-expanded={isMobileMenuOpen}
-                aria-controls="mobile-menu"
-                aria-label="Toggle mobile menu"
-              >
-                <motion.div
-                  animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
+              {/* Social Links & Mobile Menu */}
+              <div className="flex items-center space-x-4">
+                {/* Social Icons - Desktop */}
+                <div className="hidden md:flex items-center space-x-3">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-500 hover:text-cyan-600 transition-all duration-200 p-2 rounded-full hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                      aria-label={`Visit Emmanuel Chukwuka Ogugua's ${social.name} profile (opens in new tab)`}
+                    >
+                      <social.icon size={20} />
+                    </a>
+                  ))}
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="md:hidden text-slate-600 hover:text-cyan-600 focus:outline-none focus:text-cyan-600 p-2 rounded-lg transition-colors duration-200"
+                  aria-expanded={isMobileMenuOpen}
+                  aria-controls="mobile-menu"
+                  aria-label="Toggle mobile navigation menu"
                 >
-                  {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </motion.div>
-              </motion.button>
+                  <div
+                    className={`w-6 h-6 transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-180' : 'rotate-0'}`}
+                  >
+                    {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </motion.nav>
 
       {/* Mobile Navigation Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            ref={mobileMenuRef}
-            id="mobile-menu"
-            className="fixed inset-x-0 top-16 z-40 md:hidden"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-          >
-            <div className="bg-slate-900/95 backdrop-blur-lg border-t border-white/10 shadow-lg">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+      {isMobileMenuOpen && (
+        <div
+          ref={mobileMenuRef}
+          id="mobile-menu"
+          className="fixed inset-x-0 top-20 z-40 md:hidden"
+          role="region"
+          aria-label="Mobile navigation menu"
+        >
+          <div className="bg-white/95 backdrop-blur-xl border-t border-slate-200/50 shadow-xl">
+            <div className="px-4 py-6 space-y-4">
+              {/* Mobile Navigation Links */}
+              <nav className="space-y-2">
                 {navigationItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`block px-3 py-3 text-base font-medium transition-colors duration-200 ${
-                      isActiveLink(item.href)
-                        ? 'text-white bg-blue-500/10'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    aria-current={isActiveLink(item.href) ? 'page' : undefined}
-                  >
-                    {item.name}
-                  </Link>
+                  <React.Fragment key={item.name}>
+                    <Link
+                      href={item.href}
+                      className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+                        isActiveLink(item.href)
+                          ? 'text-slate-900 bg-cyan-50 border border-cyan-200'
+                          : 'text-slate-700 hover:text-cyan-600 hover:bg-slate-50'
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      aria-current={isActiveLink(item.href) ? 'page' : undefined}
+                      aria-describedby={`mobile-${item.name.toLowerCase()}-description`}
+                    >
+                      {item.name}
+                    </Link>
+                    <div
+                      id={`mobile-${item.name.toLowerCase()}-description`}
+                      className="sr-only"
+                    >
+                      Navigate to {item.name} section of the website
+                    </div>
+                  </React.Fragment>
                 ))}
+              </nav>
 
-                {/* Mobile Social Icons */}
-                <div className="border-t border-white/10 pt-4">
-                  <p className="px-3 text-sm font-medium text-gray-400 mb-3">Connect</p>
-                  <div className="flex space-x-4 px-3">
-                    {socialLinks.map((social) => (
-                      <a
-                        key={social.name}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors duration-200 p-2 rounded-full hover:bg-white/10"
-                        aria-label={`Visit ${social.name} profile`}
-                      >
-                        <social.icon size={20} />
-                      </a>
-                    ))}
-                  </div>
+              {/* Mobile Social Links */}
+              <div className="pt-4 border-t border-slate-200">
+                <p className="px-4 text-sm font-medium text-slate-600 mb-4">Connect With Me</p>
+                <div className="flex justify-center space-x-6 px-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-500 hover:text-cyan-600 transition-all duration-200 p-3 rounded-full hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                      aria-label={`Visit Emmanuel Chukwuka Ogugua's ${social.name} profile (opens in new tab)`}
+                    >
+                      <social.icon size={20} />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
 
-      {/* Mobile menu backdrop */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="fixed inset-0 z-30 md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsMobileMenuOpen(false)}
-            aria-hidden="true"
-          />
-        )}
-      </AnimatePresence>
+      {/* Mobile Menu Backdrop */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-30 md:hidden bg-black/20"
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     </>
   )
 }

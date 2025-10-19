@@ -14,23 +14,23 @@ const personas = [
     cta: 'View Development Projects',
     ctaLink: '/portfolio-ventures',
     icon: Code,
-    gradient: 'from-blue-500 to-cyan-500',
-    bgGradient: 'from-blue-900/20 to-cyan-900/20',
+    gradient: 'from-slate-700 to-slate-800',
+    bgGradient: 'from-slate-50/90 to-slate-100/90',
     image: '/images/DevEngineerHeroimage2.webp'
   },
   {
     id: 2,
-    title: 'Strategic Leader',
-    subtitle: 'Business Strategist & Entrepreneur',
-    description: 'Bridging technology and business to drive growth and innovation across ventures.',
-    cta: 'Explore Business Ventures',
-    ctaLink: '/portfolio-ventures',
-    cta2: 'Learn More About Me',
-    cta2Link: '/about',
+    title: 'Versatile Leader',
+    subtitle: 'Software Engineer & Business Strategist',
+    description: 'Bridging technology and entrepreneurship to create innovative solutions and drive business growth.',
+    cta: 'About Me',
+    ctaLink: '/about',
+    cta2: 'Get In Touch',
+    cta2Link: '/contact',
     icon: TrendingUp,
-    gradient: 'from-purple-500 to-pink-500',
-    bgGradient: 'from-purple-900/20 to-pink-900/20',
-    image: '/images/bizStrategistHeroimage.webp'
+    gradient: 'from-amber-600 to-amber-700',
+    bgGradient: 'from-amber-50/90 to-yellow-50/90',
+    image: '/images/DevCeoDualPersonal.webp'
   },
   {
     id: 3,
@@ -40,8 +40,8 @@ const personas = [
     cta: 'Discover My Ventures',
     ctaLink: '/portfolio-ventures',
     icon: Briefcase,
-    gradient: 'from-green-500 to-emerald-500',
-    bgGradient: 'from-green-900/20 to-emerald-900/20',
+    gradient: 'from-slate-600 to-slate-700',
+    bgGradient: 'from-slate-100/90 to-slate-200/90',
     image: '/images/bizStrategistHeroimage1.webp'
   }
 ]
@@ -64,13 +64,14 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative h-[75vh] pt-12 flex items-center justify-center overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-label="Hero section with rotating personas"
+      role="banner"
     >
       {/* Animated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
       </div>
 
@@ -100,7 +101,7 @@ export function HeroSection() {
         ].map((position, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white/10 rounded-full"
+            className="absolute w-2 h-2 bg-amber-200/40 rounded-full"
             style={{
               left: position.left,
               top: position.top,
@@ -119,26 +120,9 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight text-balance">
-            Chukwuka Emmanuel{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Ogugua
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto text-balance">
-            Software Engineer & Business Strategist bridging technology and entrepreneurship
-          </p>
-        </motion.div>
-
+      <div className="relative z-10 w-full h-full flex items-center justify-center text-center">
         {/* Persona Carousel */}
-        <div className="mb-12" role="region" aria-label="Persona showcase">
+        <div className="w-full h-full relative" role="region" aria-label="Persona showcase" aria-live="polite">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
@@ -146,37 +130,30 @@ export function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
-              className={`max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r ${current.bgGradient} backdrop-blur-sm border border-white/10 relative overflow-hidden`}
+              className={`absolute inset-0 flex items-center justify-center ${current.bgGradient} backdrop-blur-sm border border-slate-200/50 rounded-2xl shadow-lg overflow-hidden`}
+              role="group"
+              aria-labelledby={`persona-${current.id}-title`}
+              aria-describedby={`persona-${current.id}-description`}
             >
-              <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 opacity-90">
                 <Image
                   src={current.image}
-                  alt={current.title}
+                  alt={`${current.title} - ${current.subtitle}`}
                   fill
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 75vw"
+                  className="object-cover object-center"
+                  priority
                 />
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col items-center justify-center h-full">
                 <div className="flex items-center justify-center mb-6">
                   <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${current.gradient} flex items-center justify-center text-white`}>
                     <current.icon size={32} aria-hidden="true" />
                   </div>
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
-                  {current.title}
-                </h2>
-
-                <p className="text-lg md:text-xl text-gray-300 mb-4">
-                  {current.subtitle}
-                </p>
-
-                <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-balance">
-                  {current.description}
-                </p>
-
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={current.ctaLink}>
+                  <Link href={current.ctaLink} aria-describedby={`persona-${current.id}-cta-description`}>
                     <motion.button
                       className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
                       whileHover={{ scale: 1.05 }}
@@ -189,7 +166,7 @@ export function HeroSection() {
                   </Link>
 
                   {current.cta2 && (
-                    <Link href={current.cta2Link}>
+                    <Link href={current.cta2Link} aria-describedby={`persona-${current.id}-cta2-description`}>
                       <motion.button
                         className="btn-secondary w-full sm:w-auto"
                         whileHover={{ scale: 1.05 }}
@@ -205,36 +182,6 @@ export function HeroSection() {
             </motion.div>
           </AnimatePresence>
         </div>
-
-        {/* Persona indicators */}
-        <div className="flex justify-center space-x-2 mb-8" role="tablist" aria-label="Persona selection">
-          {personas.map((persona, index) => (
-            <button
-              key={persona.id}
-              onClick={() => setCurrentPersona(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900 ${
-                index === currentPersona
-                  ? 'bg-white scale-125'
-                  : 'bg-white/30 hover:bg-white/50'
-              }`}
-              aria-label={`View ${persona.title} persona`}
-              aria-selected={index === currentPersona}
-              role="tab"
-            />
-          ))}
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          aria-hidden="true"
-        >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -38,8 +38,9 @@ export function PersonaChart() {
               <Image
                 src="/images/aboutImagePieChartSection.webp"
                 alt="Persona pie chart showing 65% Software Engineer and 35% Business Strategist"
-                width={256}
-                height={256}
+                fill
+                sizes="256px"
+                loading="lazy"
                 className="w-full h-full object-contain"
               />
             </div>

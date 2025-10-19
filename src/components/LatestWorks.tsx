@@ -46,27 +46,27 @@ const latestWorks = [
 
 export function LatestWorks() {
   return (
-    <section className="section-padding bg-slate-900/50" aria-labelledby="latest-works-heading">
+    <section className="py-8 lg:py-12 bg-gradient-to-br from-slate-50 via-white to-slate-100" aria-labelledby="latest-works-heading">
       <div className="container-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
-          <h2 id="latest-works-heading" className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance">
+          <h2 id="latest-works-heading" className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 text-balance">
             My Latest{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-600 bg-clip-text text-transparent">
               Works
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto text-balance">
+          <p className="text-xl text-slate-700 max-w-3xl mx-auto text-balance">
             Showcasing innovative solutions across e-commerce, agriculture, business management, and lifestyle platforms
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" role="grid" aria-label="Latest projects grid">
           {latestWorks.map((work, index) => (
             <motion.article
               key={work.id}
@@ -75,21 +75,25 @@ export function LatestWorks() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-400 focus-within:ring-offset-2 focus-within:ring-offset-slate-900"
+              className="group relative bg-white/80 backdrop-blur-xl rounded-2xl overflow-hidden border border-slate-200/50 hover:border-amber-300/50 transition-all duration-500 focus-within:ring-2 focus-within:ring-amber-500 focus-within:ring-offset-2 focus-within:ring-offset-slate-50 hover-lift hover-glow"
+              role="gridcell"
+              tabIndex={0}
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={work.image}
-                  alt={work.title}
+                  alt={`${work.title} - ${work.description}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                 {/* Category badge */}
                 <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm rounded-full border border-white/20">
+                  <span className="px-3 py-1 bg-amber-100/80 backdrop-blur-sm text-amber-800 text-sm rounded-full border border-amber-200/50 font-medium">
                     {work.category}
                   </span>
                 </div>
@@ -97,10 +101,10 @@ export function LatestWorks() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors line-clamp-1">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors line-clamp-1">
                   {work.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed">
+                <p className="text-slate-600 text-sm mb-6 line-clamp-3 leading-relaxed">
                   {work.description}
                 </p>
 
@@ -108,10 +112,10 @@ export function LatestWorks() {
                 <div className="flex gap-3">
                   <Link href={work.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <motion.button
-                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-800"
+                      className="w-full bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 hover:from-slate-900 hover:via-slate-800 hover:to-slate-900 text-white px-4 py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-white hover-lift"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      aria-label={`View live demo of ${work.title}`}
+                      aria-label={`View live demo of ${work.title} (opens in new tab)`}
                     >
                       <ExternalLink size={16} aria-hidden="true" />
                       Live Demo
@@ -120,7 +124,7 @@ export function LatestWorks() {
 
                   <Link href={work.detailsUrl} className="flex-1">
                     <motion.button
-                      className="w-full border border-white/20 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-slate-800"
+                      className="w-full border-2 border-slate-300 hover:border-amber-500 hover:bg-amber-50 text-slate-700 hover:text-amber-700 px-4 py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-white"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       aria-label={`View details of ${work.title}`}
@@ -133,7 +137,7 @@ export function LatestWorks() {
               </div>
 
               {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden="true"></div>
             </motion.article>
           ))}
         </div>
@@ -144,7 +148,7 @@ export function LatestWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-6"
         >
           <Link href="/portfolio-ventures">
             <motion.button

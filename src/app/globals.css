@@ -12,19 +12,45 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
+  /* Ensure fixed navigation doesn't interfere with page layout */
   body {
-    @apply bg-slate-900 text-gray-100 antialiased;
+    @apply bg-slate-50 text-slate-900 antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Prevent horizontal scroll issues */
+    overflow-x: hidden;
+  }
+
+  /* Navigation stability improvements */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure proper fixed positioning context */
+  #__next {
+    position: relative;
+  }
+
+  /* Dark mode support */
+  .dark body {
+    @apply bg-slate-900 text-slate-100;
   }
 
   /* Focus styles for accessibility */
   *:focus-visible {
-    @apply outline-none ring-2 ring-blue-400 ring-offset-2 ring-offset-slate-900;
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white;
+  }
+
+  .dark *:focus-visible {
+    @apply ring-blue-400 ring-offset-slate-900;
   }
 
   /* Selection styles */
   ::selection {
-    @apply bg-blue-500/20 text-blue-100;
+    @apply bg-blue-100 text-blue-900;
+  }
+
+  .dark ::selection {
+    @apply bg-blue-900/50 text-blue-100;
   }
 
   /* Scrollbar styles */
@@ -33,81 +59,159 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-slate-800;
+    @apply bg-slate-100;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-600 rounded-full;
+    @apply bg-slate-300 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-slate-800;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600;
+  }
+
+  .dark .dark\:dark-scrollbar-thumb\:hover\:bg-slate-500:hover {
     @apply bg-slate-500;
   }
 }
 
 @layer components {
+  /* Premium Brand Colors - Posh & Sophisticated */
+  .brand-primary {
+    @apply text-slate-800;
+  }
+
+  .brand-secondary {
+    @apply text-slate-600;
+  }
+
+  .brand-accent {
+    @apply text-amber-600;
+  }
+
+  /* Luxury gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #1e293b 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #f59e0b 100%);
+  }
+
+  /* Premium glass morphism effects */
   .glass-card {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg;
+    @apply bg-white/90 backdrop-blur-2xl border border-slate-200/60 rounded-3xl shadow-2xl;
   }
 
-  .glass-button {
-    @apply bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 transition-all duration-200;
+  .glass-card-dark {
+    @apply bg-slate-800/90 backdrop-blur-2xl border border-slate-700/60 rounded-3xl shadow-2xl;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
-  }
-
-  .glass-input {
-    @apply bg-slate-800/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-colors;
-  }
-
+  /* Luxury buttons */
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900;
+    @apply bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 hover:from-slate-900 hover:via-slate-800 hover:to-slate-900 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-slate-900/25 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-white;
   }
 
   .btn-secondary {
-    @apply border border-white/20 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-slate-900;
+    @apply border-2 border-slate-300 hover:border-amber-500 hover:bg-amber-50 text-slate-700 hover:text-amber-700 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-white;
   }
 
+  .btn-ghost {
+    @apply text-slate-600 hover:text-slate-800 hover:bg-slate-100 px-6 py-3 rounded-xl font-medium transition-all duration-200;
+  }
+
+  /* Premium typography enhancements */
+  .text-gradient {
+    @apply bg-gradient-to-r from-slate-700 via-slate-800 to-slate-700 bg-clip-text text-transparent;
+  }
+
+  .text-gold-gradient {
+    @apply bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-600 bg-clip-text text-transparent;
+  }
+
+  .heading-primary {
+    @apply text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight;
+  }
+
+  .heading-secondary {
+    @apply text-3xl md:text-4xl font-bold text-slate-800 mb-5 leading-tight;
+  }
+
+  .text-muted {
+    @apply text-slate-600;
+  }
+
+  /* Layout components */
   .section-padding {
-    @apply py-20;
+    @apply py-16 lg:py-24;
   }
 
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-6 sm:px-8 lg:px-12;
   }
 
   .text-balance {
     text-wrap: balance;
   }
 
+  /* Premium animations */
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 1s ease-out;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
+    animation: slideUp 1s ease-out;
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* Luxury interactive elements */
+  .hover-lift {
+    @apply transition-all duration-500 hover:scale-105 hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-500 hover:shadow-2xl hover:shadow-slate-900/20;
+  }
+
+  .hover-gold-glow {
+    @apply transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/30;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -120,11 +224,11 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
 }
 
-/* Reduced motion preferences */
+/* Premium motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -136,4 +240,57 @@
   .animate-float {
     animation: none;
   }
+}
+
+/* Luxury dark mode styling */
+.dark .glass-card {
+  @apply bg-slate-800/90 border-slate-700/60;
+}
+
+.dark .text-muted {
+  @apply text-slate-400;
+}
+
+.dark .btn-secondary {
+  @apply border-slate-600 hover:border-amber-400 hover:bg-slate-800 text-slate-300 hover:text-amber-400;
+}
+
+.dark .gradient-primary {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+.dark .gradient-secondary {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #1e293b 100%);
+}
+
+.dark .heading-primary {
+  @apply text-slate-100;
+}
+
+.dark .heading-secondary {
+  @apply text-slate-200;
+}
+
+.dark .brand-primary {
+  @apply text-slate-200;
+}
+
+.dark .brand-secondary {
+  @apply text-slate-400;
+}
+
+.dark .text-slate-900 {
+  @apply text-slate-100;
+}
+
+.dark .text-slate-800 {
+  @apply text-slate-200;
+}
+
+.dark .text-slate-700 {
+  @apply text-slate-300;
+}
+
+.dark .text-slate-600 {
+  @apply text-slate-400;
 }

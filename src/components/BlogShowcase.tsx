@@ -39,7 +39,9 @@ export function BlogShowcase() {
               <div className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-8">
                 <div className="aspect-video bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-lg flex items-center justify-center">
                   <div className="text-center">
-                    <BookOpen className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                    <div className="w-16 h-16 mx-auto mb-4 bg-white/10 rounded-lg flex items-center justify-center">
+                      <BookOpen className="w-8 h-8 text-green-400" />
+                    </div>
                     <div className="text-2xl font-bold text-white mb-2">CEOwrites</div>
                     <div className="text-sm text-gray-400">Emmanuel&apos;s Blog Hub</div>
                   </div>
