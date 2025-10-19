@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const timelineImages = [
   { id: 1, title: 'Curious Kid', image: '/images/curiousKidAboutImage1.png', year: 'Early Years' },
@@ -46,17 +47,12 @@ export function Timeline() {
               className="group relative"
             >
               <div className="relative overflow-hidden rounded-xl bg-slate-800/50 backdrop-blur-sm border border-white/10 aspect-square">
-                {/* Placeholder for image */}
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-white/20 mb-2">
-                      {item.title.split(' ')[0]}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      {item.year}
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

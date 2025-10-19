@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export function AboutHero() {
   return (
@@ -58,11 +59,13 @@ export function AboutHero() {
             className="order-1 lg:order-2"
           >
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                <div className="text-8xl font-bold text-white/20">
-                  CEO
-                </div>
-              </div>
+              <Image
+                src="/images/shortAboutSideimage1.png"
+                alt="Emmanuel Ogugua"
+                width={400}
+                height={400}
+                className="w-full h-96 object-cover rounded-2xl backdrop-blur-sm border border-white/10"
+              />
 
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-20 animate-pulse"></div>

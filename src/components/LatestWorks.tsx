@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const latestWorks = [
   {
@@ -78,11 +79,12 @@ export function LatestWorks() {
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-white/20 transition-transform group-hover:scale-110">
-                    {work.title.charAt(0)}
-                  </div>
-                </div>
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                 {/* Category badge */}
