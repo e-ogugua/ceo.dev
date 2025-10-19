@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react'
-
 const navigationItems = [
   { name: 'About', href: '/about' },
   { name: 'Portfolio & Ventures', href: '/portfolio-ventures' },
@@ -83,9 +82,13 @@ export function Navigation() {
               whileTap={{ scale: 0.95 }}
             >
               <Link href="/" className="flex items-center group" aria-label="Go to homepage">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg transition-transform group-hover:rotate-3">
-                  CEO
-                </div>
+                <Image
+                  src="/ChukwukaEmmanuelOguguaLogo.webp"
+                  alt="Chukwuka Emmanuel Ogugua Logo"
+                  width={40}
+                  height={40}
+                  className="transition-transform group-hover:rotate-3"
+                />
                 <span className="ml-2 text-white font-semibold text-lg hidden sm:block">
                   Chukwuka Emmanuel Ogugua
                 </span>
