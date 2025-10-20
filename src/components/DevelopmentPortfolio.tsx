@@ -123,7 +123,7 @@ const developmentProjects = [
 
 export function DevelopmentPortfolio() {
   return (
-    <section className="py-20 bg-slate-900/30">
+    <section className="py-20 bg-slate-50/40 dark:bg-slate-900/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -132,13 +132,13 @@ export function DevelopmentPortfolio() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Software Engineering{' '}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Portfolio
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Innovative web applications and digital solutions crafted with modern technologies
           </p>
         </motion.div>
@@ -152,7 +152,7 @@ export function DevelopmentPortfolio() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-slate-800/60 via-slate-800/50 to-slate-900/60 dark:from-slate-800/80 dark:via-slate-800/70 dark:to-slate-900/80 backdrop-blur-xl rounded-xl overflow-hidden border border-slate-700/50 dark:border-slate-600/60 hover:border-slate-600/70 dark:hover:border-slate-500/80 transition-all duration-300"
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
@@ -184,11 +184,11 @@ export function DevelopmentPortfolio() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 group-hover:text-blue-400 dark:group-hover:text-blue-300 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                <p className="text-slate-600 dark:text-slate-300 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
@@ -196,12 +196,12 @@ export function DevelopmentPortfolio() {
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.slice(0, 3).map((tech) => (
-                      <span key={tech} className="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded border border-blue-400/20">
+                      <span key={tech} className="px-2 py-1 bg-blue-500/10 dark:bg-blue-400/20 text-blue-400 dark:text-blue-300 text-xs rounded border border-blue-400/20 dark:border-blue-300/30">
                         {tech}
                       </span>
                     ))}
                     {project.techStack.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-500/10 text-gray-400 text-xs rounded border border-gray-400/20">
+                      <span className="px-2 py-1 bg-slate-500/10 dark:bg-slate-400/20 text-slate-400 dark:text-slate-300 text-xs rounded border border-slate-400/20 dark:border-slate-300/30">
                         +{project.techStack.length - 3}
                       </span>
                     )}
@@ -212,8 +212,8 @@ export function DevelopmentPortfolio() {
                 <div className="mb-6">
                   <div className="space-y-2">
                     {project.features.slice(0, 3).map((feature, i) => (
-                      <div key={i} className="flex items-center text-gray-300 text-sm">
-                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                      <div key={i} className="flex items-center text-slate-600 dark:text-slate-300 text-sm">
+                        <div className="w-1.5 h-1.5 bg-blue-400 dark:bg-blue-300 rounded-full mr-2"></div>
                         <span className="truncate">{feature}</span>
                       </div>
                     ))}
@@ -224,7 +224,7 @@ export function DevelopmentPortfolio() {
                 <div className="flex gap-3">
                   <Link href={project.liveUrl} target="_blank" className="flex-1">
                     <motion.button
-                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200"
+                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 hover:shadow-xl backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -235,7 +235,7 @@ export function DevelopmentPortfolio() {
 
                   <Link href={project.githubUrl} target="_blank" className="flex-1">
                     <motion.button
-                      className="w-full border border-white/20 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200"
+                      className="w-full border border-slate-600/50 dark:border-slate-500/60 hover:border-slate-500/70 dark:hover:border-slate-400/80 hover:bg-gradient-to-r hover:from-slate-700/20 hover:to-slate-600/20 text-slate-300 dark:text-slate-200 hover:text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 backdrop-blur-sm bg-slate-800/20 dark:bg-slate-700/30"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
