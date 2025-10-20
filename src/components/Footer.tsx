@@ -28,7 +28,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900/70 dark:bg-slate-900/95 border-t border-slate-800/70 dark:border-slate-700/70 transition-all duration-500">
+    <footer className="bg-gradient-to-br from-slate-900/70 via-slate-900/80 to-slate-900/95 dark:bg-slate-900/95 border-t border-primary/20 dark:border-slate-700/70 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Brand Section - Left Side */}
@@ -40,7 +40,7 @@ export function Footer() {
                   alt="CEO Logo"
                   width={120}
                   height={120}
-                  className="rounded-full object-cover shadow-2xl ring-2 ring-slate-700/50 group-hover:ring-blue-500/60 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,163,255,0.3)] hover:scale-105"
+                  className="rounded-full object-cover shadow-2xl ring-2 ring-primary/60 group-hover:ring-primary/80 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,163,255,0.3)] hover:scale-105 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/5 backdrop-blur-sm hover:from-primary/30 hover:via-secondary/20 hover:to-primary/10"
                 />
               </div>
 
@@ -76,7 +76,7 @@ export function Footer() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform"
+                      className="block text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:px-2 hover:py-1 hover:rounded"
                     >
                       {item.name}
                     </Link>
@@ -92,7 +92,7 @@ export function Footer() {
                     <Link
                       key={service.name}
                       href={service.href}
-                      className="block text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform"
+                      className="block text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:px-2 hover:py-1 hover:rounded"
                     >
                       {service.name}
                     </Link>
@@ -114,7 +114,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-all duration-300 p-1.5 rounded hover:bg-slate-800/50 dark:hover:bg-slate-700/50 hover:scale-110 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:ring-offset-2"
+                  className="text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-all duration-300 p-1.5 rounded hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:backdrop-blur-sm hover:scale-110 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:ring-offset-2"
                   aria-label={`Visit ${social.name}`}
                 >
                   <social.icon size={16} />

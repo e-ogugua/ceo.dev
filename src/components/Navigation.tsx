@@ -124,7 +124,7 @@ export function Navigation() {
                   className="group flex items-center space-x-3 transition-all duration-300 hover:opacity-80"
                   aria-label="Go to Emmanuel Chukwuka Ogugua homepage"
                 >
-                  <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-slate-200/60 group-hover:ring-primary/50 transition-all duration-300 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm">
+                  <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/60 group-hover:ring-primary/80 transition-all duration-300 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/5 backdrop-blur-sm hover:from-primary/30 hover:via-secondary/20 hover:to-primary/10">
                     <NextImage
                       src="/images/ChukwukaEmmanuelOguguaLogo.png"
                       alt="Emmanuel Chukwuka Ogugua - Professional Logo"
@@ -149,8 +149,8 @@ export function Navigation() {
                       href={item.href}
                       className={`px-3 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg ${
                         isActiveLink(item.href)
-                          ? 'text-primary bg-primary/10 shadow-sm'
-                          : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                          ? 'text-primary bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/30 shadow-sm'
+                          : 'text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:border hover:border-primary/20'
                       }`}
                       aria-current={isActiveLink(item.href) ? 'page' : undefined}
                     >
@@ -171,7 +171,7 @@ export function Navigation() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-slate-400 hover:text-white transition-all duration-300 rounded-lg hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-primary/50 hover:scale-105"
+                      className="p-2 text-slate-400 hover:text-white transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/50 hover:scale-105"
                       aria-label={`Visit ${social.name}`}
                     >
                       <social.icon size={18} />
@@ -187,8 +187,8 @@ export function Navigation() {
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className={`md:hidden p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
                     isMobileMenuOpen
-                      ? 'text-white bg-slate-800 shadow-sm'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      ? 'text-white bg-gradient-to-r from-primary/30 to-secondary/30 backdrop-blur-sm shadow-sm'
+                      : 'text-slate-400 hover:text-white hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:backdrop-blur-sm'
                   }`}
                   aria-expanded={isMobileMenuOpen}
                   aria-controls="mobile-menu"
@@ -216,7 +216,7 @@ export function Navigation() {
             role="region"
             aria-label="Mobile navigation menu"
           >
-            <div className="bg-slate-800/95 backdrop-blur-md mx-4 rounded-lg shadow-xl border border-slate-700/60">
+            <div className="bg-gradient-to-br from-slate-800/95 via-slate-800/90 to-slate-900/95 backdrop-blur-md mx-4 rounded-lg shadow-xl border border-primary/20">
               <div className="px-4 py-6 space-y-3">
                 {/* Clean Mobile Navigation Links */}
                 <nav className="space-y-1">
@@ -226,8 +226,8 @@ export function Navigation() {
                       href={item.href}
                       className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-all duration-200 ${
                         isActiveLink(item.href)
-                          ? 'text-primary bg-primary/10'
-                          : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                          ? 'text-primary bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/30'
+                          : 'text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:border hover:border-primary/20'
                       }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                       aria-current={isActiveLink(item.href) ? 'page' : undefined}
@@ -248,7 +248,7 @@ export function Navigation() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center w-8 h-8 text-slate-400 hover:text-white bg-slate-700/50 hover:bg-slate-600 rounded-md transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-primary/50"
+                        className="flex items-center justify-center w-8 h-8 text-slate-400 hover:text-white bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 rounded-md transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-primary/50"
                         aria-label={`Visit ${social.name}`}
                       >
                         <social.icon size={14} />
