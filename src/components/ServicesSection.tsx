@@ -195,9 +195,15 @@ export function ServicesSection() {
                 </motion.button>
               </Link>
 
-              <button className="border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200">
-                View Portfolio
-              </button>
+              <Link href="/portfolio-ventures">
+                <motion.button
+                  className="border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View Portfolio
+                </motion.button>
+              </Link>
             </div>
           </div>
         </motion.div>

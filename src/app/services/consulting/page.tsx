@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Users, MessageCircle, BookOpen, Handshake, Clock, Award } from 'lucide-react'
+import { ArrowLeft, Users, MessageCircle, BookOpen, Handshake } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
 import { ServiceContactForm } from '@/components/ServiceContactForm'
 import { Footer } from '@/components/Footer'

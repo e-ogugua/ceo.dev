@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, GraduationCap, Users, Calendar, Award, BookOpen, Zap } from 'lucide-react'
+import { ArrowLeft, GraduationCap, Users, BookOpen, Zap } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
 import { ServiceContactForm } from '@/components/ServiceContactForm'
 import { Footer } from '@/components/Footer'

@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send, CheckCircle, AlertCircle, Loader2, X } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 
 interface FormData {
   name: string
@@ -21,6 +22,7 @@ interface FormErrors {
 }
 
 export function ContactForm() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -33,6 +35,17 @@ export function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  // Handle URL parameters on component mount
+  useEffect(() => {
+    const serviceParam = searchParams.get('service')
+    if (serviceParam) {
+      setFormData(prev => ({
+        ...prev,
+        service: serviceParam
+      }))
+    }
+  }, [searchParams])
 
   const validateForm = useCallback((): boolean => {
     const newErrors: FormErrors = {}
@@ -126,29 +139,29 @@ export function ContactForm() {
   }
 
   return (
-    <section className="py-16">
+    <section className="py-8">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
             Send Your Project{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Details
             </span>
           </h2>
-          <p className="text-gray-300">
+          <p className="text-sm text-gray-300">
             Fill out the form below and I&apos;ll get back to you within 24 hours.
           </p>
         </motion.div>
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white/5 dark:bg-slate-800/30 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-xl p-8 space-y-6"
+          className="bg-white/5 dark:bg-slate-800/30 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-lg p-6 space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -203,10 +216,10 @@ export function ContactForm() {
             )}
           </AnimatePresence>
 
-          {/* Form Fields - Simplified Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Form Fields - Compact Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-1">
                 Full Name <span className="text-red-400">*</span>
               </label>
               <input
@@ -216,16 +229,16 @@ export function ContactForm() {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.name ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-3 py-2 bg-white/10 border rounded text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.name ? 'border-red-400' : 'border-white/20'}`}
                 placeholder="Your full name"
               />
               {errors.name && (
-                <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                <p className="text-red-400 text-xs mt-1">{errors.name}</p>
               )}
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-1">
                 Email <span className="text-red-400">*</span>
               </label>
               <input
@@ -235,18 +248,18 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.email ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-3 py-2 bg-white/10 border rounded text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.email ? 'border-red-400' : 'border-white/20'}`}
                 placeholder="your@email.com"
               />
               {errors.email && (
-                <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                <p className="text-red-400 text-xs mt-1">{errors.email}</p>
               )}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="company" className="block text-xs font-medium text-gray-300 mb-1">
                 Company
               </label>
               <input
@@ -255,13 +268,13 @@ export function ContactForm() {
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
                 placeholder="Your company"
               />
             </div>
 
             <div>
-              <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="service" className="block text-xs font-medium text-gray-300 mb-1">
                 Service
               </label>
               <select
@@ -269,10 +282,11 @@ export function ContactForm() {
                 name="service"
                 value={formData.service}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
               >
                 <option value="">Select service</option>
                 <option value="web-development">Web Development</option>
+                <option value="custom-solution">Custom Project</option>
                 <option value="technical-consulting">Technical Consulting</option>
                 <option value="team-training">Team Training</option>
                 <option value="ongoing-support">Ongoing Support</option>
@@ -280,9 +294,9 @@ export function ContactForm() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="budget" className="block text-xs font-medium text-gray-300 mb-1">
                 Budget Range
               </label>
               <select
@@ -290,7 +304,7 @@ export function ContactForm() {
                 name="budget"
                 value={formData.budget}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
               >
                 <option value="">Select budget</option>
                 <option value="under-5k">Under $5,000</option>
@@ -302,7 +316,7 @@ export function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="timeline" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="timeline" className="block text-xs font-medium text-gray-300 mb-1">
                 Timeline
               </label>
               <select
@@ -310,7 +324,7 @@ export function ContactForm() {
                 name="timeline"
                 value={formData.timeline}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
               >
                 <option value="">Select timeline</option>
                 <option value="asap">ASAP</option>
@@ -323,7 +337,7 @@ export function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-1">
               Project Details <span className="text-red-400">*</span>
             </label>
             <textarea
@@ -332,36 +346,36 @@ export function ContactForm() {
               value={formData.message}
               onChange={handleInputChange}
               required
-              rows={5}
-              className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.message ? 'border-red-400' : 'border-white/20'}`}
-              placeholder="Tell me about your project, goals, and requirements..."
+              rows={4}
+              className={`w-full px-3 py-2 bg-white/10 border rounded text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.message ? 'border-red-400' : 'border-white/20'}`}
+              placeholder={formData.service === 'custom-solution' ? "Describe your custom project requirements, goals, and any specific features you need..." : "Tell me about your project, goals, and requirements..."}
             />
             {errors.message && (
-              <p className="text-red-400 text-sm mt-1">{errors.message}</p>
+              <p className="text-red-400 text-xs mt-1">{errors.message}</p>
             )}
           </div>
 
           <motion.button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded text-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             whileHover={!isSubmitting ? { scale: 1.02 } : {}}
             whileTap={!isSubmitting ? { scale: 0.98 } : {}}
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="w-5 h-5 animate-spin" />
+                <Loader2 className="w-4 h-4 animate-spin" />
                 <span>Sending...</span>
               </>
             ) : (
               <>
-                <Send className="w-5 h-5" />
+                <Send className="w-4 h-4" />
                 <span>Send Message</span>
               </>
             )}
           </motion.button>
 
-          <p className="text-gray-400 text-sm text-center">
+          <p className="text-gray-400 text-xs text-center">
             I&apos;ll respond within 24 hours. Your information is kept private and secure.
           </p>
         </motion.form>
