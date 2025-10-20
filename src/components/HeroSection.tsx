@@ -96,7 +96,7 @@ export function HeroSection() {
               priority={currentPersona === 0}
               className="object-cover object-center"
             />
-            <div className={`absolute inset-0 bg-gradient-to-b ${currentPersonaData.gradient} opacity-40`} />
+            <div className={`absolute inset-0 bg-gradient-to-b ${currentPersonaData.gradient} opacity-20`} />
           </motion.div>
         </AnimatePresence>
       </div>

@@ -54,7 +54,7 @@ const latestWorks = [
 
 export function LatestWorks() {
   return (
-    <section className="py-8 lg:py-12 gradient-primary" aria-labelledby="latest-works-heading">
+    <section className="py-8 lg:py-12 bg-slate-50/40 dark:bg-slate-900/90 transition-all duration-500" aria-labelledby="latest-works-heading">
       <div className="container-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export function LatestWorks() {
         >
           <motion.h2
             id="latest-works-heading"
-            className="text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-900 mb-3"
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-slate-100 mb-3"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
