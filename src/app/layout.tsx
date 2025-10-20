@@ -1,5 +1,22 @@
 import type { Metadata, Viewport } from 'next'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+
+// Optimize fonts with Next.js 13+ font loading
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+})
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 export const metadata: Metadata = {
   title: {
@@ -58,13 +75,13 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/images/ChukwukaEmmanuelOguguaLogo.png',
+    apple: '/images/ChukwukaEmmanuelOguguaLogo.png',
   },
   manifest: '/manifest.json',
   other: {
-    'theme-color': '#0f172a',
-    'msapplication-TileColor': '#0f172a',
+    'theme-color': '#00A3FF',
+    'msapplication-TileColor': '#00A3FF',
   },
 }
 
@@ -154,29 +171,19 @@ export default function RootLayout({
             })
           }}
         />
-        {/* Preload critical fonts */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-          as="style"
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-          />
-        </noscript>
       </head>
-      <body suppressHydrationWarning className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-900 antialiased">
-        <div className="relative">
-          {/* Subtle background pattern */}
-          <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30 pointer-events-none" />
+      <body suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 text-slate-900 antialiased`}>
+        <ThemeProvider>
+          <div className="relative">
+            {/* Subtle background pattern */}
+            <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30 pointer-events-none" />
 
-          {/* Main content */}
-          <div className="relative z-10">
-            {children}
+            {/* Main content */}
+            <div className="relative z-10">
+              {children}
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
 
         {/* Performance monitoring script */}
         <script

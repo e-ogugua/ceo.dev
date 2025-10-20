@@ -8,21 +8,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Enhanced Brand Colors
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+        // New Brand Colors - CEO Design System v3.0
+        primary: '#00A3FF', // Bright blue for CTAs and links
+        secondary: '#5AC8FA', // Ice blue for subtle elements and hovers
+        dark: '#1E1E1E', // Dark charcoal for text and dark backgrounds
+        light: '#FFFFFF', // White for main backgrounds
+        'soft-grey': '#F4F4F4', // Light grey for cards and backgrounds
+        muted: '#666666', // Muted text color
+        'dark-muted': '#2B2B2B', // Dark mode muted text
+
+        // Glass effects
+        glass: {
+          light: 'rgba(255, 255, 255, 0.1)',
+          dark: 'rgba(30, 30, 30, 0.3)',
         },
-        // CEO Brand Palette
+
+        // Legacy colors for backward compatibility (gradually phase out)
         ceo: {
           50: '#fefce8',
           100: '#fef9c3',
@@ -36,6 +37,7 @@ module.exports = {
           900: '#713f12',
           950: '#422006',
         },
+
         // Enhanced Slate for Professional Look
         slate: {
           50: '#f8fafc',
@@ -50,6 +52,7 @@ module.exports = {
           900: '#0f172a',
           950: '#020617',
         },
+
         // Success, Warning, Info Colors
         success: {
           50: '#f0fdf4',
@@ -69,16 +72,10 @@ module.exports = {
           600: '#2563eb',
           700: '#1d4ed8',
         },
-        glass: {
-          50: 'rgba(255, 255, 255, 0.05)',
-          100: 'rgba(255, 255, 255, 0.1)',
-          200: 'rgba(255, 255, 255, 0.2)',
-          300: 'rgba(255, 255, 255, 0.3)',
-        }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['Cal Sans', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'Satoshi', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace'],
       },
       fontSize: {
@@ -104,6 +101,11 @@ module.exports = {
       },
       backdropBlur: {
         xs: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+        '2xl': '24px',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -132,8 +134,8 @@ module.exports = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(234, 179, 8, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(234, 179, 8, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(0, 163, 255, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(0, 163, 255, 0.6)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
@@ -145,8 +147,9 @@ module.exports = {
         },
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(234, 179, 8, 0.3)',
-        'glow-lg': '0 0 40px rgba(234, 179, 8, 0.4)',
+        'glow': '0 0 20px rgba(0, 163, 255, 0.3)',
+        'glow-lg': '0 0 40px rgba(0, 163, 255, 0.4)',
+        'soft': '0 8px 24px rgba(0, 0, 0, 0.08)',
       },
     },
   },

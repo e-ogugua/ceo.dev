@@ -19,7 +19,7 @@ export function AboutHero() {
           >
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               About{' '}
-              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Emmanuel
               </span>
             </h1>
@@ -47,7 +47,7 @@ export function AboutHero() {
             >
               <Link href="/story">
                 <motion.button
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
+                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

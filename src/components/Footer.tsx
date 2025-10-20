@@ -1,23 +1,22 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Linkedin, Twitter, Facebook, Instagram, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 
 const footerNavigation = [
   { name: 'About', href: '/about' },
-  { name: 'Portfolio & Ventures', href: '/portfolio-ventures' },
-  { name: 'Learn', href: '/learn' },
+  { name: 'Portfolio', href: '/portfolio-ventures' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Learn', href: '/learn' },
   { name: 'Contact', href: '/contact' },
 ]
 
-const services = [
-  { name: 'Custom Development', href: '/contact?service=custom-development' },
-  { name: 'Technical Consulting', href: '/contact?service=technical-consulting' },
-  { name: 'Team Training', href: '/contact?service=team-training' },
-  { name: 'Ongoing Support', href: '/contact?service=ongoing-support' },
+const servicesNavigation = [
+  { name: 'Web Development', href: '/services/web-development' },
+  { name: 'Business Strategy', href: '/services/business-strategy' },
+  { name: 'Consulting', href: '/services/consulting' },
+  { name: 'Training', href: '/services/training' },
 ]
 
 const socialLinks = [
@@ -29,122 +28,115 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 border-t border-slate-200/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2"
-          >
-            <div className="flex items-center mb-4">
-              <div className="relative w-24 h-24 mr-4 bg-white/10 backdrop-blur-sm border border-slate-200/20 rounded-xl p-2">
+    <footer className="bg-slate-900 border-t border-slate-800">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Brand Section - Left Side */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="group inline-flex items-center space-x-4 mb-6">
+              <div className="relative">
                 <Image
                   src="/images/ChukwukaEmmanuelOguguaLogo.png"
-                  alt="Chukwuka Emmanuel Ogugua Logo"
-                  fill
-                  sizes="96px"
-                  className="object-cover"
+                  alt="CEO Logo"
+                  width={160}
+                  height={160}
+                  className="rounded-full object-cover shadow-3xl ring-4 ring-slate-700 group-hover:ring-blue-500/80 transition-all duration-300 hover:shadow-[0_25px_50px_rgba(0,163,255,0.4)] hover:scale-105"
                 />
               </div>
-              <span className="text-slate-800 font-semibold text-lg">
-                Chukwuka Emmanuel Ogugua
-              </span>
-            </div>
-            <p className="text-slate-600 mb-6 max-w-md">
-              Software Engineer & Business Strategist bridging technology and entrepreneurship to create innovative solutions and drive business growth.
-            </p>
 
-            {/* EmmanuelOS Button */}
-            <Link href="https://emmanuelos.vercel.app/" target="_blank">
-              <motion.button
-                className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-600 hover:from-amber-700 hover:via-yellow-700 hover:to-amber-700 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 transition-all duration-300 hover-lift hover-glow mb-6"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                EmmanuelOS-SWART Dashboard
-                <ExternalLink size={16} />
-              </motion.button>
+              <div>
+                <div className="space-y-1">
+                  <p className="text-white font-bold text-xl leading-tight">
+                    Chukwuka Emmanuel Ogugua
+                  </p>
+                  <p className="text-slate-400 font-medium">Software Engineer & Business Strategist</p>
+                </div>
+              </div>
             </Link>
 
-            {/* Social links */}
-            <div className="flex space-x-4">
+            {/* EmmanuelOS Explore Button */}
+            <div className="mb-6">
+              <Link href="https://emmanuelos.vercel.app" target="_blank" rel="noopener noreferrer" className="group">
+                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/40 rounded-lg text-blue-400 hover:text-blue-300 hover:border-blue-400/60 hover:bg-gradient-to-r hover:from-blue-600/30 hover:to-purple-600/30 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl">
+                  Explore EmmanuelOS
+                  <ExternalLink size={14} className="ml-2 group-hover:translate-x-0.5 transition-transform duration-200" />
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Navigation & Services - Center */}
+          <div className="lg:col-span-5">
+            <div className="grid grid-cols-2 gap-8">
+              {/* Navigation Links */}
+              <div>
+                <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider">Navigate</h3>
+                <nav className="space-y-3">
+                  {footerNavigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-slate-400 hover:text-white transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Services Links */}
+              <div>
+                <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider">Services</h3>
+                <nav className="space-y-3">
+                  {servicesNavigation.slice(0, 4).map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="block text-slate-400 hover:text-white transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          {/* Social & Connect - Right Side */}
+          <div className="lg:col-span-3">
+            <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider">Connect</h3>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-3 mb-6">
               {socialLinks.map((social) => (
-                <motion.a
+                <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-500 hover:text-amber-600 transition-all duration-200 p-3 rounded-full hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="text-slate-400 hover:text-white transition-all duration-300 p-2 rounded-lg hover:bg-slate-800 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  aria-label={`Visit ${social.name}`}
                 >
-                  <social.icon size={20} />
-                </motion.a>
+                  <social.icon size={18} />
+                </a>
               ))}
             </div>
-          </motion.div>
 
-          {/* Quick links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-slate-800 font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {footerNavigation.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-slate-600 hover:text-amber-600 transition-colors duration-200"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-slate-800 font-semibold text-lg mb-4">Services</h3>
-            <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    href={service.href}
-                    className="text-slate-600 hover:text-amber-600 transition-colors duration-200"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+            <div className="text-slate-400 text-sm">
+              <p className="font-medium">Enugu, Nigeria</p>
+              <a href="mailto:emmachuka@gmail.com" className="hover:text-white transition-colors duration-200 font-medium">
+                emmachuka@gmail.com
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="border-t border-slate-200 mt-8 pt-8 text-center"
-        >
-          <p className="text-slate-600">
-            © {new Date().getFullYear()} Chukwuka Emmanuel Ogugua. All rights reserved.
+        <div className="border-t border-slate-800 mt-10 pt-6 text-center">
+          <p className="text-slate-500 text-sm font-medium">
+            © {new Date().getFullYear()} Emmanuel Chukwuka Ogugua. All rights reserved.
           </p>
-        </motion.div>
+        </div>
       </div>
     </footer>
   )

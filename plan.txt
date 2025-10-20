@@ -3,16 +3,24 @@ Site Architecture
 My layman explanation how i see this ap to be and perform like. So you analyse it and do the technical aspect of it to achieve it
 
 1. Hero / Landing
- I see the landing and Hero like this: It wil have a sleek and morden glassy black navigation heading, The CEO logo will be towards the left end of the navigation menu and whenever its is clicked on any where, ot any time in the app ( as I expect the header to be steady all over the app and its pages same with the footer). So users and visitors are brough to the landing page with a nice motion animated techy way (not too heavy that users loose speed or loading, exploring and navigation), and too, it should not be too distracting. the logo image is: ChukwukaEmmanuelOguguaLogo.png, that is CEO: Chukwuka Emmanuel Ogugua's Logo. Then (still on the placemet in the header), there will be some gap from the logo through towards the right of the header navigation, where we'll have our About page button, Portfolio and Ventures nav button, Learn nav button,blog nav button,  and the contact navigation button and then the  social icons (linking to my social handles accordingly ) X- Twitter @emmachuka, Linkdlin: www.linkedin.com/in/emmanuelogugua
-, Facebook: https://web.facebook.com/CEOICLtd/ and instagram: https://www.instagram.com/ceo231/  just like the header in the website - https://www.adhamdannaway.com/ , so together the header will be looking clean and very clear and easily readable and also wow and engaging with users.
+ I see the landing and Hero like this: It wil have a sleek and morden glassy black navigation heading, The CEO logo will be towards the left end of the navigation menu and whenever its is clicked on any where, ot any time in the app ( as I expect the header to be steady all over the app and its pages same with the footer). So users and visitors are brough to the landing page with a nice motion animated techy way (not too heavy that users loose speed or loading, exploring and navigation), and too, it should not be too distracting. the logo image is: ChukwukaEmmanuelOguguaLogo.png, that is CEO: Chukwuka Emmanuel Ogugua's Logo. Then (still on the placemet in the header), there will be some gap from the logo through towards the right of the header navigation, where we'll have our Home page button, About page button, Portfolio and Ventures nav button, Learn nav button,blog nav button,  and the contact navigation button and then the  social icons (linking to my social handles accordingly ) X- Twitter @emmachuka, Linkdlin: www.linkedin.com/in/emmanuelogugua
+, Facebook: https://web.facebook.com/CEOICLtd/ and instagram: https://www.instagram.com/ceo231/  just like the header in the website - https://www.adhamdannaway.com/ , so together the header will be looking clean and very clear and easily readable and also wow and engaging with users. The header logo will display "ceo.dev" text for a more professional, domain-branded appearance while maintaining the full "Emmanuel Chukwuka Ogugua" branding in the footer.
 
-Okay as for the hero image section, I will use three images: The one that will represent me as a Cybersecurity, IT expert, Programmer, software developer and engineer. the second will be an image of me in a blend of my persona image as a Dev. and as A Business Strategist joined seemlessly in the center, and with the discription of the skills in its vibe. And then the third my persona image as  a serial business owner and brand strategist. So, the three images, as a dev, the combination of both and that of a business owner and brand strategist. Also I want the three hero images switch to have that cool vibe transition between each image of the three images with their corresponding CTA buttons accordingly. use: Development Projects and Business Ventures CTA  accordinglyfor the three images and for the second image and as for the image, the one with a blend of the personas: it will have 2 CTA butttons one to link to our about page  and the other to our contact page.
+Okay as for the hero image section, I will use two images: The one that will represent me as a Software Engineer and Developer. The second will be an image of me as a Business Strategist and Entrepreneur. The two images will have smooth techy transitions between them with their corresponding CTA buttons accordingly.
+
+For the Software Engineer persona (left side positioning):
+- Pills and buttons positioned to the right side of the image
+- CTA: "View My Work" linking to portfolio-ventures page
+
+For the Business Strategist persona (right side positioning):
+- Pills and buttons positioned to the left side of the image
+- Shows dual CTAs: "About Me" and "Get In Touch"
 
 Now, just below the hero image section comes; My latest Works Section, in such a way that once you come to the landing page, you will be seeing a heading text part of this section: My Latest works, and when looking at the landing hero section user can see that part of the below section's heading; My Latest walork section. that means if you're looking at the landing page, you're looking at the hero. The hero may be taking about 80% or 70-75% of the screen, while below it, immediately below it, that is the hero images, you will see my latest work.
 
 And in that section not too long a scroll down from the hero such that. a part of the hero is slightly showing enough to show  my Latest works cards which are:  Emmdra, PoshPOULE Farms Suite and  CEOTR Ltd Erp suite. and Zereths, each card should take users to the description or details page and to the live website of the work accordinlgy. the description or details pages should all be well formed and develop to fit accordingly,  well designed and implemented to suite the entire app's swagg and vibes. Use these images accordingly for the cards cover images;  EmmdraScreenshot1.png, poshpouleFarmsErpSuiteScreenshot4.png, 
 ceotrScreenshot1.png and ZerethScreenshot1.png
-And  the footer will be just a simple footer nav section that jwill have my logo in this form; (c)2025 Chukwuka Emmanuel Ogugua logo. Then with the nav buttons to my About portfolio and Ventures, Learn, Blog, and Contact pages and the services: Custom Development, Technical Consulting, Team Ttraining and Ongoing Support  And  along with the social icons just like we did in the header But this time with a different vibe and design different and sleek too.
+And the footer will be just a simple footer nav section that will have the nav buttons to my About portfolio and Ventures, Learn, Blog, and Contact pages and the services: Custom Development, Technical Consulting, Team Ttraining and Ongoing Support  And  along with the social icons just like we did in the header But this time with a different vibe and design different and sleek too.
 and this Wraps the page.
 
 
@@ -28,7 +36,7 @@ My personal brand is a living duality:
  
 “As a visitor, I want to experience Emmanuel Ogugua’s full persona both as a skilled software developer and a visionary entrepreneur — so that I can understand his capabilities and story in an inspiring, interactive way.”
 
-	Goal: Introduce both personas in a smooth techy motion with three Images.
+	Goal: Introduce both personas in a smooth techy motion with two Images.
 
 
 * Each should have faint motion overlay (animated lines or geometric glow).

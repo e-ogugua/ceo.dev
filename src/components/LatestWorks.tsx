@@ -54,40 +54,38 @@ const latestWorks = [
 
 export function LatestWorks() {
   return (
-    <section className="section-padding gradient-primary" aria-labelledby="latest-works-heading">
+    <section className="py-8 lg:py-12 gradient-primary" aria-labelledby="latest-works-heading">
       <div className="container-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.h2
             id="latest-works-heading"
-            className="heading-xl mb-6"
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-900 mb-3"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            My Latest{' '}
-            <span className="gradient-text-accent">
-              Works
+            Some of My Latest{' '}
+            <span className="text-primary font-bold">
+              Work
             </span>
           </motion.h2>
-          <motion.p
-            className="text-large text-slate-600 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <motion.div
+            className="w-16 h-0.5 bg-primary mx-auto"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-          >
-            Showcasing innovative solutions across e-commerce, agriculture, business management, and lifestyle platforms
-          </motion.p>
+          ></motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" role="grid" aria-label="Latest projects grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="grid" aria-label="Latest projects grid">
           {latestWorks.map((work, index) => (
             <motion.article
               key={work.id}
@@ -103,12 +101,12 @@ export function LatestWorks() {
                 y: -12,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              className="group relative glass-card card-hover overflow-hidden focus-within:ring-2 focus-within:ring-ceo-500 focus-within:ring-offset-2"
+              className="group relative bg-white/95 backdrop-blur-sm border border-slate-200/60 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-primary/50 focus-within:ring-offset-2 shadow-xl hover:shadow-2xl transition-all duration-500 dark:bg-slate-800/95 dark:border-slate-700/60 hover:-translate-y-2"
               role="gridcell"
               tabIndex={0}
             >
               {/* Enhanced Image Section */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-44 overflow-hidden">
                 <Image
                   src={work.image}
                   alt={`${work.title} - ${work.description}`}
@@ -120,9 +118,9 @@ export function LatestWorks() {
                 <div className={`absolute inset-0 bg-gradient-to-t ${work.gradient} opacity-20 group-hover:opacity-10 transition-opacity duration-300`}></div>
 
                 {/* Enhanced Category badge */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-3 right-3">
                   <motion.span
-                    className="px-3 py-1.5 bg-white/90 backdrop-blur-sm text-slate-800 text-xs font-semibold rounded-full border border-slate-200/50 shadow-lg"
+                    className="px-3 py-1.5 bg-white/95 backdrop-blur-md text-slate-800 text-xs font-bold rounded-full border border-slate-200/60 shadow-lg dark:bg-slate-800/95 dark:text-slate-200 dark:border-slate-600/60"
                     whileHover={{ scale: 1.05 }}
                   >
                     {work.category}
@@ -130,11 +128,11 @@ export function LatestWorks() {
                 </div>
 
                 {/* Tech stack indicators */}
-                <div className="absolute bottom-4 left-4 flex gap-1">
+                <div className="absolute bottom-3 left-3 flex gap-1.5">
                   {work.tech.slice(0, 3).map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 bg-white/80 backdrop-blur-sm text-slate-700 text-xs rounded-full font-medium"
+                      className="px-2.5 py-1 bg-white/85 backdrop-blur-sm text-slate-700 text-xs font-semibold rounded-full border border-slate-200/50 shadow-sm dark:bg-slate-800/85 dark:text-slate-300 dark:border-slate-600/50"
                     >
                       {tech}
                     </span>
@@ -143,14 +141,14 @@ export function LatestWorks() {
               </div>
 
               {/* Enhanced Content Section */}
-              <div className="p-6">
+              <div className="p-5">
                 <motion.h3
-                  className="heading-sm mb-3 group-hover:text-ceo-700 transition-colors duration-300 line-clamp-1"
+                  className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-1 text-slate-900 dark:text-slate-100 leading-tight"
                   whileHover={{ x: 4 }}
                 >
                   {work.title}
                 </motion.h3>
-                <p className="text-small mb-6 line-clamp-3 leading-relaxed">
+                <p className="text-sm mb-5 line-clamp-2 leading-relaxed text-slate-600 dark:text-slate-300 font-medium">
                   {work.description}
                 </p>
 
@@ -158,10 +156,10 @@ export function LatestWorks() {
                 <div className="flex gap-3">
                   <Link href={work.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <motion.button
-                      className="w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-700 hover:to-slate-800 text-white px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 group/btn"
+                      className="w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-primary hover:via-primary/90 hover:to-primary text-white px-4 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 group/btn shadow-lg hover:shadow-xl"
                       whileHover={{
                         scale: 1.02,
-                        boxShadow: "0 10px 25px rgba(15, 23, 42, 0.2)"
+                        boxShadow: "0 15px 30px rgba(0, 163, 255, 0.3)"
                       }}
                       whileTap={{ scale: 0.98 }}
                       aria-label={`View live demo of ${work.title} (opens in new tab)`}
@@ -173,10 +171,10 @@ export function LatestWorks() {
 
                   <Link href={work.detailsUrl} className="flex-1">
                     <motion.button
-                      className="w-full border-2 border-slate-300 hover:border-ceo-500 hover:bg-ceo-50 text-slate-700 hover:text-ceo-700 px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ceo-500 focus:ring-offset-2 group/btn"
+                      className="w-full border-2 border-slate-300 hover:border-primary hover:bg-primary/5 text-slate-800 hover:text-primary px-4 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 group/btn dark:border-slate-600 dark:text-slate-200 dark:hover:bg-primary/10 dark:hover:text-primary shadow-md hover:shadow-lg"
                       whileHover={{
                         scale: 1.02,
-                        borderColor: "rgb(234 179 8)"
+                        borderColor: "rgb(0, 163, 255)"
                       }}
                       whileTap={{ scale: 0.98 }}
                       aria-label={`View details of ${work.title}`}
@@ -204,24 +202,24 @@ export function LatestWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-6"
         >
           <Link href="/portfolio-ventures">
             <motion.button
-              className="btn-primary flex items-center gap-3 mx-auto px-8 py-4 text-lg font-semibold relative overflow-hidden group"
+              className="btn-primary flex items-center gap-2 mx-auto px-6 py-3 text-base font-semibold relative overflow-hidden group"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(234, 179, 8, 0.3)"
+                boxShadow: "0 20px 40px rgba(0, 163, 255, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
               aria-label="View all projects and ventures"
             >
-              <span className="relative z-10 flex items-center gap-3">
+              <span className="relative z-10 flex items-center gap-2">
                 View All Projects & Ventures
                 <ArrowRight size={20} aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-200" />
               </span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-ceo-600 to-ceo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={false}
                 animate={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}

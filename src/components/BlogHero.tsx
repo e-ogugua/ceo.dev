@@ -16,7 +16,7 @@ export function BlogHero() {
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             CEOwrites{' '}
-            <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Blog
             </span>
           </h1>
