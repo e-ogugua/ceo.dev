@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Code, Briefcase, TrendingUp, Sparkles } from 'lucide-react'
+import { ArrowRight, Code, Briefcase, Sparkles, ExternalLink, User, Mail } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -11,270 +11,366 @@ const personas = [
     id: 1,
     title: 'Software Engineer',
     subtitle: 'Full-Stack Developer & Tech Innovator',
-    description: 'Building robust, scalable applications with modern technologies and best practices.',
-    cta: 'View Development Projects',
-    ctaLink: '/portfolio-ventures',
+    description: 'Building robust, scalable applications with modern technologies and best practices. Passionate about creating intuitive digital experiences that solve real-world problems.',
+    primaryCta: 'View Development Projects',
+    primaryCtaLink: '/portfolio-ventures',
+    secondaryCta: 'View Technical Skills',
+    secondaryCtaLink: '/about',
     icon: Code,
     gradient: 'from-slate-900 via-slate-800 to-slate-900',
     bgGradient: 'from-slate-50/95 to-slate-100/95',
     image: '/images/DevEngineerHeroimage2.webp',
-    accent: 'from-primary-500 to-primary-600'
+    accent: 'from-blue-500 to-cyan-500',
+    stats: [
+      { label: 'Years Experience', value: '15+' },
+      { label: 'Projects Built', value: '50+' },
+      { label: 'Technologies', value: '20+' }
+    ]
   },
   {
     id: 2,
     title: 'Versatile Leader',
-    subtitle: 'Software Engineer & Business Strategist',
-    description: 'Bridging technology and entrepreneurship to create innovative solutions and drive business growth.',
-    cta: 'About Me',
-    ctaLink: '/about',
-    cta2: 'Get In Touch',
-    cta2Link: '/contact',
-    icon: TrendingUp,
-    gradient: 'from-ceo-600 via-ceo-500 to-ceo-600',
-    bgGradient: 'from-ceo-50/95 to-yellow-50/95',
-    image: '/images/DevCeoDualPersonal.webp',
-    accent: 'from-ceo-500 to-ceo-600'
+    subtitle: 'Developer & Business Strategist',
+    description: 'Bridging the gap between technical innovation and strategic business growth. Leading digital transformation initiatives while maintaining technical excellence.',
+    primaryCta: 'About Me',
+    primaryCtaLink: '/about',
+    secondaryCta: 'Get In Touch',
+    secondaryCtaLink: '/contact',
+    icon: Sparkles,
+    gradient: 'from-slate-800 via-purple-900 to-slate-900',
+    bgGradient: 'from-purple-50/95 to-slate-100/95',
+    image: '/images/bizStrategistHeroimage.webp',
+    accent: 'from-purple-500 to-pink-500',
+    stats: [
+      { label: 'Dual Expertise', value: '65% / 35%' },
+      { label: 'Team Leadership', value: '10+' },
+      { label: 'ROI Generated', value: '$500K+' }
+    ]
   },
   {
     id: 3,
-    title: 'Business Owner',
-    subtitle: 'Serial Entrepreneur & Brand Strategist',
-    description: 'Leading multiple ventures in agriculture, technology, and lifestyle brands.',
-    cta: 'Discover My Ventures',
-    ctaLink: '/portfolio-ventures',
+    title: 'Business Strategist',
+    subtitle: 'Entrepreneur & Brand Architect',
+    description: 'Driving business growth through strategic vision and compelling brand narratives. Building sustainable ventures that create lasting impact in the market.',
+    primaryCta: 'View Business Ventures',
+    primaryCtaLink: '/portfolio-ventures',
+    secondaryCta: 'Learn More',
+    secondaryCtaLink: '/about',
     icon: Briefcase,
-    gradient: 'from-slate-800 via-slate-700 to-slate-800',
-    bgGradient: 'from-slate-100/95 to-slate-200/95',
+    gradient: 'from-slate-900 via-slate-800 to-slate-900',
+    bgGradient: 'from-slate-50/95 to-slate-100/95',
     image: '/images/bizStrategistHeroimage1.webp',
-    accent: 'from-slate-600 to-slate-700'
+    accent: 'from-emerald-500 to-teal-500',
+    stats: [
+      { label: 'Companies Founded', value: '6+' },
+      { label: 'Team Members', value: '50+' },
+      { label: 'Market Impact', value: 'Regional' }
+    ]
   }
 ]
 
 export function HeroSection() {
   const [currentPersona, setCurrentPersona] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
   useEffect(() => {
-    setIsLoaded(true)
-    if (isPaused) return
+    if (!isAutoPlaying) return
 
-    const timer = setInterval(() => {
+    const interval = setInterval(() => {
       setCurrentPersona((prev) => (prev + 1) % personas.length)
-    }, 5000)
+    }, 6000) // Change every 6 seconds
 
-    return () => clearInterval(timer)
-  }, [isPaused])
+    return () => clearInterval(interval)
+  }, [isAutoPlaying])
 
-  const current = personas[currentPersona]
-
-  if (!isLoaded) {
-    return (
-      <section className="relative h-[75vh] pt-12 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100">
-          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-        </div>
-        <div className="relative z-10 w-full h-full flex items-center justify-center">
-          <div className="glass-card p-8 rounded-3xl animate-pulse">
-            <div className="w-16 h-16 bg-slate-200 rounded-full mx-auto mb-4"></div>
-            <div className="h-8 bg-slate-200 rounded w-48 mx-auto mb-2"></div>
-            <div className="h-4 bg-slate-200 rounded w-32 mx-auto"></div>
-          </div>
-        </div>
-      </section>
-    )
+  const handlePersonaChange = (index: number) => {
+    setCurrentPersona(index)
+    setIsAutoPlaying(false)
   }
 
+  const currentPersonaData = personas[currentPersona]
+
   return (
-    <section
-      className="relative h-[75vh] pt-12 flex items-center justify-center overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      aria-label="Hero section with rotating personas"
-      role="banner"
-    >
-      {/* Enhanced animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-40"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-ceo-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      {/* Enhanced floating elements */}
-      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-        {[
-          { left: '15%', top: '20%', delay: 0 },
-          { left: '75%', top: '15%', delay: 0.5 },
-          { left: '45%', top: '35%', delay: 1 },
-          { left: '85%', top: '25%', delay: 1.5 },
-          { left: '25%', top: '55%', delay: 2 },
-          { left: '65%', top: '45%', delay: 2.5 },
-          { left: '35%', top: '75%', delay: 3 },
-          { left: '90%', top: '60%', delay: 3.5 },
-          { left: '10%', top: '80%', delay: 4 },
-          { left: '55%', top: '10%', delay: 4.5 },
-          { left: '80%', top: '70%', delay: 5 },
-          { left: '20%', top: '40%', delay: 5.5 },
-          { left: '70%', top: '80%', delay: 6 },
-          { left: '40%', top: '15%', delay: 6.5 },
-          { left: '60%', top: '65%', delay: 7 },
-          { left: '30%', top: '25%', delay: 7.5 },
-          { left: '85%', top: '45%', delay: 8 },
-          { left: '15%', top: '70%', delay: 8.5 },
-          { left: '75%', top: '55%', delay: 9 },
-          { left: '50%', top: '85%', delay: 9.5 }
-        ].map((position, i) => (
+      <div className="container-padding relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+          {/* Content Section */}
           <motion.div
-            key={i}
-            className={`absolute w-2 h-2 rounded-full ${
-              i % 3 === 0 ? 'bg-ceo-200/60' :
-              i % 3 === 1 ? 'bg-primary-200/60' : 'bg-slate-200/60'
-            }`}
-            style={{
-              left: position.left,
-              top: position.top,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.1, 0.4, 0.1],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 4 + (i % 3) * 2,
-              repeat: Infinity,
-              delay: position.delay,
-            }}
-            aria-hidden="true"
-          />
-        ))}
-      </div>
-
-      <div className="relative z-10 w-full h-full flex items-center justify-center text-center">
-        {/* Enhanced Persona Carousel */}
-        <div className="w-full h-full relative" role="region" aria-label="Persona showcase" aria-live="polite">
-          <AnimatePresence mode="wait">
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center lg:text-left"
+          >
             <motion.div
-              key={current.id}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -50, scale: 1.05 }}
-              transition={{
-                duration: 0.7,
-                ease: [0.4, 0, 0.2, 1]
-              }}
-              className={`absolute inset-0 flex items-center justify-center ${current.bgGradient} backdrop-blur-sm border border-slate-200/60 rounded-3xl shadow-2xl overflow-hidden`}
-              role="group"
-              aria-labelledby={`persona-${current.id}-title`}
-              aria-describedby={`persona-${current.id}-description`}
+              key={currentPersona}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
             >
-              {/* Enhanced background image */}
-              <div className="absolute inset-0 opacity-80">
-                <Image
-                  src={current.image}
-                  alt={`${current.title} - ${current.subtitle}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 75vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  priority={current.id === 1}
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${current.gradient} opacity-20`}></div>
-              </div>
-
-              {/* Enhanced content overlay */}
-              <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 lg:p-12">
-                {/* Enhanced icon with glow effect */}
+              {/* Persona Title & Icon */}
+              <div className="flex items-center justify-center lg:justify-start gap-4">
                 <motion.div
-                  className="flex items-center justify-center mb-8"
-                  animate={{
-                    boxShadow: [
-                      `0 0 20px rgba(234, 179, 8, 0.3)`,
-                      `0 0 40px rgba(234, 179, 8, 0.6)`,
-                      `0 0 20px rgba(234, 179, 8, 0.3)`
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
+                  className={`p-3 rounded-2xl bg-gradient-to-r ${currentPersonaData.accent} shadow-lg`}
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${current.gradient} flex items-center justify-center text-white shadow-2xl`}>
-                    <current.icon size={40} aria-hidden="true" />
-                  </div>
+                  <currentPersonaData.icon className="w-8 h-8 text-white" />
                 </motion.div>
-
-                {/* Enhanced CTA buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={current.ctaLink} aria-describedby={`persona-${current.id}-cta-description`}>
-                    <motion.button
-                      className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold relative overflow-hidden group"
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 20px 40px rgba(15, 23, 42, 0.15)"
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      aria-label={`${current.cta} for ${current.title}`}
-                    >
-                      <span className="relative z-10 flex items-center gap-2">
-                        {current.cta}
-                        <ArrowRight size={20} aria-hidden="true" />
-                      </span>
-                      <motion.div
-                        className={`absolute inset-0 bg-gradient-to-r ${current.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                        initial={false}
-                        animate={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                      />
-                    </motion.button>
-                  </Link>
-
-                  {current.cta2 && (
-                    <Link href={current.cta2Link} aria-describedby={`persona-${current.id}-cta2-description`}>
-                      <motion.button
-                        className="btn-secondary w-full sm:w-auto px-8 py-4 text-lg font-semibold"
-                        whileHover={{
-                          scale: 1.05,
-                          borderColor: "rgb(234 179 8)",
-                          backgroundColor: "rgb(254 252 232 / 0.1)"
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        aria-label={current.cta2}
-                      >
-                        {current.cta2}
-                      </motion.button>
-                    </Link>
-                  )}
+                <div>
+                  <motion.h1
+                    className="text-5xl md:text-6xl font-bold text-slate-900 mb-2"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    {currentPersonaData.title}
+                  </motion.h1>
+                  <motion.p
+                    className="text-xl text-slate-600 font-medium"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    {currentPersonaData.subtitle}
+                  </motion.p>
                 </div>
               </div>
 
-              {/* Enhanced decorative elements */}
-              <div className="absolute top-8 right-8 opacity-20">
-                <Sparkles size={32} className="text-ceo-400" />
-              </div>
-              <div className="absolute bottom-8 left-8 opacity-20">
-                <Sparkles size={24} className="text-primary-400" />
-              </div>
+              {/* Description */}
+              <motion.p
+                className="text-lg text-slate-600 max-w-2xl leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                {currentPersonaData.description}
+              </motion.p>
+
+              {/* Stats */}
+              <motion.div
+                className="grid grid-cols-3 gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                {currentPersonaData.stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/60 shadow-sm"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                  >
+                    <div className={`text-2xl font-bold bg-gradient-to-r ${currentPersonaData.accent} bg-clip-text text-transparent`}>
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-slate-600 font-medium">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div
+                className={`flex flex-col sm:flex-row gap-4 ${currentPersonaData.id === 2 ? 'justify-center lg:justify-start' : 'justify-center lg:justify-start'}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+              >
+                <Link href={currentPersonaData.primaryCtaLink}>
+                  <motion.button
+                    className={`btn-primary flex items-center gap-2 px-8 py-4 text-lg font-semibold relative overflow-hidden group`}
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 20px 40px rgba(234, 179, 8, 0.3)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      {currentPersonaData.primaryCta}
+                      <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
+                    <motion.div
+                      className={`absolute inset-0 bg-gradient-to-r ${currentPersonaData.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                      initial={false}
+                      animate={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
+                  </motion.button>
+                </Link>
+
+                {currentPersonaData.id === 2 ? (
+                  // Special case for middle persona - show both About and Contact buttons
+                  <>
+                    <Link href={currentPersonaData.primaryCtaLink}>
+                      <motion.button
+                        className={`btn-primary flex items-center gap-2 px-8 py-4 text-lg font-semibold relative overflow-hidden group`}
+                        whileHover={{
+                          scale: 1.05,
+                          boxShadow: "0 20px 40px rgba(234, 179, 8, 0.3)"
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span className="relative z-10 flex items-center gap-2">
+                          <User size={20} />
+                          {currentPersonaData.primaryCta}
+                          <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
+                        </span>
+                        <motion.div
+                          className={`absolute inset-0 bg-gradient-to-r ${currentPersonaData.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                          initial={false}
+                          animate={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                        />
+                      </motion.button>
+                    </Link>
+
+                    <Link href={currentPersonaData.secondaryCtaLink}>
+                      <motion.button
+                        className={`btn-secondary flex items-center gap-2 px-8 py-4 text-lg font-semibold`}
+                        whileHover={{
+                          scale: 1.05,
+                          borderColor: "rgb(234 179 8)",
+                          backgroundColor: "rgba(234, 179, 8, 0.05)"
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Mail size={20} />
+                        {currentPersonaData.secondaryCta}
+                      </motion.button>
+                    </Link>
+                  </>
+                ) : (
+                  <Link href={currentPersonaData.secondaryCtaLink}>
+                    <motion.button
+                      className={`btn-secondary flex items-center gap-2 px-8 py-4 text-lg font-semibold`}
+                      whileHover={{
+                        scale: 1.05,
+                        borderColor: "rgb(234 179 8)",
+                        backgroundColor: "rgba(234, 179, 8, 0.05)"
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {currentPersonaData.secondaryCta}
+                      <ExternalLink size={16} />
+                    </motion.button>
+                  </Link>
+                )}
+              </motion.div>
             </motion.div>
-          </AnimatePresence>
+          </motion.div>
+
+          {/* Image Section */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative"
+          >
+            <div className="relative w-full max-w-lg mx-auto">
+              {/* Main Image Container */}
+              <motion.div
+                className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentPersona}
+                    initial={{ opacity: 0, scale: 0.9, rotateY: -90 }}
+                    animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, rotateY: 90 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={currentPersonaData.image}
+                      alt={`${currentPersonaData.title} - ${currentPersonaData.subtitle}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority={currentPersona === 0}
+                      className="object-cover"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${currentPersonaData.gradient} opacity-20`} />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Floating Elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <motion.div
+                    className="absolute top-4 right-4 w-3 h-3 bg-white/80 rounded-full"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.8, 1, 0.8],
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                  <motion.div
+                    className="absolute bottom-8 left-8 w-2 h-2 bg-white/60 rounded-full"
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.6, 1, 0.6],
+                    }}
+                    transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                  />
+                </div>
+              </motion.div>
+
+              {/* Persona Indicators */}
+              <div className="flex justify-center mt-8 space-x-3">
+                {personas.map((_, index) => (
+                  <motion.button
+                    key={index}
+                    onClick={() => handlePersonaChange(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentPersona
+                        ? `bg-gradient-to-r ${currentPersonaData.accent} scale-125`
+                        : 'bg-slate-300 hover:bg-slate-400'
+                    }`}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    aria-label={`Go to persona ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Enhanced progress indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-        {personas.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setCurrentPersona(index)
-              setIsPaused(true)
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        animate={{
+          y: [0, 10, 0],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
+          <motion.div
+            className="w-1 h-3 bg-slate-400 rounded-full mt-2"
+            animate={{
+              y: [0, 12, 0],
             }}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentPersona
-                ? 'bg-ceo-500 scale-125'
-                : 'bg-slate-300 hover:bg-slate-400'
-            }`}
-            aria-label={`Go to persona ${index + 1}`}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
-        ))}
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }
