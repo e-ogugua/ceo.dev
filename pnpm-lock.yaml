@@ -17,6 +17,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.2
         version: 19.2.2(@types/react@19.2.2)
+      debug:
+        specifier: ^4.4.3
+        version: 4.4.3
       eslint:
         specifier: ^9.38.0
         version: 9.38.0(jiti@1.21.7)
