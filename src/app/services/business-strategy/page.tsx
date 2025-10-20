@@ -14,32 +14,32 @@ export default function BusinessStrategyPage() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100">
+      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <Link
               href="/"
-              className="inline-flex items-center text-slate-600 hover:text-slate-900 mb-8 transition-colors duration-200"
+              className="inline-flex items-center text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 mb-8 transition-colors duration-200"
             >
               <ArrowLeft size={16} className="mr-2" />
               Back to Home
             </Link>
 
             <div className="flex justify-center mb-6">
-              <div className="p-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full">
+              <div className="p-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full shadow-lg">
                 <TrendingUp size={48} className="text-white" />
               </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6">
               Business Strategy
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
                 Consulting
               </span>
             </h1>
 
-            <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
               Strategic guidance for business growth, digital transformation,
               and market positioning to achieve sustainable success.
             </p>
@@ -51,101 +51,85 @@ export default function BusinessStrategyPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Growth Strategy */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <Rocket className="text-green-600 mr-3" size={24} />
-                  <h3 className="text-xl font-bold text-slate-900">Growth Strategy</h3>
+                  <Rocket className="text-green-600 dark:text-green-500 mr-3" size={24} />
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Growth Strategy</h3>
                 </div>
-                <p className="text-slate-600 mb-4">
+                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                   Develop comprehensive growth strategies that scale your business and increase market share.
                 </p>
-                <ul className="text-sm text-slate-500 space-y-1">
-                  <li>• Market Analysis</li>
-                  <li>• Growth Planning</li>
-                  <li>• Competitive Strategy</li>
+                <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Market Analysis</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Growth Planning</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Competitive Strategy</span>
+                  </li>
                 </ul>
               </div>
 
               {/* Digital Transformation */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <Target className="text-blue-600 mr-3" size={24} />
-                  <h3 className="text-xl font-bold text-slate-900">Digital Transformation</h3>
+                  <Target className="text-blue-600 dark:text-blue-500 mr-3" size={24} />
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Digital Transformation</h3>
                 </div>
-                <p className="text-slate-600 mb-4">
+                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                   Guide your organization through digital transformation with modern technologies and processes.
                 </p>
-                <ul className="text-sm text-slate-500 space-y-1">
-                  <li>• Technology Adoption</li>
-                  <li>• Process Optimization</li>
-                  <li>• Change Management</li>
+                <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Technology Adoption</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Process Optimization</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Change Management</span>
+                  </li>
                 </ul>
               </div>
 
               {/* Market Analysis */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <BarChart3 className="text-purple-600 mr-3" size={24} />
-                  <h3 className="text-xl font-bold text-slate-900">Market Analysis</h3>
+                  <BarChart3 className="text-purple-600 dark:text-purple-500 mr-3" size={24} />
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Market Analysis</h3>
                 </div>
-                <p className="text-slate-600 mb-4">
+                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                   In-depth market research and analysis to identify opportunities and competitive advantages.
                 </p>
-                <ul className="text-sm text-slate-500 space-y-1">
-                  <li>• Competitive Research</li>
-                  <li>• Trend Analysis</li>
-                  <li>• Opportunity Assessment</li>
+                <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Competitive Research</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Trend Analysis</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Opportunity Assessment</span>
+                  </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
-              Our Strategic Process
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="bg-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">1</span>
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Analysis</h3>
-                <p className="text-slate-600 text-sm">Comprehensive business and market analysis</p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-green-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">2</span>
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Strategy</h3>
-                <p className="text-slate-600 text-sm">Develop actionable strategic plans</p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-purple-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">3</span>
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Execution</h3>
-                <p className="text-slate-600 text-sm">Implement strategies with expert guidance</p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-orange-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">4</span>
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Growth</h3>
-                <p className="text-slate-600 text-sm">Monitor progress and optimize results</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section with Form */}
-        <div className="bg-slate-900">
+        <div className="bg-slate-900 dark:bg-slate-800">
           <ServiceContactForm
             serviceName="Business Strategy Consulting"
             serviceType="business-strategy"

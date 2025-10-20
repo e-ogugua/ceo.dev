@@ -1,29 +1,29 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Briefcase, Users } from 'lucide-react'
+import { Code, Briefcase, Users, ExternalLink } from 'lucide-react'
 
 export function LearnHero() {
   return (
     <section className="py-20 pt-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-            Learn &{' '}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Grow
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Dive deep into the world of software engineering, business strategy, and personal development. Explore curated insights, practical tutorials, and actionable knowledge from my journey as a full-stack developer and strategic business leader.
-          </p>
-        </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+              Learn &{' '}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Grow
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Dive deep into the world of software engineering, business strategy, and personal development. Explore curated insights, practical tutorials, and actionable knowledge from my journey as a full-stack developer and strategic business leader.
+            </p>
+          </motion.div>
 
         {/* Learning Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -119,9 +119,15 @@ export function LearnHero() {
               <div className="text-xl font-semibold text-white mb-2">Ready to Level Up?</div>
               <div className="text-slate-300 dark:text-slate-400">Explore curated learning paths and actionable insights</div>
             </div>
-            <button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
+            <a
+              href="https://codementor-academy.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 inline-flex items-center gap-2"
+            >
               Start Learning
-            </button>
+              <ExternalLink size={16} />
+            </a>
           </div>
         </motion.div>
       </div>

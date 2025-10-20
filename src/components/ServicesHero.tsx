@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, Users, Lightbulb } from 'lucide-react'
+import Link from 'next/link'
+import { Briefcase, Users, Lightbulb, ArrowRight } from 'lucide-react'
 
 export function ServicesHero() {
   return (
@@ -39,7 +40,17 @@ export function ServicesHero() {
                 <Briefcase className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Web Development</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm">Custom websites and applications built with modern technologies</p>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Custom websites and applications built with modern technologies</p>
+              <Link href="/services/web-development">
+                <motion.button
+                  className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-4 py-2 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Get Started
+                  <ArrowRight size={14} />
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
 
@@ -55,7 +66,17 @@ export function ServicesHero() {
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Business Strategy</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm">Strategic planning and consulting for business growth</p>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Strategic planning and consulting for business growth</p>
+              <Link href="/services/business-strategy">
+                <motion.button
+                  className="w-full bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white px-4 py-2 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Get Started
+                  <ArrowRight size={14} />
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
 
@@ -71,7 +92,17 @@ export function ServicesHero() {
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Training & Consulting</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm">Expert training and guidance for teams and individuals</p>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Expert training and guidance for teams and individuals</p>
+              <Link href="/services/training">
+                <motion.button
+                  className="w-full bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white px-4 py-2 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Get Started
+                  <ArrowRight size={14} />
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>

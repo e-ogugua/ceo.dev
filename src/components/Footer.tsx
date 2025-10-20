@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { Linkedin, Twitter, Facebook, Instagram, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
-import { NewsletterSubscription } from '@/components/NewsletterSubscription'
 
 const footerNavigation = [
   { name: 'About', href: '/about' },
@@ -129,17 +128,6 @@ export function Footer() {
                 emmachuka@gmail.com
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Newsletter Subscription */}
-        <div className="border-t border-slate-800/50 dark:border-slate-700/50 mt-8 pt-8">
-          <div className="max-w-md mx-auto">
-            <NewsletterSubscription
-              variant="minimal"
-              title="Stay Updated"
-              description="Get the latest insights and updates delivered to your inbox."
-            />
           </div>
         </div>
 

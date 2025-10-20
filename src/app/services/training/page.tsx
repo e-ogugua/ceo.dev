@@ -14,32 +14,32 @@ export default function TrainingPage() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100">
+      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <Link
             href="/"
-            className="inline-flex items-center text-slate-600 hover:text-slate-900 mb-8 transition-colors duration-200"
+            className="inline-flex items-center text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 mb-8 transition-colors duration-200"
           >
             <ArrowLeft size={16} className="mr-2" />
             Back to Home
           </Link>
 
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-full">
+            <div className="p-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-full shadow-lg">
               <GraduationCap size={48} className="text-white" />
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Professional
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
               Training
             </span>
           </h1>
 
-          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
             Empower your team with comprehensive training programs covering modern web development,
             strategic thinking, and leadership skills.
           </p>
@@ -51,99 +51,85 @@ export default function TrainingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Web Development Training */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-4">
-                <BookOpen className="text-blue-600 mr-3" size={24} />
-                <h3 className="text-xl font-bold text-slate-900">Web Development</h3>
+                <BookOpen className="text-blue-600 dark:text-blue-500 mr-3" size={24} />
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Web Development</h3>
               </div>
-              <p className="text-slate-600 mb-4">
+              <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                 Comprehensive training in modern web technologies including React, Next.js, Node.js, and best practices.
               </p>
-              <ul className="text-sm text-slate-500 space-y-1">
-                <li>• Frontend Development</li>
-                <li>• Backend Integration</li>
-                <li>• Modern Frameworks</li>
+              <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Frontend Development</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Backend Integration</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Modern Frameworks</span>
+                </li>
               </ul>
             </div>
 
             {/* Leadership Training */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-4">
-                <Users className="text-green-600 mr-3" size={24} />
-                <h3 className="text-xl font-bold text-slate-900">Leadership Development</h3>
+                <Users className="text-green-600 dark:text-green-500 mr-3" size={24} />
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Leadership Development</h3>
               </div>
-              <p className="text-slate-600 mb-4">
+              <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                 Develop essential leadership skills including team management, strategic thinking, and decision-making.
               </p>
-              <ul className="text-sm text-slate-500 space-y-1">
-                <li>• Team Management</li>
-                <li>• Strategic Planning</li>
-                <li>• Communication Skills</li>
+              <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Team Management</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Strategic Planning</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Communication Skills</span>
+                </li>
               </ul>
             </div>
 
             {/* Technical Workshops */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center mb-4">
-                <Zap className="text-purple-600 mr-3" size={24} />
-                <h3 className="text-xl font-bold text-slate-900">Technical Workshops</h3>
+                <Zap className="text-purple-600 dark:text-purple-500 mr-3" size={24} />
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Technical Workshops</h3>
               </div>
-              <p className="text-slate-600 mb-4">
+              <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                 Intensive workshops on specific technologies, tools, and methodologies for rapid skill development.
               </p>
-              <ul className="text-sm text-slate-500 space-y-1">
-                <li>• Specialized Tools</li>
-                <li>• Best Practices</li>
-                <li>• Hands-on Projects</li>
+              <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Specialized Tools</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Best Practices</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">•</span>
+                  <span>Hands-on Projects</span>
+                </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Training Formats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
-            Training Formats
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Users className="text-white" size={24} />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2">In-Person Workshops</h3>
-              <p className="text-slate-600 text-sm">
-                Interactive classroom sessions with hands-on exercises and real-time feedback.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-green-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Calendar className="text-white" size={24} />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Virtual Sessions</h3>
-              <p className="text-slate-600 text-sm">
-                Online training sessions accessible from anywhere with interactive elements and recordings.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-purple-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Award className="text-white" size={24} />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Custom Programs</h3>
-              <p className="text-slate-600 text-sm">
-                Tailored training programs designed specifically for your team&apos;s needs and goals.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
         {/* CTA Section with Form */}
-        <div className="bg-slate-900">
+        <div className="bg-slate-900 dark:bg-slate-800">
           <ServiceContactForm
             serviceName="Professional Training"
             serviceType="training"

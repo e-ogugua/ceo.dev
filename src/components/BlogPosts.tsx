@@ -427,36 +427,6 @@ export function BlogPosts() {
             );
           })}
         </div>
-
-        {/* Newsletter Signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-green-400/20 rounded-xl p-8 max-w-2xl mx-auto">
-            <div className="text-4xl mb-4">📧</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Never Miss an Insight</h3>
-            <p className="text-gray-300 mb-6">
-              Join my newsletter for weekly insights on technology, business strategy, and personal growth. No spam, just valuable content delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 transition-colors"
-              />
-              <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
-                Subscribe
-              </button>
-            </div>
-            <p className="text-gray-400 text-sm mt-4">
-              Join 500+ readers who get my latest articles and insights
-            </p>
-          </div>
-        </motion.div>
       </div>
   )
 }

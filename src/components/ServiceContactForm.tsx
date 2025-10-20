@@ -25,7 +25,7 @@ interface FormErrors {
 
 interface ServiceContactFormProps {
   serviceName: string
-  serviceType: 'web-development' | 'business-strategy' | 'consulting' | 'training'
+  serviceType: 'web-development' | 'business-strategy' | 'consulting' | 'training' | 'custom-development'
   title?: string
   description?: string
   features?: string[]
@@ -91,6 +91,19 @@ export function ServiceContactForm({
         'Performance Optimization',
         'Security Consulting',
         'Team Training'
+      ]
+    },
+    'custom-development': {
+      title: 'Start Your Custom Development Project',
+      description: 'Let\'s build something unique together. Tell me about your custom software needs.',
+      color: 'from-indigo-600 to-purple-600',
+      features: [
+        'Custom Web Applications',
+        'Mobile App Development',
+        'API Development & Integration',
+        'Database Design & Optimization',
+        'Scalable Architecture',
+        'Performance Optimization'
       ]
     },
     'training': {

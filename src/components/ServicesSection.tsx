@@ -10,6 +10,7 @@ const services = [
     title: 'Custom Development',
     description: 'Bespoke software solutions tailored to your specific business needs. From web applications to mobile apps, I build scalable, maintainable code that grows with your business.',
     icon: Code,
+    link: 'custom-development',
     features: [
       'Full-stack web applications',
       'Mobile app development',
@@ -28,6 +29,7 @@ const services = [
     title: 'Technical Consulting',
     description: 'Strategic technology guidance to help you make informed decisions about your tech stack, architecture, and development processes. Get expert advice on scaling and optimization.',
     icon: TrendingUp,
+    link: 'consulting',
     features: [
       'Technology stack evaluation',
       'Architecture planning',
@@ -46,6 +48,7 @@ const services = [
     title: 'Team Training',
     description: 'Comprehensive training programs to upskill your development team. From modern JavaScript frameworks to software architecture patterns, ensure your team stays current.',
     icon: Users,
+    link: 'training',
     features: [
       'React/Next.js workshops',
       'TypeScript fundamentals',
@@ -61,19 +64,20 @@ const services = [
   },
   {
     id: 4,
-    title: 'Ongoing Support',
-    description: 'Reliable maintenance and support for your applications. Keep your software running smoothly with regular updates, bug fixes, and performance monitoring.',
+    title: 'Business Strategy',
+    description: 'Strategic business consulting to help you develop growth strategies, market positioning, and operational excellence for sustainable business success.',
     icon: Headphones,
+    link: 'business-strategy',
     features: [
-      'Bug fixes & patches',
-      'Performance monitoring',
-      'Security updates',
-      'Feature enhancements',
-      '24/7 emergency support',
-      'Monthly health reports'
+      'Business model analysis',
+      'Growth strategy development',
+      'Market research & analysis',
+      'Competitive positioning',
+      'Operational optimization',
+      'Strategic planning'
     ],
-    startingPrice: 'From $500/month',
-    timeline: 'Ongoing',
+    startingPrice: 'From $200/hr',
+    timeline: '2-6 weeks',
     gradient: 'from-orange-500 to-red-500',
     bgGradient: 'from-orange-900/20 to-red-900/20'
   }
@@ -148,7 +152,7 @@ export function ServicesSection() {
                 </div>
 
                 {/* CTA Button */}
-                <Link href={`/contact?service=${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                <Link href={`/services/${service.link}`}>
                   <motion.button
                     className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-200`}
                     whileHover={{ scale: 1.02 }}

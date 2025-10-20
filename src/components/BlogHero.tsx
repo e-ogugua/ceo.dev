@@ -1,9 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, TrendingUp, Heart } from 'lucide-react'
+import { useState } from 'react'
+import { BookOpen, TrendingUp, Heart, X, ExternalLink } from 'lucide-react'
+import { NewsletterSubscription } from '@/components/NewsletterSubscription'
 
 export function BlogHero() {
+  const [showNewsletterModal, setShowNewsletterModal] = useState(false)
+
   return (
     <section className="py-20 pt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,18 +117,81 @@ export function BlogHero() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="inline-flex items-center space-x-6 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-8">
-            <div className="text-5xl">☕</div>
-            <div className="text-left">
-              <div className="text-xl font-semibold text-white mb-2">Coffee & Conversation</div>
-              <div className="text-gray-400">Get my latest thoughts delivered to your inbox</div>
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-8 max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              {/* Coffee & Conversation - Newsletter */}
+              <div className="flex items-center space-x-6">
+                <div className="text-5xl">☕</div>
+                <div className="text-left">
+                  <div className="text-xl font-semibold text-white mb-2">Coffee & Conversation</div>
+                  <div className="text-gray-400">Get my latest thoughts delivered to your inbox</div>
+                </div>
+                <button
+                  onClick={() => setShowNewsletterModal(true)}
+                  className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
+                >
+                  Subscribe
+                </button>
+              </div>
+
+              {/* Ceowrites Blog Link */}
+              <div className="flex items-center space-x-6">
+                <div className="text-5xl">📝</div>
+                <div className="text-left">
+                  <div className="text-xl font-semibold text-white mb-2">CEOwrites Blog</div>
+                  <div className="text-gray-400">More insights and blogs for deeper exploration</div>
+                </div>
+                <a
+                  href="https://ceowrites-emmanuel-blog-hub.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 inline-flex items-center gap-2"
+                >
+                  Visit Blog
+                  <ExternalLink size={16} />
+                </a>
+              </div>
             </div>
-            <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
-              Subscribe
-            </button>
           </div>
         </motion.div>
       </div>
+
+      {/* Newsletter Subscription Modal */}
+      {showNewsletterModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-slate-800/90 backdrop-blur-md border border-white/10 rounded-xl p-8 max-w-md w-full relative"
+          >
+            <button
+              onClick={() => setShowNewsletterModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            <div className="text-center mb-6">
+              <div className="text-4xl mb-4">☕</div>
+              <h3 className="text-2xl font-bold text-white mb-2">Coffee & Conversation</h3>
+              <p className="text-gray-400">Get my latest thoughts delivered to your inbox</p>
+            </div>
+
+            <NewsletterSubscription
+              variant="minimal"
+              className="mb-4"
+            />
+
+            <button
+              onClick={() => setShowNewsletterModal(false)}
+              className="w-full text-gray-400 hover:text-white transition-colors text-sm"
+            >
+              Maybe later
+            </button>
+          </motion.div>
+        </div>
+      )}
     </section>
   )
 }

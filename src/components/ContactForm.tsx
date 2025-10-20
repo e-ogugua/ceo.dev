@@ -272,7 +272,7 @@ export function ContactForm() {
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">Select service</option>
-                <option value="custom-development">Custom Development</option>
+                <option value="web-development">Web Development</option>
                 <option value="technical-consulting">Technical Consulting</option>
                 <option value="team-training">Team Training</option>
                 <option value="ongoing-support">Ongoing Support</option>
