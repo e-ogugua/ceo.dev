@@ -86,7 +86,7 @@ const developmentProjects = [
     id: 5,
     title: 'CodeMentor Academy',
     description: 'An AI-powered coding education platform offering personalized learning paths, interactive lessons, and progress tracking for aspiring developers.',
-    image: '/images/codementorScreenshot1.png',
+    image: '/images/codementorLogo.png',
     category: 'Education & Technology',
     status: 'Production Ready (v1.0.0)',
     techStack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
@@ -105,7 +105,7 @@ const developmentProjects = [
     id: 6,
     title: 'Jepligom Ministry Portal',
     description: 'A modern ministry website and community platform for spiritual growth and connection.',
-    image: '/images/JepligomMinistryPortalLogo.png',
+    image: '/images/JepligomMinistryPortalScreenshot1.png',
     category: 'Religious & Community',
     status: 'Production Ready (v1.0.0)',
     techStack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Express.js'],
@@ -124,7 +124,7 @@ const developmentProjects = [
 
 export function DevelopmentPortfolio() {
   return (
-    <section className="py-12 bg-slate-50/40 dark:bg-slate-900/80">
+    <section id="development-portfolio" className="py-12 bg-slate-50/40 dark:bg-slate-900/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -166,6 +166,10 @@ export function DevelopmentPortfolio() {
                       width={200}
                       height={150}
                       className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                      style={{
+                        width: 'auto',
+                        height: 'auto'
+                      }}
                       onError={(e) => {
                         // Fallback to placeholder if image fails to load
                         const target = e.currentTarget as HTMLImageElement;
@@ -284,7 +288,7 @@ export function DevelopmentPortfolio() {
           <div className="inline-flex items-center space-x-6 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-4">
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-400 mb-1">{developmentProjects.length}</div>
-              <div className="text-xs text-gray-400">Projects Completed</div>
+              <div className="text-xs text-gray-400">Projects Completed Recently</div>
             </div>
 
             <div className="w-px h-8 bg-white/20"></div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const facts = [
   {
@@ -49,6 +50,7 @@ export function RandomFacts() {
   return (
     <section className="py-8 bg-slate-50/60 dark:bg-slate-900/85">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,67 +58,89 @@ export function RandomFacts() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-white dark:text-slate-100 mb-1">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-1">
             Random facts{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               about me
             </span>
           </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            Discover what makes me tick
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-          {facts.map((fact, index) => (
-            <motion.div
-              key={fact.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              className="group relative"
-            >
-              <div className="relative h-full bg-slate-800/60 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-lg p-4 hover:border-white/20 dark:hover:border-slate-600 transition-all duration-300 shadow-md hover:shadow-lg overflow-hidden">
-                {/* Liquid screen effect background */}
-                <div className="absolute inset-0 opacity-20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 via-purple-400/20 to-pink-400/30 animate-pulse"></div>
-                  <div className="absolute inset-0 bg-gradient-to-tl from-cyan-300/20 via-transparent to-violet-300/20 animate-pulse delay-1000"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 via-transparent to-teal-400/10 animate-pulse delay-500"></div>
-                </div>
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative aspect-[4/3] max-w-md mx-auto lg:mx-0">
+              <Image
+                src="/images/aboutImageRandomFactsSection.png"
+                alt="Random facts about Emmanuel"
+                fill
+                className="object-cover rounded-xl shadow-xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </motion.div>
 
-                {/* Animated liquid overlay */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 transform rotate-12 animate-pulse"></div>
-                  <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-cyan-400/15 to-pink-400/15 transform -rotate-12 animate-pulse delay-700"></div>
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="text-xl mb-3 text-center">
+          {/* Facts Grid */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 gap-3"
+          >
+            {facts.map((fact, index) => (
+              <motion.div
+                key={fact.id}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -1 }}
+                className="group"
+              >
+                <div className="relative bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border border-slate-200/60 dark:border-slate-700/60 rounded-lg p-3 hover:border-slate-300/70 dark:hover:border-slate-600/70 transition-all duration-300 shadow-md hover:shadow-lg">
+                  {/* Icon */}
+                  <div className="text-lg mb-2 text-center">
                     {fact.icon}
                   </div>
 
-                  <p className="text-gray-200 dark:text-slate-200 text-xs leading-relaxed text-center font-medium drop-shadow-sm">
+                  {/* Fact Text */}
+                  <p className="text-slate-700 dark:text-slate-200 text-xs leading-tight text-center font-medium">
                     {fact.fact}
                   </p>
-                </div>
 
-                {/* Subtle border glow */}
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            </motion.div>
-          ))}
+                  {/* Subtle glow */}
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400/5 to-purple-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
 
+        {/* Closing Quote */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-4"
+          className="text-center mt-6"
         >
-          <p className="text-gray-400 dark:text-slate-400 text-xs italic">
-            &quot;Embracing life&apos;s diverse experiences.&quot;
-          </p>
+          <div className="inline-flex items-center space-x-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 rounded-lg px-4 py-2">
+            <span className="text-slate-600 dark:text-slate-300 text-sm italic">
+              &quot;Embracing life&apos;s diverse experiences.&quot;
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>

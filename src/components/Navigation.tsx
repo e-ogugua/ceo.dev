@@ -124,7 +124,7 @@ export function Navigation() {
                   className="group flex items-center space-x-3 transition-all duration-300 hover:opacity-80"
                   aria-label="Go to Emmanuel Chukwuka Ogugua homepage"
                 >
-                  <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/60 group-hover:ring-primary/80 transition-all duration-300 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/5 backdrop-blur-sm hover:from-primary/30 hover:via-secondary/20 hover:to-primary/10">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/60 group-hover:ring-primary/80 transition-all duration-300 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/5 backdrop-blur-sm hover:from-primary/30 hover:via-secondary/20 hover:to-primary/10">
                     <NextImage
                       src="/images/ChukwukaEmmanuelOguguaLogo.png"
                       alt="Emmanuel Chukwuka Ogugua - Professional Logo"

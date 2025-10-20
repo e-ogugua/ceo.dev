@@ -11,7 +11,7 @@ const businessVentures = [
     title: 'Emmdra Empire & Lifestyle',
     role: 'Co-founder',
     description: 'Nigeria\'s premier lifestyle destination, featuring a complete e-commerce platform with shopping cart functionality, admin dashboard, email notifications, and mobile-responsive design.',
-    image: '/images/EmmdraLogo.png',
+    image: '/images/EmmdraLogo1.png',
     category: 'E-commerce & Lifestyle',
     duration: '2023 – Present',
     location: 'Nigeria',
@@ -25,7 +25,7 @@ const businessVentures = [
     title: 'PoshPOULE Farms Ltd',
     role: 'Executive Director',
     description: 'Comprehensive e-commerce and ERP platform for PoshPOULE Farms Ltd, specializing in organic poultry, fresh eggs, vegetables, and farm-fresh produce with multi-currency support.',
-    image: '/images/poshpoule-logo1.png',
+    image: '/images/poshpoule-logo.png',
     category: 'Agriculture & E-commerce',
     duration: 'Sept 2014 – Present',
     location: 'Enugu, Nigeria',
@@ -39,7 +39,7 @@ const businessVentures = [
     title: 'CEOTR Ltd',
     role: 'Co-Founder & Executive Director',
     description: 'Enterprise resource planning platform for business management, portfolio showcase, and client engagement tailored for construction, IT, consulting, and software development companies.',
-    image: '/images/ceotr-logo-white.png',
+    image: '/images/ceotr-logo-white1.png',
     category: 'Business & ERP',
     duration: 'Apr 2016 – Present',
     location: 'Enugu, Nigeria',
@@ -53,7 +53,7 @@ const businessVentures = [
     title: 'Zereth Foods',
     role: 'IT Integration Lead',
     description: 'Modern web platform for cake ordering, recipes, and bakery services with custom design options and online ordering system.',
-    image: '/images/Zereth-logo1.jpeg',
+    image: '/images/Zereth-logo.jpeg',
     category: 'Food & Bakery',
     duration: '2023 – Present',
     location: 'Enugu, Nigeria',
@@ -94,7 +94,7 @@ const businessVentures = [
 
 export function BusinessVentures() {
   return (
-    <section className="py-12 bg-slate-50/50 dark:bg-slate-900/85">
+    <section id="business-ventures" className="py-12 bg-slate-50/50 dark:bg-slate-900/85">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -136,6 +136,10 @@ export function BusinessVentures() {
                       width={200}
                       height={150}
                       className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                      style={{
+                        width: 'auto',
+                        height: 'auto'
+                      }}
                       onError={(e) => {
                         // Fallback to placeholder if image fails to load
                         const target = e.currentTarget as HTMLImageElement;

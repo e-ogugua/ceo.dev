@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, BookOpen, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function BlogShowcase() {
   return (
@@ -35,12 +36,36 @@ export function BlogShowcase() {
             <div className="relative">
               <div className="bg-slate-800/50 dark:bg-slate-800/70 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-lg p-4">
                 <div className="aspect-video bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-10 h-10 mx-auto mb-2 bg-white/10 rounded flex items-center justify-center">
-                      <BookOpen className="w-5 h-5 text-green-400" />
+                  {/* Actual blog logo */}
+                  <div className="w-full h-full flex items-center justify-center p-3">
+                    <Image
+                      src="/images/ceowrites-emmanuelBlogHubLogo.png"
+                      alt="CEOWrites Blog Hub Logo"
+                      width={200}
+                      height={150}
+                      className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                      style={{
+                        width: 'auto',
+                        height: 'auto'
+                      }}
+                      onError={(e) => {
+                        // Fallback to placeholder if image fails to load
+                        const target = e.currentTarget as HTMLImageElement;
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) {
+                          target.style.display = 'none';
+                          fallback.style.display = 'flex';
+                        }
+                      }}
+                    />
+                    {/* Fallback placeholder */}
+                    <div className="text-center hidden" style={{display: 'none'}}>
+                      <div className="w-10 h-10 mx-auto mb-2 bg-white/10 rounded flex items-center justify-center">
+                        <BookOpen className="w-5 h-5 text-green-400" />
+                      </div>
+                      <div className="text-lg font-bold text-white">CEOwrites</div>
+                      <div className="text-xs text-gray-400 dark:text-slate-400">Emmanuel&apos;s Blog</div>
                     </div>
-                    <div className="text-lg font-bold text-white">CEOwrites</div>
-                    <div className="text-xs text-gray-400 dark:text-slate-400">Emmanuel&apos;s Blog</div>
                   </div>
                 </div>
               </div>

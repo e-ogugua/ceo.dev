@@ -4,6 +4,16 @@ import { motion } from 'framer-motion'
 import { Code, TrendingUp, Users, Lightbulb } from 'lucide-react'
 
 export function PortfolioHero() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   return (
     <section className="py-12 pt-24 bg-slate-50/30 dark:bg-slate-900/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,12 +111,22 @@ export function PortfolioHero() {
           className="text-center"
         >
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50">
+            <motion.button
+              onClick={() => scrollToSection('development-portfolio')}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               View Development Projects
-            </button>
-            <button className="border border-primary/40 hover:border-primary/60 hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 text-slate-900 dark:text-slate-100 hover:text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 hover:scale-105 backdrop-blur-sm bg-white/10 dark:bg-slate-800/20">
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('business-ventures')}
+              className="border border-primary/40 hover:border-primary/60 hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 text-slate-900 dark:text-slate-100 hover:text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 hover:scale-105 backdrop-blur-sm bg-white/10 dark:bg-slate-800/20 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Explore Business Ventures
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </div>
