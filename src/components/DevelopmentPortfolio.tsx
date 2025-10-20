@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const developmentProjects = [
   {
@@ -159,9 +160,11 @@ export function DevelopmentPortfolio() {
                 <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
                   {/* Actual project image */}
                   <div className="w-full h-full flex items-center justify-center p-4">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
+                      width={200}
+                      height={150}
                       className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
                       onError={(e) => {
                         // Fallback to placeholder if image fails to load

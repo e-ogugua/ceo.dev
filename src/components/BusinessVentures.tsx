@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Building, Calendar, MapPin } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const businessVentures = [
   {
@@ -129,9 +130,11 @@ export function BusinessVentures() {
                 <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
                   {/* Actual venture logo */}
                   <div className="w-full h-full flex items-center justify-center p-4">
-                    <img
+                    <Image
                       src={venture.image}
                       alt={venture.title}
+                      width={200}
+                      height={150}
                       className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
                       onError={(e) => {
                         // Fallback to placeholder if image fails to load
