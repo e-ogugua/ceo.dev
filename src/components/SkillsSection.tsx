@@ -27,56 +27,53 @@ const skillCategories = [
 
 export function SkillsSection() {
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 bg-slate-50/70 dark:bg-slate-900/90">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-xl md:text-2xl font-bold text-white dark:text-slate-100 mb-1">
             Skills{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Expertise
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Technical proficiency meets strategic business acumen
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
-              initial={{ opacity: 0, x: categoryIndex === 0 ? -30 : 30 }}
+              initial={{ opacity: 0, x: categoryIndex === 0 ? -20 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-4"
             >
               <div className="text-center lg:text-left">
-                <h3 className={`text-2xl font-bold mb-6 ${
+                <h3 className={`text-lg font-bold mb-3 ${
                   categoryIndex === 0 ? 'text-blue-400' : 'text-purple-400'
                 }`}>
                   {category.category}
                 </h3>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: skillIndex * 0.1 }}
+                    transition={{ duration: 0.5, delay: skillIndex * 0.08 }}
                     viewport={{ once: true }}
                     className="group"
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 font-medium">{skill.name}</span>
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-gray-300 dark:text-slate-300 font-medium text-sm">{skill.name}</span>
                       <span className={`text-sm font-semibold ${
                         categoryIndex === 0 ? 'text-blue-400' : 'text-purple-400'
                       }`}>
@@ -84,11 +81,11 @@ export function SkillsSection() {
                       </span>
                     </div>
 
-                    <div className="w-full bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                    <div className="w-full bg-slate-700/60 dark:bg-slate-700/80 rounded-full h-2 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: 0.3 + skillIndex * 0.1 }}
+                        transition={{ duration: 0.8, delay: 0.2 + skillIndex * 0.08 }}
                         viewport={{ once: true }}
                         className={`h-full rounded-full ${
                           categoryIndex === 0
@@ -104,32 +101,32 @@ export function SkillsSection() {
           ))}
         </div>
 
-        {/* Overall Skills Summary */}
+        {/* Compact Skills Summary */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-8 text-center"
         >
-          <div className="inline-flex items-center space-x-8 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+          <div className="inline-flex items-center space-x-4 bg-slate-800/60 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-lg p-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">95%</div>
-              <div className="text-sm text-gray-400">Technical Proficiency</div>
+              <div className="text-xl font-bold text-blue-400 mb-1">95%</div>
+              <div className="text-xs text-gray-400 dark:text-slate-400">Technical</div>
             </div>
 
-            <div className="w-px h-12 bg-white/20"></div>
+            <div className="w-px h-6 bg-white/20"></div>
 
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">90%</div>
-              <div className="text-sm text-gray-400">Strategic Thinking</div>
+              <div className="text-xl font-bold text-purple-400 mb-1">90%</div>
+              <div className="text-xs text-gray-400 dark:text-slate-400">Strategic</div>
             </div>
 
-            <div className="w-px h-12 bg-white/20"></div>
+            <div className="w-px h-6 bg-white/20"></div>
 
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">100%</div>
-              <div className="text-sm text-gray-400">Problem Solving</div>
+              <div className="text-xl font-bold text-green-400 mb-1">100%</div>
+              <div className="text-xs text-gray-400 dark:text-slate-400">Problem Solving</div>
             </div>
           </div>
         </motion.div>
