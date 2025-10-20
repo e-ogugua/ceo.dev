@@ -127,13 +127,31 @@ export function BusinessVentures() {
               {/* Venture Logo/Image */}
               <div className="relative h-48 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <Building className="w-16 h-16 text-purple-400 mb-4" />
-                    <div className="text-2xl font-bold text-white mb-2">
-                      {venture.title.split(' ')[0]}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      {venture.category}
+                  {/* Actual venture logo */}
+                  <div className="w-full h-full flex items-center justify-center p-4">
+                    <img
+                      src={venture.image}
+                      alt={venture.title}
+                      className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                      onError={(e) => {
+                        // Fallback to placeholder if image fails to load
+                        const target = e.currentTarget as HTMLImageElement;
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) {
+                          target.style.display = 'none';
+                          fallback.style.display = 'flex';
+                        }
+                      }}
+                    />
+                    {/* Fallback placeholder */}
+                    <div className="text-center hidden" style={{display: 'none'}}>
+                      <Building className="w-16 h-16 text-purple-400 mb-4" />
+                      <div className="text-2xl font-bold text-white mb-2">
+                        {venture.title.split(' ')[0]}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {venture.category}
+                      </div>
                     </div>
                   </div>
                 </div>

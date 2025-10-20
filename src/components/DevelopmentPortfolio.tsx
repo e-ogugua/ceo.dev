@@ -157,12 +157,30 @@ export function DevelopmentPortfolio() {
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl font-bold text-white/20 mb-2">
-                      {project.title.split(' ')[0].charAt(0)}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      {project.category}
+                  {/* Actual project image */}
+                  <div className="w-full h-full flex items-center justify-center p-4">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                      onError={(e) => {
+                        // Fallback to placeholder if image fails to load
+                        const target = e.currentTarget as HTMLImageElement;
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) {
+                          target.style.display = 'none';
+                          fallback.style.display = 'flex';
+                        }
+                      }}
+                    />
+                    {/* Fallback placeholder */}
+                    <div className="text-center hidden" style={{display: 'none'}}>
+                      <div className="text-6xl font-bold text-white/20 mb-2">
+                        {project.title.split(' ')[0].charAt(0)}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {project.category}
+                      </div>
                     </div>
                   </div>
                 </div>
