@@ -143,8 +143,12 @@ export function HeroSection() {
                   {currentPersonaData.stats.map((stat) => (
                     <motion.div
                       key={stat.label}
-                      className="bg-white/30 backdrop-blur-md text-white px-5 py-3 rounded-full text-sm font-semibold border-2 border-white/40 shadow-lg"
-                      whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.4)", borderColor: "rgba(255, 255, 255, 0.6)" }}
+                      className={`bg-gradient-to-r ${currentPersonaData.id === 0 ? 'from-primary/80 to-secondary/80' : 'from-secondary/80 to-primary/80'} backdrop-blur-xl text-white px-5 py-3 rounded-full text-sm font-semibold border-2 ${currentPersonaData.id === 0 ? 'border-primary/60 hover:border-primary/80' : 'border-secondary/60 hover:border-secondary/80'} shadow-lg hover:shadow-xl`}
+                      whileHover={{ 
+                        scale: 1.05, 
+                        backgroundColor: currentPersonaData.id === 0 ? "rgba(0, 163, 255, 0.9)" : "rgba(90, 200, 250, 0.9)",
+                        borderColor: currentPersonaData.id === 0 ? "rgba(0, 163, 255, 0.8)" : "rgba(90, 200, 250, 0.8)"
+                      }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -169,11 +173,11 @@ export function HeroSection() {
                 >
                   <Link href={currentPersonaData.primaryCtaLink}>
                     <motion.button
-                      className="bg-white/25 backdrop-blur-md hover:bg-white/35 text-white border-2 border-white/40 hover:border-white/60 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                      className={`bg-gradient-to-r ${currentPersonaData.id === 0 ? 'from-primary to-secondary' : 'from-secondary to-primary'} backdrop-blur-xl hover:opacity-90 text-white border-2 ${currentPersonaData.id === 0 ? 'border-primary/60 hover:border-primary/80' : 'border-secondary/60 hover:border-secondary/80'} px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl`}
                       whileHover={{
                         scale: 1.05,
-                        boxShadow: "0 25px 50px rgba(255, 255, 255, 0.3)",
-                        backgroundColor: "rgba(255, 255, 255, 0.35)"
+                        boxShadow: currentPersonaData.id === 0 ? "0 25px 50px rgba(0, 163, 255, 0.4)" : "0 25px 50px rgba(90, 200, 250, 0.4)",
+                        background: currentPersonaData.id === 0 ? "linear-gradient(135deg, #00A3FF 0%, #5AC8FA 100%)" : "linear-gradient(135deg, #5AC8FA 0%, #00A3FF 100%)"
                       }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -188,11 +192,11 @@ export function HeroSection() {
                     // Special case for business strategist - show Contact button (secondary CTA)
                     <Link href={currentPersonaData.secondaryCtaLink}>
                       <motion.button
-                        className="bg-transparent hover:bg-white/15 text-white border-2 border-white/60 hover:border-white/80 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                        className="bg-gradient-to-r from-secondary/20 to-primary/20 backdrop-blur-xl hover:opacity-80 text-white border-2 border-secondary/60 hover:border-secondary/80 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                         whileHover={{
                           scale: 1.05,
-                          borderColor: "rgba(255, 255, 255, 0.9)",
-                          backgroundColor: "rgba(255, 255, 255, 0.15)"
+                          borderColor: "rgba(90, 200, 250, 0.9)",
+                          background: "linear-gradient(135deg, rgba(90, 200, 250, 0.3) 0%, rgba(0, 163, 255, 0.3) 100%)"
                         }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -205,11 +209,11 @@ export function HeroSection() {
                   ) : (
                     <Link href={currentPersonaData.secondaryCtaLink}>
                       <motion.button
-                        className="bg-transparent hover:bg-white/15 text-white border-2 border-white/60 hover:border-white/80 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                        className="bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-xl hover:opacity-80 text-white border-2 border-primary/60 hover:border-primary/80 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                         whileHover={{
                           scale: 1.05,
-                          borderColor: "rgba(255, 255, 255, 0.9)",
-                          backgroundColor: "rgba(255, 255, 255, 0.15)"
+                          borderColor: "rgba(0, 163, 255, 0.9)",
+                          background: "linear-gradient(135deg, rgba(0, 163, 255, 0.3) 0%, rgba(90, 200, 250, 0.3) 100%)"
                         }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -236,8 +240,8 @@ export function HeroSection() {
                     onClick={() => handlePersonaChange(index)}
                     className={`w-4 h-4 rounded-full transition-all duration-300 shadow-lg ${
                       index === currentPersona
-                        ? `bg-white scale-125 shadow-white/50`
-                        : 'bg-white/50 hover:bg-white/70 shadow-white/30'
+                        ? `bg-gradient-to-r from-primary to-secondary scale-125 shadow-primary/50`
+                        : 'bg-gradient-to-r from-primary/50 to-secondary/50 hover:from-primary/70 hover:to-secondary/70 shadow-primary/30'
                     }`}
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
@@ -262,9 +266,9 @@ export function HeroSection() {
           ease: "easeInOut",
         }}
       >
-        <div className="w-7 h-12 border-2 border-white/70 rounded-full flex justify-center shadow-lg">
+        <div className="w-7 h-12 border-2 border-primary/70 rounded-full flex justify-center shadow-lg">
           <motion.div
-            className="w-1.5 h-4 bg-white rounded-full mt-3 shadow-sm"
+            className="w-1.5 h-4 bg-gradient-to-b from-primary to-secondary rounded-full mt-3 shadow-sm"
             animate={{
               y: [0, 16, 0],
             }}
