@@ -94,27 +94,27 @@ const businessVentures = [
 
 export function BusinessVentures() {
   return (
-    <section className="py-20 bg-slate-50/50 dark:bg-slate-900/85">
+    <section className="py-12 bg-slate-50/50 dark:bg-slate-900/85">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             Ventures & Business{' '}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Leadership
             </span>
           </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Entrepreneurial drive and strategic impact across multiple industries and ventures
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {businessVentures.map((venture, index) => (
             <motion.div
               key={venture.id}
@@ -126,10 +126,10 @@ export function BusinessVentures() {
               className="group relative bg-gradient-to-br from-slate-800/60 via-slate-800/50 to-slate-900/60 dark:from-slate-800/80 dark:via-slate-800/70 dark:to-slate-900/80 backdrop-blur-xl rounded-xl overflow-hidden border border-slate-700/50 dark:border-slate-600/60 hover:border-slate-600/70 dark:hover:border-slate-500/80 transition-all duration-300"
             >
               {/* Venture Logo/Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
                   {/* Actual venture logo */}
-                  <div className="w-full h-full flex items-center justify-center p-4">
+                  <div className="w-full h-full flex items-center justify-center p-3">
                     <Image
                       src={venture.image}
                       alt={venture.title}
@@ -148,8 +148,8 @@ export function BusinessVentures() {
                     />
                     {/* Fallback placeholder */}
                     <div className="text-center hidden" style={{display: 'none'}}>
-                      <Building className="w-16 h-16 text-purple-400 mb-4" />
-                      <div className="text-2xl font-bold text-white mb-2">
+                      <Building className="w-14 h-14 text-purple-400 mb-3" />
+                      <div className="text-xl font-bold text-white mb-2">
                         {venture.title.split(' ')[0]}
                       </div>
                       <div className="text-sm text-gray-400">
@@ -160,46 +160,46 @@ export function BusinessVentures() {
                 </div>
 
                 {/* Year badge */}
-                <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-purple-500/20 backdrop-blur-sm text-purple-400 text-xs rounded-full border border-purple-400/30">
+                <div className="absolute top-3 right-3">
+                  <span className="px-2 py-1 bg-purple-500/20 backdrop-blur-sm text-purple-400 text-xs rounded-full border border-purple-400/30">
                     Est. {venture.year}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-purple-400 dark:group-hover:text-purple-300 transition-colors">
+              <div className="p-5">
+                <div className="mb-3">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-purple-400 dark:group-hover:text-purple-300 transition-colors">
                     {venture.title}
                   </h3>
                   <div className="flex items-center text-purple-400 dark:text-purple-300 text-sm font-medium mb-2">
                     <span>{venture.role}</span>
                   </div>
-                  <div className="flex items-center text-slate-600 dark:text-slate-400 text-sm mb-3">
-                    <Calendar className="w-4 h-4 mr-1" />
+                  <div className="flex items-center text-slate-600 dark:text-slate-400 text-sm mb-2">
+                    <Calendar className="w-3 h-3 mr-1" />
                     <span>{venture.duration}</span>
                   </div>
                   <div className="flex items-center text-slate-600 dark:text-slate-400 text-sm">
-                    <MapPin className="w-4 h-4 mr-1" />
+                    <MapPin className="w-3 h-3 mr-1" />
                     <span>{venture.location}</span>
                   </div>
                 </div>
 
-                <p className="text-slate-600 dark:text-slate-300 text-sm mb-4 line-clamp-3">
+                <p className="text-slate-600 dark:text-slate-300 text-sm mb-3 line-clamp-2">
                   {venture.description}
                 </p>
 
                 {/* Impact */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2">Key Impact</h4>
+                <div className="mb-3">
+                  <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-1">Key Impact</h4>
                   <p className="text-slate-600 dark:text-slate-300 text-sm">{venture.impact}</p>
                 </div>
 
                 {/* Key Learnings */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2">Key Learnings</h4>
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-1">Key Learnings</h4>
+                  <div className="flex flex-wrap gap-1">
                     {venture.keyLearnings.map((learning) => (
                       <span key={learning} className="px-2 py-1 bg-purple-500/10 dark:bg-purple-400/20 text-purple-400 dark:text-purple-300 text-xs rounded border border-purple-400/20 dark:border-purple-300/30">
                         {learning}
@@ -209,20 +209,20 @@ export function BusinessVentures() {
                 </div>
 
                 {/* Action buttons */}
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   {venture.website !== '#' ? (
                     <Link href={venture.website} target="_blank" className="flex-1">
                       <motion.button
-                        className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 hover:shadow-xl backdrop-blur-sm border border-purple-400/30 hover:border-purple-400/50"
+                        className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 hover:shadow-xl backdrop-blur-sm border border-purple-400/30 hover:border-purple-400/50"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        <ExternalLink size={16} />
+                        <ExternalLink size={14} />
                         Visit Website
                       </motion.button>
                     </Link>
                   ) : (
-                    <div className="w-full px-4 py-2 text-center text-slate-500 dark:text-slate-400 text-sm">
+                    <div className="w-full px-3 py-2 text-center text-slate-500 dark:text-slate-400 text-sm">
                       Website Coming Soon
                     </div>
                   )}
@@ -241,26 +241,26 @@ export function BusinessVentures() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-8"
         >
-          <div className="inline-flex items-center space-x-8 bg-gradient-to-r from-slate-800/60 via-slate-800/50 to-slate-900/60 dark:from-slate-800/80 dark:via-slate-800/70 dark:to-slate-900/80 backdrop-blur-xl border border-slate-700/50 dark:border-slate-600/60 rounded-xl p-8">
+          <div className="inline-flex items-center space-x-6 bg-gradient-to-r from-slate-800/60 via-slate-800/50 to-slate-900/60 dark:from-slate-800/80 dark:via-slate-800/70 dark:to-slate-900/80 backdrop-blur-xl border border-slate-700/50 dark:border-slate-600/60 rounded-xl p-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">{businessVentures.length}</div>
-              <div className="text-sm text-slate-400 dark:text-slate-300">Active Ventures</div>
+              <div className="text-2xl font-bold text-purple-400 mb-1">{businessVentures.length}</div>
+              <div className="text-xs text-slate-400 dark:text-slate-300">Active Ventures</div>
             </div>
 
-            <div className="w-px h-12 bg-slate-600/50 dark:bg-slate-500/50"></div>
+            <div className="w-px h-8 bg-slate-600/50 dark:bg-slate-500/50"></div>
 
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">10+</div>
-              <div className="text-sm text-slate-400 dark:text-slate-300">Years Experience</div>
+              <div className="text-2xl font-bold text-green-400 mb-1">10+</div>
+              <div className="text-xs text-slate-400 dark:text-slate-300">Years Experience</div>
             </div>
 
-            <div className="w-px h-12 bg-slate-600/50 dark:bg-slate-500/50"></div>
+            <div className="w-px h-8 bg-slate-600/50 dark:bg-slate-500/50"></div>
 
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">₦180M+</div>
-              <div className="text-sm text-slate-400 dark:text-slate-300">Projects Delivered</div>
+              <div className="text-2xl font-bold text-blue-400 mb-1">₦180M+</div>
+              <div className="text-xs text-slate-400 dark:text-slate-300">Projects Delivered</div>
             </div>
           </div>
         </motion.div>

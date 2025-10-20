@@ -124,27 +124,27 @@ const developmentProjects = [
 
 export function DevelopmentPortfolio() {
   return (
-    <section className="py-20 bg-slate-50/40 dark:bg-slate-900/80">
+    <section className="py-12 bg-slate-50/40 dark:bg-slate-900/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             Software Engineering{' '}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Portfolio
             </span>
           </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Innovative web applications and digital solutions crafted with modern technologies
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {developmentProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -156,10 +156,10 @@ export function DevelopmentPortfolio() {
               className="group relative bg-gradient-to-br from-slate-800/60 via-slate-800/50 to-slate-900/60 dark:from-slate-800/80 dark:via-slate-800/70 dark:to-slate-900/80 backdrop-blur-xl rounded-xl overflow-hidden border border-slate-700/50 dark:border-slate-600/60 hover:border-slate-600/70 dark:hover:border-slate-500/80 transition-all duration-300"
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
                   {/* Actual project image */}
-                  <div className="w-full h-full flex items-center justify-center p-4">
+                  <div className="w-full h-full flex items-center justify-center p-3">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -178,7 +178,7 @@ export function DevelopmentPortfolio() {
                     />
                     {/* Fallback placeholder */}
                     <div className="text-center hidden" style={{display: 'none'}}>
-                      <div className="text-6xl font-bold text-white/20 mb-2">
+                      <div className="text-5xl font-bold text-white/20 mb-2">
                         {project.title.split(' ')[0].charAt(0)}
                       </div>
                       <div className="text-sm text-gray-400">
@@ -189,33 +189,33 @@ export function DevelopmentPortfolio() {
                 </div>
 
                 {/* Status badge */}
-                <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-green-500/20 backdrop-blur-sm text-green-400 text-xs rounded-full border border-green-400/30">
+                <div className="absolute top-3 right-3">
+                  <span className="px-2 py-1 bg-green-500/20 backdrop-blur-sm text-green-400 text-xs rounded-full border border-green-400/30">
                     {project.status}
                   </span>
                 </div>
 
                 {/* Year badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm text-blue-400 text-xs rounded-full border border-blue-400/30">
+                <div className="absolute top-3 left-3">
+                  <span className="px-2 py-1 bg-blue-500/20 backdrop-blur-sm text-blue-400 text-xs rounded-full border border-blue-400/30">
                     {project.year}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 group-hover:text-blue-400 dark:group-hover:text-blue-300 transition-colors">
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-blue-400 dark:group-hover:text-blue-300 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-600 dark:text-slate-300 text-sm mb-4 line-clamp-3">
+                <p className="text-slate-600 dark:text-slate-300 text-sm mb-3 line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Tech Stack */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-3">
+                  <div className="flex flex-wrap gap-1">
                     {project.techStack.slice(0, 3).map((tech) => (
                       <span key={tech} className="px-2 py-1 bg-blue-500/10 dark:bg-blue-400/20 text-blue-400 dark:text-blue-300 text-xs rounded border border-blue-400/20 dark:border-blue-300/30">
                         {tech}
@@ -230,9 +230,9 @@ export function DevelopmentPortfolio() {
                 </div>
 
                 {/* Key Features */}
-                <div className="mb-6">
-                  <div className="space-y-2">
-                    {project.features.slice(0, 3).map((feature, i) => (
+                <div className="mb-4">
+                  <div className="space-y-1">
+                    {project.features.slice(0, 2).map((feature, i) => (
                       <div key={i} className="flex items-center text-slate-600 dark:text-slate-300 text-sm">
                         <div className="w-1.5 h-1.5 bg-blue-400 dark:bg-blue-300 rounded-full mr-2"></div>
                         <span className="truncate">{feature}</span>
@@ -242,25 +242,25 @@ export function DevelopmentPortfolio() {
                 </div>
 
                 {/* Action buttons */}
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   <Link href={project.liveUrl} target="_blank" className="flex-1">
                     <motion.button
-                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 hover:shadow-xl backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50"
+                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 hover:shadow-xl backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink size={14} />
                       Live Demo
                     </motion.button>
                   </Link>
 
                   <Link href={project.githubUrl} target="_blank" className="flex-1">
                     <motion.button
-                      className="w-full border border-slate-600/50 dark:border-slate-500/60 hover:border-slate-500/70 dark:hover:border-slate-400/80 hover:bg-gradient-to-r hover:from-slate-700/20 hover:to-slate-600/20 text-slate-300 dark:text-slate-200 hover:text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 backdrop-blur-sm bg-slate-800/20 dark:bg-slate-700/30"
+                      className="w-full border border-slate-600/50 dark:border-slate-500/60 hover:border-slate-500/70 dark:hover:border-slate-400/80 hover:bg-gradient-to-r hover:from-slate-700/20 hover:to-slate-600/20 text-slate-300 dark:text-slate-200 hover:text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-all duration-200 backdrop-blur-sm bg-slate-800/20 dark:bg-slate-700/30"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <Github size={16} />
+                      <Github size={14} />
                       Code
                     </motion.button>
                   </Link>
@@ -279,19 +279,19 @@ export function DevelopmentPortfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-8"
         >
-          <div className="inline-flex items-center space-x-4 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+          <div className="inline-flex items-center space-x-6 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">{developmentProjects.length}</div>
-              <div className="text-sm text-gray-400">Projects Completed</div>
+              <div className="text-2xl font-bold text-blue-400 mb-1">{developmentProjects.length}</div>
+              <div className="text-xs text-gray-400">Projects Completed</div>
             </div>
 
-            <div className="w-px h-12 bg-white/20"></div>
+            <div className="w-px h-8 bg-white/20"></div>
 
             <div className="text-center">
-              <div className="text-lg font-semibold text-white mb-2">Always Learning</div>
-              <div className="text-sm text-gray-400">New technologies & frameworks</div>
+              <div className="text-sm font-semibold text-white mb-1">Always Learning</div>
+              <div className="text-xs text-gray-400">New technologies & frameworks</div>
             </div>
           </div>
         </motion.div>
