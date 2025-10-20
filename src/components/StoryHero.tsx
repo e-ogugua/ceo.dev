@@ -16,14 +16,14 @@ export function StoryHero() {
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
               My Full{' '}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Story
               </span>
             </h1>
 
-            <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               <p>
                 Journey through my evolution from a curious kid with a passion for problem-solving to becoming a software engineer and business strategist. Each chapter represents a pivotal moment in my development.
               </p>
@@ -57,8 +57,8 @@ export function StoryHero() {
               />
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full opacity-20 animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-full opacity-20 animate-pulse delay-1000"></div>
             </div>
           </motion.div>
         </div>

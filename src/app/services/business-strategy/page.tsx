@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, TrendingUp, Target, BarChart3, Rocket } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
+import { ServiceContactForm } from '@/components/ServiceContactForm'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -143,31 +144,20 @@ export default function BusinessStrategyPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-slate-300 mb-8 text-lg">
-              Let&apos;s develop a strategic roadmap for your business growth and success.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="bg-white text-slate-900 px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors duration-200"
-              >
-                Start Consultation
-              </Link>
-              <Link
-                href="/about"
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-200"
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* CTA Section with Form */}
+        <div className="bg-slate-900">
+          <ServiceContactForm
+            serviceName="Business Strategy Consulting"
+            serviceType="business-strategy"
+            features={[
+              'Business Model Analysis',
+              'Growth Strategy',
+              'Market Research',
+              'Competitive Analysis',
+              'Strategic Planning'
+            ]}
+          />
+        </div>
       </div>
       <Footer />
     </>

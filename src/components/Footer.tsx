@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Linkedin, Twitter, Facebook, Instagram, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+import { NewsletterSubscription } from '@/components/NewsletterSubscription'
 
 const footerNavigation = [
   { name: 'About', href: '/about' },
@@ -131,8 +132,19 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Newsletter Subscription */}
+        <div className="border-t border-slate-800/50 dark:border-slate-700/50 mt-8 pt-8">
+          <div className="max-w-md mx-auto">
+            <NewsletterSubscription
+              variant="minimal"
+              title="Stay Updated"
+              description="Get the latest insights and updates delivered to your inbox."
+            />
+          </div>
+        </div>
+
         {/* Copyright */}
-        <div className="border-t border-slate-800/50 dark:border-slate-700/50 mt-6 pt-4 text-center">
+        <div className="border-t border-slate-800/50 dark:border-slate-700/50 mt-8 pt-6 text-center">
           <p className="text-slate-500 dark:text-slate-400 text-xs font-medium">
             © {new Date().getFullYear()} Emmanuel Chukwuka Ogugua. All rights reserved.
           </p>

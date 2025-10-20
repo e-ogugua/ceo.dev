@@ -55,18 +55,6 @@ const learningResources = [
   },
   {
     id: 5,
-    title: 'Effective Remote Team Management',
-    description: 'Strategies for leading and managing distributed teams effectively, including communication, productivity, and culture building.',
-    category: 'Leadership',
-    readTime: '14 min read',
-    difficulty: 'Intermediate',
-    tags: ['Leadership', 'Remote Work', 'Team Management', 'Productivity'],
-    featured: false,
-    slug: 'remote-team-management',
-    image: '/images/learnCardMastetringNext.webp'
-  },
-  {
-    id: 6,
     title: 'From Developer to Tech Leader',
     description: 'The journey from individual contributor to technical leadership, including the skills and mindset shifts required.',
     category: 'Career',
@@ -75,7 +63,19 @@ const learningResources = [
     tags: ['Career Growth', 'Leadership', 'Technical Leadership', 'Mentorship'],
     featured: true,
     slug: 'developer-to-tech-leader',
-    image: '/images/learnTheCleanCode.webp'
+    image: '/images/aboutImage6StrategistLeader.png'
+  },
+  {
+    id: 6,
+    title: 'Navigating Unstructured Environments in Tech Leadership',
+    description: 'Learn essential strategies for leading teams and managing projects in dynamic, unstructured environments. Drawing from real-world experience in challenging IT environments.',
+    category: 'Leadership',
+    readTime: '16 min read',
+    difficulty: 'Advanced',
+    tags: ['Leadership', 'Project Management', 'Team Dynamics', 'Adaptability'],
+    featured: true,
+    slug: 'navigating-unstructured-environments',
+    image: '/images/blogPostNavigatingUnstructuredEnvironment.webp'
   }
 ]
 
@@ -90,13 +90,13 @@ export function LearningCards() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Curated Learning{' '}
-            <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Resources
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             In-depth articles, tutorials, and insights covering software engineering, business strategy, and leadership
           </p>
         </motion.div>
@@ -110,10 +110,10 @@ export function LearningCards() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border transition-all duration-300 ${
+              className={`group relative bg-slate-800/50 dark:bg-slate-800/30 backdrop-blur-sm rounded-xl overflow-hidden border transition-all duration-300 ${
                 resource.featured
-                  ? 'border-green-400/30 hover:border-green-400/50'
-                  : 'border-white/10 hover:border-white/20'
+                  ? 'border-primary/30 hover:border-primary/50'
+                  : 'border-white/10 dark:border-slate-700/50 hover:border-primary/30'
               }`}
             >
               {/* Featured Badge */}
@@ -129,7 +129,7 @@ export function LearningCards() {
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={resource.image}
-                  alt={resource.title}
+                  alt={resource.title || 'Learning Resource'}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -137,19 +137,17 @@ export function LearningCards() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                 {/* Category badge */}
-                <div className="absolute top-4 right-4">
                   <span className={`px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm rounded-full border border-white/20 ${
                     resource.category === 'Technical'
-                      ? 'bg-blue-500/20 text-blue-400 border border-blue-400/30'
+                      ? 'bg-primary/20 text-primary border-primary/30'
                       : resource.category === 'Business'
-                      ? 'bg-purple-500/20 text-purple-400 border border-purple-400/30'
+                      ? 'bg-secondary/20 text-secondary border-secondary/30'
                       : resource.category === 'Leadership'
-                      ? 'bg-green-500/20 text-green-400 border border-green-400/30'
-                      : 'bg-orange-500/20 text-orange-400 border border-orange-400/30'
+                      ? 'bg-green-500/20 text-green-400 border-green-400/30'
+                      : 'bg-orange-500/20 text-orange-400 border-orange-400/30'
                   }`}>
                     {resource.category}
                   </span>
-                </div>
               </div>
 
               {/* Content */}
@@ -178,11 +176,11 @@ export function LearningCards() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                     {resource.title}
                   </h3>
 
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">
                     {resource.description}
                   </p>
                 </div>
@@ -190,12 +188,12 @@ export function LearningCards() {
                 {/* Tags */}
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-2">
-                    {resource.tags.slice(0, 3).map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-slate-700/50 text-gray-300 text-xs rounded">
+                    {resource.tags?.slice(0, 3).map((tag) => (
+                      <span key={tag} className="px-2 py-1 bg-slate-700/50 dark:bg-slate-700/70 text-slate-300 dark:text-slate-400 text-xs rounded">
                         {tag}
                       </span>
                     ))}
-                    {resource.tags.length > 3 && (
+                    {resource.tags && resource.tags.length > 3 && (
                       <span className="px-2 py-1 bg-slate-600/50 text-gray-400 text-xs rounded">
                         +{resource.tags.length - 3}
                       </span>
@@ -204,7 +202,7 @@ export function LearningCards() {
                 </div>
 
                 {/* Meta Info */}
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-6">
+                <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 mb-6">
                   <div className="flex items-center">
                     <Clock className="w-4 h-4 mr-1" />
                     <span>{resource.readTime}</span>
@@ -246,19 +244,19 @@ export function LearningCards() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 backdrop-blur-sm border border-green-400/20 rounded-xl p-8 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-primary/5 dark:to-secondary/5 backdrop-blur-sm border border-primary/20 dark:border-primary/10 rounded-xl p-8 max-w-2xl mx-auto">
             <div className="text-4xl mb-4">📚</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Stay Updated</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Stay Updated</h3>
+            <p className="text-slate-600 dark:text-slate-300 mb-6">
               Get notified when I publish new articles, tutorials, and insights on software engineering and business strategy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-slate-800/50 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 transition-colors"
+                className="flex-1 px-4 py-3 bg-slate-800/50 dark:bg-slate-800/70 border border-white/20 dark:border-slate-700/50 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-primary transition-colors"
               />
-              <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
+              <button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
                 Subscribe
               </button>
             </div>

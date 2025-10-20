@@ -76,13 +76,13 @@ export function InteractiveStory() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Interactive Journey{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Timeline
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Click on any chapter to explore my story in detail
           </p>
         </motion.div>
@@ -102,8 +102,8 @@ export function InteractiveStory() {
                 onClick={() => setActiveChapter(index)}
                 className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
                   activeChapter === index
-                    ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-blue-400/50'
-                    : 'bg-slate-800/30 border-white/10 hover:border-white/20 hover:bg-slate-800/50'
+                    ? 'bg-gradient-to-r from-primary/20 to-secondary/20 border-primary/50'
+                    : 'bg-slate-800/30 dark:bg-slate-800/50 border-white/10 dark:border-slate-700/50 hover:border-primary/30 hover:bg-slate-800/70'
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -135,7 +135,7 @@ export function InteractiveStory() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-8"
           >
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+            <div className="bg-slate-800/50 dark:bg-slate-800/70 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-xl p-8">
               <div className="mb-6">
                 <Image
                   src={storyChapters[activeChapter].image}
@@ -149,20 +149,20 @@ export function InteractiveStory() {
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                     {storyChapters[activeChapter].title}
                   </h3>
-                  <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm rounded-full">
+                  <span className="px-3 py-1 bg-gradient-to-r from-primary to-secondary text-white text-sm rounded-full">
                     {storyChapters[activeChapter].year}
                   </span>
                 </div>
 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                   {storyChapters[activeChapter].story}
                 </p>
 
-                <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-400/20 rounded-lg p-4">
-                  <p className="text-blue-300 italic font-medium">
+                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-primary/5 dark:to-secondary/5 backdrop-blur-sm border border-primary/20 dark:border-primary/10 rounded-lg p-4">
+                  <p className="text-primary dark:text-primary/80 italic font-medium">
                     &quot;{storyChapters[activeChapter].lesson}&quot;
                   </p>
                 </div>
@@ -176,8 +176,8 @@ export function InteractiveStory() {
                     onClick={() => setActiveChapter(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       activeChapter === index
-                        ? 'bg-gradient-to-r from-blue-400 to-purple-400 w-8'
-                        : 'bg-gray-500 hover:bg-gray-400'
+                        ? 'bg-gradient-to-r from-primary to-secondary w-8'
+                        : 'bg-slate-500 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500'
                     }`}
                     aria-label={`Go to chapter ${index + 1}`}
                   />

@@ -5,8 +5,42 @@ import { ArrowLeft, Clock, Calendar, Share2, Twitter, Linkedin, Facebook } from 
 import Link from 'next/link'
 
 const blogPosts = {
+  'bridging-the-gap-logic-gates-leadership': {
+    title: 'Bridging the Gap: From Logic Gates to Leadership',
+    description: 'A narrative piece detailing my transition and growth from a technical role to leading businesses like CEOTR and PoshPOULE, highlighting key lessons learned in merging technical acumen with strategic leadership.',
+    content: `
+# Bridging the Gap: From Logic Gates to Leadership
+
+Have you ever found yourself drawn to two seemingly different worlds? For many of us in the tech space, it starts with a fascination for logic. The satisfaction of a perfectly written line of code, the elegance of a robust system architecture, the thrill of debugging a complex problem – these are the foundational joys that pull us into software development.
+
+My own early journey was no different. I spent years immersed in the technical side: understanding how computers worked, troubleshooting systems, and building digital solutions. The world of IT and coding felt like a puzzle, constantly challenging me to find the most efficient and beautiful answers. It was about mastering the tools, understanding the languages, and bringing digital concepts to life, one meticulous step at a time.
+
+But as I honed my technical craft, I began to see another dimension. I realized that the most brilliant code, the most sophisticated system, only truly shines when it serves a purpose in the real world. It's not enough for an application to run flawlessly; it needs to solve a genuine problem, create value for users, and contribute to a larger vision.
+
+This awareness sparked a new kind of curiosity – one that veered into the realm of business. I started asking questions that went beyond syntax and algorithms:
+- How does this technology translate into market opportunity?
+- What strategic decisions drive successful product adoption?
+- How do you build a team, nurture a brand, and navigate the complexities of an industry?
+
+This wasn't a sudden leap, but a gradual, organic transition. It was about recognizing that the same problem-solving mindset I applied to debugging code could be equally powerful in dissecting market trends or crafting a compelling business strategy. The discipline of development taught me iteration, resilience, and attention to detail, all invaluable traits when launching a new venture or leading a team.
+
+The 'gap' between code and co-founder isn't really a gap at all; it's a bridge. A bridge built with technical proficiency on one side and strategic foresight on the other. It's understanding that a successful product requires both elegant engineering and a clear business model. A thriving team needs both technical leadership and visionary direction.
+
+For anyone who feels this dual pull, who loves the logic of code but also dreams of shaping markets and leading ventures, the journey is about integrating these passions. It's about seeing technology not just as an end in itself, but as a powerful lever for strategic growth. It's a continuous learning process, where every line of code informs a business decision, and every business challenge inspires a new technical solution.
+
+Embrace both sides. That's where true innovation often lies.
+
+Have you experienced a similar journey bridging different disciplines? Share your insights below!
+    `,
+    category: 'Personal Journey',
+    readTime: '8 min read',
+    publishedDate: '2024-01-15',
+    author: 'Emmanuel Chukwuka Ogugua',
+    tags: ['Personal Journey', 'Leadership', 'Technology', 'Business']
+  },
   'gardening-problem-solving': {
     title: 'Beyond the Screen: How Gardening Sharpens My Problem-Solving Skills',
+    description: 'This post leverages my "Gardening is my therapy" fact. Explore the surprising parallels between nurturing a garden and debugging code or growing a business.',
     content: `
 # Beyond the Screen: How Gardening Sharpens My Problem-Solving Skills
 
@@ -63,16 +97,20 @@ This perspective has fundamentally changed how I approach technical leadership:
 The garden has become my greatest teacher. It reminds me that great solutions—whether in soil or in code—come from patience, observation, and working with natural processes rather than against them.
 
 Next time you're stuck on a complex problem, step away from the screen. Go for a walk, tend to something living, and let your subconscious mind work its magic. The answer might just grow on you.
+
+— Emmanuel Ogugua
     `,
     category: 'Personal Growth',
     readTime: '8 min read',
     publishedDate: '2024-01-15',
-    author: 'Emmanuel Chukwuka Ogugua'
+    author: 'Emmanuel Chukwuka Ogugua',
+    tags: ['Personal Growth', 'Problem Solving', 'Mindfulness', 'Nature']
   },
   'digital-farmer-poshpoule': {
-    title: 'The Digital Farmer: Leveraging Tech for Sustainable Agriculture',
+    title: 'The Digital Farmer: Leveraging Tech for Sustainable Agriculture (Lessons from PoshPOULE)',
+    description: 'Dive into my experience with PoshPOULE Farms Ltd. Discuss specific technologies or strategic approaches for making organic farming more efficient and sustainable.',
     content: `
-# The Digital Farmer: Leveraging Tech for Sustainable Agriculture
+# The Digital Farmer: Leveraging Tech for Sustainable Agriculture (Lessons from PoshPOULE)
 
 At first glance, farming and technology might seem like strangers. One smells of soil, the other hums with circuits. But at PoshPOULE Farms Ltd, I've spent years proving they can not only coexist—they can strengthen each other.
 
@@ -129,977 +167,202 @@ As we continue to grow, I'm excited about exploring:
 The intersection of agriculture and technology is where real innovation happens. It's not just about feeding people—it's about feeding them better, more sustainably, and more transparently.
 
 If you're a farmer looking to embrace technology or a tech entrepreneur interested in agriculture, remember: the best solutions come from understanding both the soil and the code.
+
+— Emmanuel Ogugua
     `,
     category: 'Business Strategy',
     readTime: '12 min read',
     publishedDate: '2024-01-10',
-    author: 'Emmanuel Chukwuka Ogugua'
+    author: 'Emmanuel Chukwuka Ogugua',
+    tags: ['Business Strategy', 'Agriculture', 'Technology', 'Sustainability']
   },
   'tech-stack-2025': {
     title: 'My Go-To Tech Stack for Building Robust Web Applications in 2025',
+    description: 'A practical post detailing my preferred tools and frameworks for full-stack development, including why I chose them and introducing EmmanuelOS.',
     content: `
 # My Go-To Tech Stack for Building Robust Web Applications in 2025
 
-As we move through 2025, the web development landscape continues to evolve rapidly. After years of building applications across various industries, I've refined my tech stack to focus on reliability, performance, and developer experience. Here's my current toolkit and why I choose each technology.
+If there's one thing I've learned after building and breaking countless apps, it's that your tech stack should work with you, not against you. The web world evolves fast, but 2025 feels different — tools are maturing, AI integration is becoming standard, and developers have more power than ever to ship scalable, polished products solo.
 
-## The Foundation: Next.js 15
+I've spent the past year refining my workflow across dozens of real-world projects, from experimental apps to systems that will eventually form the backbone of EmmanuelOS — my personal digital operating system that ties together all my apps, businesses, and productivity systems into one cohesive environment.
 
-Next.js remains my framework of choice, and version 15 brings even more power to the table.
+Here's the tech stack I now rely on to build robust, modern, and future-proof web apps.
 
-\`\`\`javascript
-// Why Next.js?
-const reasons = [
-  'App Router for better performance',
-  'Server Components for optimal rendering',
-  'Built-in optimization features',
-  'Excellent developer experience',
-  'Strong TypeScript support'
-]
-\`\`\`
+## 1. Next.js — The Engine That Powers My Frontend
 
-### Key Features I'm Using
+Next.js is my default framework for anything web-based. The combination of React + file-based routing + server actions makes it seamless to build fast, SEO-friendly apps without juggling separate frontend and backend repos.
 
-1. **App Router**: Cleaner file-based routing with layouts and loading states
-2. **Server Components**: Better performance and SEO
-3. **Middleware**: For authentication and request handling
-4. **Image Optimization**: Automatic WebP conversion and responsive images
+In 2025, with Next.js 15's improvements in Server Components, React Compiler, and edge-first architecture, it's never felt smoother to scale projects from MVP to production. I use it for everything from dashboards to full SaaS platforms.
 
-## Language & Type Safety: TypeScript
+Why I love it: performance out of the box, flexibility with API routes, and a thriving ecosystem. It's also the ideal frontend layer for EmmanuelOS — handling all UI modules that plug into my core system.
 
-TypeScript isn't optional anymore—it's essential for scalable applications.
+## 2. Tailwind CSS — Clean Design, Minimal Effort
 
-\`\`\`typescript
-interface User {
-  id: string
-  name: string
-  email: string
-  preferences: UserPreferences
-}
+If you care about design but don't want to wrestle with CSS files all day, Tailwind is the way to go. It's lightweight, composable, and forces clarity in structure.
 
-const createUser = (userData: Omit<User, 'id'>): User => {
-  // TypeScript catches errors at compile time
-  return { id: generateId(), ...userData }
-}
-\`\`\`
+For me, Tailwind shines in its ability to keep interfaces consistent and fast to iterate. I pair it with Framer Motion for smooth transitions and shadcn/ui components for a clean, modern aesthetic.
 
-## Styling: Tailwind CSS
+Why I love it: fast prototyping, design precision, and no "CSS fatigue."
 
-Tailwind's utility-first approach aligns perfectly with rapid development and consistent design systems.
+## 3. Supabase — My Default Backend-as-a-Service
 
-\`\`\`jsx
-// Utility-first classes for rapid development
-<div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 rounded-xl shadow-lg backdrop-blur-sm">
-  <h2 className="text-2xl font-bold text-white mb-4">Beautiful Components</h2>
-  <p className="text-blue-100">Consistent styling with minimal CSS</p>
-</div>
-\`\`\`
+I used to build APIs and auth flows manually with Django REST Framework or Node, but Supabase changed the game. It gives me PostgreSQL, Auth, Edge Functions, and Realtime out of the box — with strong open-source principles.
 
-## State Management: Zustand
+For EmmanuelOS, Supabase serves as a unified backend for multiple modules (productivity, finance, AI assistants). It handles user data securely while letting me scale without heavy infrastructure overhead.
 
-For client-side state management, Zustand provides the perfect balance of simplicity and power.
+Why I love it: It feels like Firebase for grown-ups — SQL-based, open, and infinitely customizable.
 
-\`\`\`typescript
-// Simple yet powerful state management
-const useStore = create((set) => ({
-  user: null,
-  login: (userData) => set({ user: userData }),
-  logout: () => set({ user: null })
-}))
-\`\`\`
+## 4. Python + Django (for Specialized Systems)
 
-## Backend & Database: Supabase
+When a project needs deep business logic, data analytics, or AI integrations, Django still earns its place. Its ORM and admin panel make it unbeatable for data-heavy apps and internal tools.
 
-Supabase provides a complete backend solution with real-time capabilities.
+In EmmanuelOS, Django handles the intelligence layer — managing analytics, automation scripts, and AI workflow orchestration that supports the various app modules.
 
-\`\`\`javascript
-// Real-time subscriptions
-const subscription = supabase
-  .channel('public:messages')
-  .on('postgres_changes',
-    { event: '*', schema: 'public', table: 'messages' },
-    (payload) => console.log('Change received!', payload)
-  )
-  .subscribe()
-\`\`\`
+Why I love it: battle-tested, structured, and perfect for serious backend logic.
 
-## Animations: Framer Motion
+## 5. GitHub + Vercel + Docker — My Deployment Trinity
 
-For smooth, performant animations that enhance user experience.
+GitHub handles my CI/CD workflows, while Vercel deploys all Next.js apps with ease. For complex systems or microservices, Docker keeps everything portable and environment-agnostic.
 
-\`\`\`jsx
-// Declarative animations
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5 }}
->
-  Content that animates in beautifully
-</motion.div>
-\`\`\`
+This trio ensures I can move from idea to live app in hours, not days.
 
-## Deployment: Vercel
+Why I love it: reliability, automation, and zero-config deployments that scale.
 
-Zero-configuration deployment with excellent performance and developer experience.
+## 6. AI Integration Layer
 
-## The Complete Stack Architecture
+In 2025, every serious product has an AI layer. I integrate OpenAI API, LangChain, and lightweight Python agents to automate workflows and personalize user experiences.
 
-### Frontend Architecture
+For EmmanuelOS, AI isn't an add-on — it's woven into the architecture. Each module (whether it's finance, productivity, or business management) connects through an AI interface that learns and adapts to user behavior.
 
-\`\`\`typescript
-// Project structure
-src/
-├── app/                 // Next.js App Router
-│   ├── layout.tsx      // Root layout
-│   ├── page.tsx        // Homepage
-│   └── [slug]/         // Dynamic routes
-├── components/         // Reusable UI components
-├── lib/               // Utilities and configurations
-└── styles/           // Global styles
-\`\`\`
+Why I love it: it turns apps into assistants.
 
-### Development Workflow
+## Bringing It All Together — EmmanuelOS
 
-1. **Planning**: Define requirements and user stories
-2. **Design**: Create wireframes and user flows
-3. **Development**: Build with TypeScript and component composition
-4. **Testing**: Unit tests and integration tests
-5. **Deployment**: Automatic deployment with preview URLs
+Every app I build now lives as a future "module" inside EmmanuelOS — a digital operating system that combines my tools, ventures, and learning systems into one connected ecosystem.
 
-## Why This Stack Works
+Each module shares the same stack: Next.js + Supabase + Python at its core, styled with Tailwind, and enhanced by AI. It's modular, scalable, and deeply personal — designed to manage not just work, but life itself.
 
-### Developer Experience
-- **Fast Development**: Hot reload and excellent tooling
-- **Type Safety**: Catch errors before they reach production
-- **Great Documentation**: All tools have excellent docs
-- **Active Communities**: Strong support networks
+In a world overflowing with tech choices, simplicity wins. These tools keep me moving fast, staying creative, and building systems that last.
 
-### Performance Benefits
-- **Automatic Optimization**: Code splitting, image optimization
-- **Server-Side Rendering**: Better SEO and performance
-- **Edge Deployment**: Global CDN distribution
-
-### Scalability Features
-- **Microservices Ready**: Can break into smaller services
-- **Database Flexibility**: Easy to switch or add databases
-- **API-First Design**: Frontend and backend can evolve independently
-
-## Tool Configuration
-
-### Next.js Configuration
-
-\`\`\`javascript
-// next.config.js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-  images: {
-    domains: ['your-domain.com'],
-  },
-}
-
-module.exports = nextConfig
-\`\`\`
-
-### Tailwind Configuration
-
-\`\`\`javascript
-// tailwind.config.js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/app/**/*.{js,ts,jsx,tsx}',
-  ],
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          50: '#f0f9ff',
-          500: '#3b82f6',
-          600: '#2563eb',
-        }
-      }
-    }
-  }
-}
-\`\`\`
-
-## Best Practices with This Stack
-
-### 1. Component Organization
-
-Keep components small, focused, and reusable:
-
-\`\`\`typescript
-// Good: Small, focused components
-const UserProfile = ({ user }: { user: User }) => (
-  <div className="bg-white p-6 rounded-lg shadow">
-    <h2>{user.name}</h2>
-    <p>{user.email}</p>
-  </div>
-)
-\`\`\`
-
-### 2. API Design
-
-Design APIs that are easy to use and maintain:
-
-\`\`\`typescript
-// Clean API design
-interface ApiResponse<T> {
-  data: T
-  success: boolean
-  message?: string
-}
-\`\`\`
-
-### 3. Error Handling
-
-Implement comprehensive error handling:
-
-\`\`\`typescript
-// Proper error boundaries and handling
-const ErrorBoundary = ({ children }: { children: React.ReactNode }) => {
-  // Implementation for catching and displaying errors
-}
-\`\`\`
-
-## Future Considerations
-
-As we look toward 2026, I'm keeping an eye on:
-
-1. **Next.js 16**: New features and improvements
-2. **React 19**: Concurrent features and performance improvements
-3. **AI Integration**: More sophisticated AI tooling
-4. **Edge Computing**: Further edge deployment capabilities
-
-## Conclusion
-
-This tech stack has served me well across multiple projects, from simple landing pages to complex enterprise applications. The key is choosing tools that work well together and enable rapid, reliable development.
-
-Remember, the best tech stack is one that your team knows well and that helps you deliver value to your users quickly and consistently.
-
-## What's Your Stack?
-
-I'd love to hear about your preferred technologies and why you chose them. The tech landscape is always evolving, and there's always something new to learn from other developers' experiences.
-
-What's working well in your current stack? What would you change if you could start fresh?
+— Emmanuel Ogugua
     `,
     category: 'Technology',
     readTime: '10 min read',
     publishedDate: '2024-01-08',
-    author: 'Emmanuel Chukwuka Ogugua'
+    author: 'Emmanuel Chukwuka Ogugua',
+    tags: ['Technology', 'Web Development', 'Next.js', 'AI']
   },
-  'farm-to-code-architecture': {
-    title: 'From Farm to Code: How Agricultural Thinking Improves Software Architecture',
+  'from-byte-to-brand': {
+    title: 'From Byte to Brand: Crafting a Compelling Identity in the Digital Age',
+    description: 'Share insights into building strong brand narratives and identities for new ventures. Draw on your experience in business development and strategic partnerships from CEOTR Limited.',
     content: `
-# From Farm to Code: How Agricultural Thinking Improves Software Architecture
+# From Byte to Brand: Crafting a Compelling Identity in the Digital Age
 
-As someone who splits their time between managing agricultural operations and building software systems, I've discovered fascinating parallels between sustainable farming practices and scalable software architecture. These insights have fundamentally improved how I design and maintain digital systems.
+In today's world, a brand isn't built in a boardroom — it's built in the little interactions people have with your product, your message, and your story. The digital age leveled the playing field. A startup with vision and clarity can stand shoulder-to-shoulder with established giants, as long as its brand feels real.
 
-## The Natural Wisdom of Agriculture
+At CEOTR Limited, I've had the chance to work with emerging ventures trying to find their footing — from small local enterprises to growing tech startups. One pattern always stands out: many founders understand their product, but not their identity. And in the noise of today's online world, identity is what cuts through.
 
-Farming teaches patience, observation, and working with natural systems rather than against them. These same principles apply beautifully to software development.
+## 1. Your Brand Is a Promise, Not a Logo
 
-## Soil Health = Code Foundation
+When people think "brand," they often think colors, fonts, or taglines. Those are expressions — not the essence. A real brand starts with a clear promise: what do you stand for, and what will you consistently deliver?
 
-Just as healthy soil is the foundation of a productive farm, clean, well-structured code forms the foundation of maintainable software.
+For CEOTR, that promise has always been reliability and innovation in business systems. Every project, partnership, or communication flows from that core. It's the anchor that guides design, tone, and behavior.
 
-### Building Rich "Soil"
+If you're building your own venture, start there. Ask yourself: What do I want people to feel when they interact with us — trust, curiosity, empowerment, belonging? Then build everything else around that emotional truth.
 
-\`\`\`typescript
-// Rich, fertile codebase
-interface WellStructuredCode {
-  clearNaming: boolean
-  singleResponsibility: boolean
-  properAbstraction: boolean
-  comprehensiveTests: boolean
-  goodDocumentation: boolean
-}
-\`\`\`
+## 2. Craft a Narrative, Not Just a Name
 
-## Seasonal Planning = Sprint Planning
+Stories move people more than specifications ever will. In an age where attention is scarce, your brand's story must feel alive. Talk about the "why" — the challenge you're solving, the journey behind it, and the humans making it happen.
 
-Farmers plan around seasons—planting in spring, harvesting in fall. Software teams should plan around development cycles.
+When CEOTR started, our story was simple: two founders tired of fragmented business systems decided to build tools that actually made management easier. That authenticity resonated with partners more than any sales pitch could.
 
-### Strategic Planning
+Your audience doesn't just want to know what you do — they want to know why it matters.
 
-\`\`\`javascript
-// Agricultural approach to development
-const developmentSeasons = {
-  spring: 'planning_and_design',
-  summer: 'active_development',
-  autumn: 'testing_and_refinement',
-  winter: 'maintenance_and_optimization'
-}
-\`\`\`
+## 3. Build Consistency Into Every Touchpoint
 
-## Crop Rotation = Technology Diversification
+A strong brand is predictable in the best way. Whether it's your website, emails, product UI, or how your team speaks on a call, the voice should feel unified.
 
-Monoculture farming leads to depleted soil and vulnerability to pests. Similarly, relying on a single technology stack creates fragility.
+Consistency isn't about sameness — it's about coherence. At CEOTR, we use digital brand systems that define tone, visual identity, and content rhythm. It helps our message stay aligned even as the company evolves.
 
-### Diversified Tech Stack
+If you're running lean, tools like Notion, Figma, or Framer can help you document and visualize your brand elements early on. Treat your brand kit like code — version, refine, and push updates when needed.
 
-\`\`\`typescript
-// Balanced technology ecosystem
-const techEcosystem = {
-  frontend: ['React', 'Next.js'],
-  backend: ['Node.js', 'Python'],
-  database: ['PostgreSQL', 'MongoDB'],
-  deployment: ['Vercel', 'Railway'],
-  monitoring: ['Sentry', 'DataDog']
-}
-\`\`\`
+## 4. Authenticity Beats Perfection Every Time
 
-## Natural Pest Management = Proactive Debugging
+The internet can spot insincerity instantly. The brands that win today are the ones that sound human — a little imperfect, but deeply consistent. Show your process. Share lessons learned. Let your audience grow with you.
 
-Farmers use companion planting and natural predators to manage pests. Developers should use comprehensive testing and monitoring.
+Your brand doesn't need to shout; it just needs to resonate.
 
-### Proactive Quality Assurance
+## 5. Bridge Strategy and Emotion
 
-\`\`\`typescript
-// Multi-layered testing strategy
-const qualityAssurance = {
-  unit: 'test_individual_functions',
-  integration: 'test_component_interactions',
-  e2e: 'test_complete_user_journeys',
-  performance: 'test_under_load',
-  security: 'test_vulnerabilities'
-}
-\`\`\`
+What makes a digital brand powerful isn't just great visuals or smart positioning — it's the balance between logic and feeling. A well-designed system tells people what you do; a well-told story tells them why they should care.
 
-## Water Conservation = Resource Optimization
+That's where I see the future of branding heading — toward human-centered ecosystems. Brands that feel personal, connected, and alive across every platform.
 
-Efficient irrigation systems conserve water while ensuring plants get what they need. Similarly, efficient code conserves computational resources.
+## The Future of Identity: Human, Digital, and Evolving
 
-### Resource-Efficient Code
+In 2025 and beyond, your brand isn't a static identity — it's a living interface. It grows with your business, your audience, and your values.
 
-\`\`\`javascript
-// Optimize for performance and resource usage
-const optimizeResources = async (data) => {
-  // Use pagination instead of loading everything
-  // Implement caching for frequently accessed data
-  // Use CDN for static assets
-  // Optimize images and media files
+From my journey at CEOTR, one thing is clear: every byte of data and every story you share contributes to the same thing — your brand's heartbeat. The challenge is keeping that rhythm steady while the world keeps changing.
 
-  return efficientResult
-}
-\`\`\`
+Build from truth. Speak with clarity. Let your digital presence reflect the values you live offline. That's how brands endure — not by chasing trends, but by staying human.
 
-## Biodiversity = Feature Diversity
-
-A diverse ecosystem is more resilient than a monoculture. Similarly, a diverse feature set makes applications more robust and user-friendly.
-
-## Scaling Lessons from Agriculture
-
-### Gradual Expansion
-
-Successful farms grow incrementally, adding land and capacity as they prove successful. Software should scale similarly.
-
-\`\`\`typescript
-// Scale gradually and sustainably
-const scalingStrategy = {
-  phase1: 'validate_core_features',
-  phase2: 'add_advanced_features',
-  phase3: 'optimize_performance',
-  phase4: 'expand_user_base',
-  phase5: 'geographic_expansion'
-}
-\`\`\`
-
-## Sustainability = Long-term Maintenance
-
-Sustainable farming practices ensure long-term productivity. Sustainable software practices ensure long-term maintainability.
-
-### Sustainable Development Practices
-
-1. **Regular refactoring** to prevent technical debt accumulation
-2. **Continuous learning** to stay current with best practices
-3. **Team knowledge sharing** to prevent silos
-4. **Automated testing** to catch issues early
-5. **Performance monitoring** to identify bottlenecks
-
-## Weather Patterns = Market Trends
-
-Farmers adapt to weather patterns and market conditions. Developers should adapt to technology trends and user needs.
-
-### Trend Adaptation
-
-\`\`\`javascript
-// Stay current with technology trends
-const trendMonitoring = {
-  frameworks: 'monitor_popular_frameworks',
-  tools: 'evaluate_new_development_tools',
-  practices: 'adopt_proven_best_practices',
-  userNeeds: 'listen_to_user_feedback'
-}
-\`\`\`
-
-## Community Supported Agriculture = Community Driven Development
-
-CSA models build direct relationships between farmers and consumers. Open source and community-driven development build similar relationships.
-
-## The Power of Observation
-
-Both farming and coding require careful observation:
-
-- **Watch for early warning signs** of problems
-- **Monitor system health** regularly
-- **Gather feedback** from users and stakeholders
-- **Adapt based on observations** rather than assumptions
-
-## Cross-Pollination Benefits
-
-The cross-pollination between my farming and coding worlds has led to unique insights:
-
-### Patience in Problem-Solving
-
-Complex bugs, like plant diseases, often require time and careful observation to diagnose correctly.
-
-### Systems Thinking
-
-Understanding how different parts of a farm ecosystem interact helps me design better software systems.
-
-### Sustainability Focus
-
-Just as sustainable farming preserves resources for future generations, sustainable coding preserves system health for future developers.
-
-## Practical Applications
-
-### In Software Architecture
-
-1. **Modular Design**: Like crop rotation, modular code prevents tight coupling
-2. **API-First Approach**: Clear interfaces between systems, like well-defined field boundaries
-3. **Scalable Infrastructure**: Ability to handle varying loads, like irrigation systems that adapt to rainfall
-
-### In Team Management
-
-1. **Diverse Skill Sets**: Cross-functional teams like diverse ecosystems
-2. **Knowledge Sharing**: Regular "harvest reports" and retrospectives
-3. **Sustainable Pace**: Avoiding burnout like preventing soil depletion
-
-## Conclusion
-
-The parallels between sustainable agriculture and scalable software development are profound. Both require patience, observation, and working with natural systems rather than against them.
-
-By applying agricultural wisdom to software architecture, I've built more resilient, maintainable, and user-friendly applications. The key insight is that great systems—whether farms or codebases—emerge from understanding and working with natural patterns rather than trying to control them.
-
-## Key Takeaways
-
-1. **Patience pays off**: Rushed solutions often create more problems
-2. **Observation is key**: Watch for early warning signs
-3. **Systems thinking**: Everything is connected
-4. **Sustainability matters**: Build for the long term
-5. **Adaptation is essential**: Conditions change, systems must evolve
-
-The farm has been my greatest teacher. It reminds me daily that the best solutions come from listening to and working with natural systems, whether those systems involve soil, code, or people.
-
-What natural metaphors help you think about technology and development?
+— Emmanuel Ogugua
     `,
-    category: 'Technology',
-    readTime: '14 min read',
-    publishedDate: '2024-01-05',
-    author: 'Emmanuel Chukwuka Ogugua'
-  },
-  'authentic-brands-nigerian-markets': {
-    title: 'Building Authentic Brands: Lessons from Nigerian Markets to Global Tech',
-    content: `
-# Building Authentic Brands: Lessons from Nigerian Markets to Global Tech
-
-Growing up around Nigerian markets taught me invaluable lessons about authentic branding that I now apply to technology entrepreneurship. The principles of relationship-building, trust, and genuine value creation translate perfectly from bustling marketplaces to modern tech companies.
-
-## The Nigerian Market Experience
-
-Nigerian markets are more than places of commerce—they're social ecosystems where relationships matter more than transactions, and authenticity trumps slick marketing.
-
-### The Human Element
-
-In Nigerian markets, business is personal:
-
-\`\`\`typescript
-interface MarketRelationship {
-  trust: 'earned_over_time'
-  respect: 'mutual_and_reciprocal'
-  loyalty: 'based_on_consistent_value'
-  community: 'everyone_is_connected'
-}
-\`\`\`
-
-## Authentic Branding Principles
-
-### 1. Relationships Over Transactions
-
-The most successful market vendors build lasting relationships, not just one-time sales. Similarly, great tech brands focus on long-term user relationships.
-
-### 2. Genuine Expertise
-
-Market vendors who truly understand their products build trust. Tech entrepreneurs should be domain experts who genuinely understand user problems.
-
-### 3. Community Integration
-
-Successful market traders become part of the community fabric. Tech brands should integrate into their user communities.
-
-## Applying Market Wisdom to Tech
-
-### Building Trust in Digital Spaces
-
-\`\`\`javascript
-// Digital trust building
-const buildDigitalTrust = async () => {
-  // Consistent communication
-  // Transparent practices
-  // Reliable product quality
-  // Responsive customer service
-
-  return 'trusted_brand'
-}
-\`\`\`
-
-### The Power of Storytelling
-
-Every successful market vendor has stories—about their products, their journey, their values. Great tech brands tell compelling stories too.
-
-## Brand Authenticity in Practice
-
-### Case Study: PoshPOULE Farms
-
-When I started PoshPOULE Farms, I applied market lessons to agricultural technology:
-
-1. **Transparency**: Open about farming practices and processes
-2. **Community Focus**: Building relationships with local farmers and customers
-3. **Quality Focus**: Prioritizing product quality over rapid scaling
-4. **Cultural Connection**: Understanding and respecting local agricultural traditions
-
-### Technology Brand Building
-
-The same principles apply to software products:
-
-\`\`\`typescript
-// Authentic tech branding
-const authenticTechBrand = {
-  mission: 'solve_real_problems',
-  values: 'transparency_and_quality',
-  community: 'user_centric_approach',
-  growth: 'sustainable_and_organic'
-}
-\`\`\`
-
-## The Authenticity Challenge in Tech
-
-### Common Pitfalls
-
-1. **Over-promising**: Making claims that can't be consistently delivered
-2. **Feature Creep**: Adding features without clear user value
-3. **Inauthentic Marketing**: Using buzzwords without substance
-4. **Ignoring User Feedback**: Building in isolation from real users
-
-### Solutions
-
-1. **Under-promise, over-deliver**
-2. **Focus on core value propositions**
-3. **Use authentic, conversational language**
-4. **Actively seek and respond to feedback**
-
-## Measuring Brand Authenticity
-
-### Key Metrics
-
-\`\`\`javascript
-// Brand authenticity metrics
-const authenticityMetrics = {
-  userSatisfaction: 'net_promoter_score',
-  communityEngagement: 'active_participation',
-  brandConsistency: 'message_alignment',
-  trustIndicators: 'repeat_usage_and_referrals'
-}
-\`\`\`
-
-## Building Authentic Tech Communities
-
-### Community-First Approach
-
-1. **Start with user needs**, not product features
-2. **Foster genuine connections** between users
-3. **Provide real value** beyond marketing
-4. **Be transparently human** in communications
-
-### Examples from My Work
-
-#### Emmdra Empire
-- Built around authentic Nigerian fashion and culture
-- Community-driven product development
-- Transparent supply chain and pricing
-
-#### CEOTR Ltd
-- Focus on genuine business solutions
-- Long-term client relationships over quick sales
-- Transparent project timelines and deliverables
-
-## The Future of Authentic Branding
-
-### Trends Shaping Authentic Brands
-
-1. **Purpose-driven companies** that stand for something beyond profit
-2. **Transparency as a competitive advantage**
-3. **Community-owned brands** and decentralized governance
-4. **Sustainability and ethical practices** as core values
-
-### Technology's Role
-
-Technology should enhance authenticity, not replace it:
-
-- **AI for personalization**, not manipulation
-- **Data for insights**, not surveillance
-- **Automation for efficiency**, not dehumanization
-
-## Practical Steps for Authentic Branding
-
-### For Tech Entrepreneurs
-
-1. **Define your core values** and stick to them
-2. **Understand your users** as real people with real problems
-3. **Build genuine relationships** through consistent communication
-4. **Measure success** by user satisfaction, not just metrics
-
-### Brand Building Framework
-
-\`\`\`typescript
-interface AuthenticBrandFramework {
-  foundation: 'clear_values_and_mission'
-  structure: 'consistent_messaging_and_design'
-  growth: 'community_building_and_engagement'
-  sustainability: 'continuous_improvement_and_adaptation'
-}
-\`\`\`
-
-## Challenges and Solutions
-
-### Challenge: Scaling Authenticity
-
-**Problem**: As companies grow, maintaining authentic connections becomes harder.
-
-**Solution**: 
-- Implement systems that preserve the founder's vision
-- Hire people who share your values
-- Maintain direct user communication channels
-
-### Challenge: Digital Authenticity
-
-**Problem**: Digital communication can feel impersonal and inauthentic.
-
-**Solution**:
-- Use conversational, human language
-- Share behind-the-scenes content
-- Respond personally to user feedback
-- Admit mistakes and show learning
-
-## The Nigerian Market Legacy
-
-The lessons from Nigerian markets continue to guide my approach to technology entrepreneurship:
-
-- **Relationships matter more than transactions**
-- **Authenticity builds lasting trust**
-- **Community creates sustainable growth**
-- **Cultural understanding drives innovation**
-
-## Conclusion
-
-Authentic branding isn't a marketing tactic—it's a way of doing business. The principles I learned in Nigerian markets apply equally well to modern technology companies.
-
-In a world of AI-generated content and algorithmic optimization, authenticity stands out. It's the human element that builds real connections and sustainable success.
-
-## Key Takeaways
-
-1. **Authenticity can't be faked**—it must be lived
-2. **Relationships trump transactions** in building lasting brands
-3. **Community involvement** creates brand advocates
-4. **Transparency builds trust** faster than any marketing campaign
-5. **Cultural understanding** leads to better products and services
-
-The Nigerian market taught me that the best brands aren't built—they're grown through genuine relationships and consistent value delivery.
-
-What experiences from your culture or background influence how you approach branding and business?
-    `,
-    category: 'Business Strategy',
+    category: 'Brand Strategy',
     readTime: '11 min read',
     publishedDate: '2024-01-03',
-    author: 'Emmanuel Chukwuka Ogugua'
+    author: 'Emmanuel Chukwuka Ogugua',
+    tags: ['Brand Strategy', 'Digital Marketing', 'Business Development', 'CEOTR']
   },
-  'entrepreneurs-garden': {
-    title: 'The Entrepreneur\'s Garden: Cultivating Business Growth Through Patience and Care',
+  'navigating-unstructured-environments': {
+    title: 'Navigating Unstructured Environments: Lessons from the Nupe Cultural Resource Centre',
+    description: 'Reflect on your experience in Niger State. Discuss challenges you faced in less structured IT and administrative roles and the creative, flexible problem-solving strategies you employed.',
     content: `
-# The Entrepreneur's Garden: Cultivating Business Growth Through Patience and Care
+# Navigating Unstructured Environments: Lessons from the Nupe Cultural Resource Centre, Bida, Niger State, Nigeria
 
-As someone who tends both literal gardens and entrepreneurial ventures, I've discovered that building a successful business shares remarkable similarities with cultivating a thriving garden. Both require patience, careful planning, and the wisdom to work with natural growth patterns rather than against them.
+When I first arrived in Bida for my NYSC posting, I expected a typical IT or administrative environment — systems, structure, maybe even a workflow chart on the wall. What I found instead at the Nupe Cultural Resource Centre was closer to organized chaos. Records were mostly paper-based, devices were few, and "process" often meant memory and goodwill.
 
-## The Garden as Business Metaphor
+For someone fresh out of university, armed with theory and curiosity, it was both disorienting and intriguing. But it turned out to be one of the most formative seasons of my career.
 
-Every successful garden starts with understanding the soil, climate, and natural growth patterns. Similarly, every successful business begins with understanding the market, customers, and competitive landscape.
+## Learning to Lead Without a Manual
 
-### Soil Preparation = Market Research
+There was no defined IT department. My role as Personal Assistant / Information Technologist meant everything and nothing at once — drafting letters, troubleshooting computers, typing reports, even helping organize cultural events. Every day began with a new version of "figure it out."
 
-Just as you test and amend soil before planting, you should thoroughly research your market before launching a product.
+At first, I tried to create structure by force — folders, checklists, templates. But it didn't stick. People weren't resisting out of laziness; they just worked differently. I realized leadership here meant adapting to context, not imposing control.
 
-\`\`\`javascript
-// Market research framework
-const marketResearch = {
-  customerNeeds: 'identify_pain_points',
-  competitiveLandscape: 'analyze_competitors',
-  marketSize: 'estimate_opportunity',
-  entryBarriers: 'understand_challenges'
-}
-\`\`\`
+So, instead of enforcing my way, I started observing theirs — the unwritten systems that already existed. Who people trusted for certain decisions. How information actually moved. Once I mapped that flow, I began introducing small, respectful upgrades.
 
-## Planting Seeds = Product Development
+A simple digital record system for documents. A shared USB drive for storing templates. Naming conventions that made retrieval easier. Nothing fancy — just enough order to make the work lighter.
 
-### Choosing the Right Seeds
+## Flexibility Is a Skill, Not a Compromise
 
-Not every seed will thrive in every soil. Similarly, not every product idea will succeed in every market.
+Working in a low-resource environment forced creativity. When the only office printer broke, I figured out a way to connect a borrowed one through a laptop as a print server. When internet access failed, I used my phone hotspot to sync files or send urgent messages.
 
-### Strategic Planting
+Those small wins built confidence — in me and in others. It wasn't about showing off tech skills; it was about proving that systems could work here, too.
 
-\`\`\`typescript
-// Product development strategy
-interface ProductStrategy {
-  coreFeatures: 'essential_functionality'
-  uniqueValue: 'differentiating_factors'
-  scalability: 'growth_potential'
-  sustainability: 'long_term_viability'
-}
-\`\`\`
+I learned that sometimes efficiency doesn't come from new tools, but from how well you adapt old ones.
 
-## Watering and Care = Customer Development
+## The Human Side of Systems
 
-### Regular Attention
+Technology solves problems, but people sustain the solutions. Once colleagues saw that digital tools made their work easier, they became open to learning more. I started informal training sessions — short, practical, and focused on what mattered to their roles.
 
-Gardens need consistent care—watering, weeding, pest management. Businesses need regular customer engagement and product iteration.
+Those sessions did more than improve workflow; they built trust. It reminded me that transformation, no matter how technical, always starts with people feeling seen and capable.
 
-### The Right Amount of Water
+## What That Experience Taught Me
 
-Too little water causes plants to wither; too much causes root rot. Similarly, too little customer engagement leads to lost opportunities; too much can overwhelm and annoy customers.
+Looking back, my time in Bida was less about IT and more about leadership in its rawest form — making progress with limited tools, listening more than instructing, and finding clarity in messy realities.
 
-## Seasonal Growth = Business Cycles
+Every structured system I build today, every company I've co-founded since, carries that lesson: if you can bring order to unstructured spaces without killing their spirit, you can lead anywhere.
 
-### Understanding Seasons
+In a world obsessed with optimization and frameworks, the real test of skill is how you perform when there's none to lean on. Bida taught me that structure isn't always a prerequisite for progress — sometimes, it's the result of patience, humility, and persistence.
 
-\`\`\`javascript
-// Business growth cycles
-const businessSeasons = {
-  spring: 'planning_and_preparation',
-  summer: 'execution_and_growth',
-  autumn: 'harvest_and_optimization',
-  winter: 'reflection_and_planning'
-}
-\`\`\`
-
-## Pruning and Training = Product Iteration
-
-### Strategic Pruning
-
-Gardeners prune plants to encourage healthy growth in desired directions. Entrepreneurs should prune features and focus efforts on what works best.
-
-### Training Plants
-
-Some plants need support structures to grow properly. Some business initiatives need additional resources or guidance to succeed.
-
-## Pest Management = Risk Management
-
-### Natural Pest Control
-
-\`\`\`typescript
-// Risk management strategies
-const riskManagement = {
-  prevention: 'avoid_problems_before_they_occur',
-  monitoring: 'regular_system_checks',
-  response: 'quick_effective_solutions',
-  learning: 'improve_from_experience'
-}
-\`\`\`
-
-## Harvest Time = Business Milestones
-
-### Knowing When to Harvest
-
-Picking vegetables at the right time ensures the best quality and flavor. Similarly, timing business decisions correctly maximizes success.
-
-### Multiple Harvests
-
-Some plants provide multiple harvests in a season. Some business models can be iterated for repeated success.
-
-## Garden Planning = Strategic Planning
-
-### Crop Rotation
-
-Successful farmers rotate crops to maintain soil health and prevent pest buildup. Successful entrepreneurs diversify offerings and rotate focus areas.
-
-### Companion Planting
-
-Some plants grow better together, supporting each other's growth. Similarly, some business partnerships create synergies that benefit all parties.
-
-## Scaling the Garden = Scaling the Business
-
-### Gradual Expansion
-
-\`\`\`javascript
-// Sustainable scaling approach
-const scalingStrategy = {
-  validate: 'prove_concept_at_small_scale',
-  optimize: 'improve_efficiency_and_quality',
-  expand: 'gradually_increase_capacity',
-  diversify: 'add_complementary_offerings'
-}
-\`\`\`
-
-## The Patience Factor
-
-### Natural Timing
-
-Plants grow at their own pace, following natural rhythms. Businesses should respect market timing and growth patterns.
-
-### Compound Growth
-
-\`\`\`typescript
-// The power of consistent effort
-const compoundGrowth = {
-  daily: 'small_consistent_actions',
-  weekly: 'regular_progress_reviews',
-  monthly: 'measure_and_adjust',
-  yearly: 'significant_transformation'
-}
-\`\`\`
-
-## Learning from Failure
-
-### Garden Failures
-
-When plants don't thrive, gardeners analyze what went wrong and adjust for next season. When business initiatives fail, entrepreneurs should do the same.
-
-### Resilience Building
-
-Both gardening and entrepreneurship build resilience through repeated practice and learning from setbacks.
-
-## The Entrepreneur's Mindset
-
-### Observation Skills
-
-Successful gardeners are keen observers of plant health, soil conditions, and environmental factors. Successful entrepreneurs are keen observers of market trends, customer behavior, and competitive dynamics.
-
-### Adaptability
-
-Gardens require adaptation to weather, pests, and changing conditions. Businesses require adaptation to market changes, competitive pressures, and customer needs.
-
-## Community and Knowledge Sharing
-
-### Learning from Other Gardeners
-
-The gardening community shares knowledge, seeds, and techniques. The entrepreneurial community should do the same.
-
-### Mentorship
-
-Experienced gardeners mentor newcomers. Experienced entrepreneurs should mentor aspiring business owners.
-
-## Sustainability and Long-term Thinking
-
-### Regenerative Practices
-
-Sustainable gardening builds soil health for future seasons. Sustainable business practices build company strength for future growth.
-
-### Legacy Thinking
-
-\`\`\`javascript
-// Building for the long term
-const legacyBusiness = {
-  values: 'principles_that_endure',
-  impact: 'positive_contribution_to_society',
-  sustainability: 'long_term_viability',
-  succession: 'preparing_for_future_leadership'
-}
-\`\`\`
-
-## The Intersection of Garden and Business Wisdom
-
-My unique position of managing both agricultural operations and technology ventures has given me a distinctive perspective on business growth.
-
-### Cross-Pollination Benefits
-
-The patience required for gardening translates to the patience required for business development. The observation skills honed in the garden improve my ability to read market signals and customer needs.
-
-## Practical Applications
-
-### In Product Development
-
-1. **Start small**: Test ideas like starting with a small garden plot
-2. **Iterate quickly**: Make small changes and observe results
-3. **Scale gradually**: Expand successful initiatives methodically
-
-### In Team Building
-
-1. **Nurture talent**: Like tending to plants, invest in team member growth
-2. **Create optimal conditions**: Provide the right environment for success
-3. **Prune when necessary**: Address performance issues constructively
-
-### In Strategic Planning
-
-1. **Seasonal thinking**: Plan around natural business cycles
-2. **Diversification**: Don't put all eggs in one basket (or all seeds in one plot)
-3. **Sustainability focus**: Build for long-term health, not short-term gains
-
-## Common Mistakes to Avoid
-
-### Rushing Growth
-
-Just as over-fertilizing can burn plants, rushing business growth without proper foundations can lead to failure.
-
-### Ignoring Environmental Factors
-
-Plants fail when gardeners ignore soil quality, sunlight, and water needs. Businesses fail when entrepreneurs ignore market conditions, competition, and customer preferences.
-
-### Neglecting Maintenance
-
-Gardens deteriorate without regular care. Businesses decline without ongoing attention to quality, customer service, and innovation.
-
-## The Reward of Patience
-
-### Compound Returns
-
-\`\`\`javascript
-// The mathematics of patience
-const compoundGrowth = (principal, rate, time) => {
-  return principal * Math.pow(1 + rate, time)
-}
-
-// Small, consistent investments yield significant returns over time
-const gardenWisdom = compoundGrowth(100, 0.1, 10) // 259.37
-const businessWisdom = 'exponential_growth_through_consistency'
-\`\`\`
-
-## Conclusion
-
-The entrepreneur's garden teaches us that successful business growth, like successful gardening, requires patience, observation, and working with natural patterns rather than against them.
-
-Both endeavors reward those who:
-
-- **Plan carefully** before taking action
-- **Observe constantly** and adjust as needed
-- **Care consistently** for long-term health
-- **Learn continuously** from both successes and failures
-- **Think sustainably** for future generations
-
-## Final Thoughts
-
-The garden has been my greatest business teacher. It reminds me daily that the best results come from understanding and working with natural systems, whether those systems involve soil, markets, or people.
-
-In our fast-paced world of instant results and overnight success stories, the garden's wisdom about patience and natural growth patterns is more valuable than ever.
-
-What natural metaphors help you think about business and entrepreneurship?
+— Emmanuel Ogugua
     `,
-    category: 'Personal Growth',
-    readTime: '9 min read',
+    category: 'Leadership',
+    readTime: '14 min read',
     publishedDate: '2024-01-01',
-    author: 'Emmanuel Chukwuka Ogugua'
+    author: 'Emmanuel Chukwuka Ogugua',
+    tags: ['Leadership', 'Problem Solving', 'Adaptability', 'Nigeria']
   }
 }
 
@@ -1108,16 +371,58 @@ interface BlogPostContentProps {
 }
 
 export function BlogPostContent({ slug }: BlogPostContentProps) {
-  const post = blogPosts[slug as keyof typeof blogPosts]
+  const blogPost = blogPosts[slug as keyof typeof blogPosts]
 
-  if (!post) {
+  const handleShare = async (platform: 'twitter' | 'linkedin' | 'facebook') => {
+    if (!blogPost) return
+
+    const url = typeof window !== 'undefined' ? window.location.href : ''
+    const title = blogPost.title
+    const description = blogPost.description
+
+    // Use Web Share API if available (mobile)
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title,
+          text: description,
+          url,
+        })
+        return
+      } catch (_err) { // eslint-disable-line @typescript-eslint/no-unused-vars
+        // User cancelled or error, fallback to platform-specific sharing
+      }
+    }
+
+    // Platform-specific sharing URLs
+    let shareUrl = ''
+
+    switch (platform) {
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`
+        break
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
+        break
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+        break
+    }
+
+    // Open sharing URL in new window
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'width=600,height=400')
+    }
+  }
+
+  if (!blogPost) {
     return (
       <section className="py-20 pt-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Blog Post Not Found</h1>
-          <p className="text-gray-300 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
+          <h1 className="text-4xl font-bold text-white mb-4">Article Not Found</h1>
+          <p className="text-gray-300 mb-8">The article you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/blog">
-            <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold">
+            <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold">
               Back to Blog
             </button>
           </Link>
@@ -1128,7 +433,7 @@ export function BlogPostContent({ slug }: BlogPostContentProps) {
 
   return (
     <>
-      {/* Blog Post Header */}
+      {/* Article Header */}
       <section className="py-20 pt-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1146,52 +451,67 @@ export function BlogPostContent({ slug }: BlogPostContentProps) {
             <div className="mb-8">
               <div className="flex items-center gap-4 mb-4">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                  post.category === 'Technology'
+                  blogPost.category === 'Technical'
                     ? 'bg-blue-500/20 text-blue-400 border border-blue-400/30'
-                    : post.category === 'Business Strategy'
+                    : blogPost.category === 'Business Strategy'
                     ? 'bg-purple-500/20 text-purple-400 border border-purple-400/30'
-                    : post.category === 'Personal Growth'
+                    : blogPost.category === 'Personal Growth'
                     ? 'bg-green-500/20 text-green-400 border border-green-400/30'
-                    : 'bg-orange-500/20 text-orange-400 border border-orange-400/30'
+                    : blogPost.category === 'Leadership'
+                    ? 'bg-orange-500/20 text-orange-400 border border-orange-400/30'
+                    : 'bg-gray-500/20 text-gray-400 border border-gray-400/30'
                 }`}>
-                  {post.category}
+                  {blogPost.category}
                 </span>
                 <div className="flex items-center text-gray-400 text-sm">
                   <Clock className="w-4 h-4 mr-1" />
-                  <span>{post.readTime}</span>
+                  <span>{blogPost.readTime}</span>
                 </div>
                 <div className="flex items-center text-gray-400 text-sm">
                   <Calendar className="w-4 h-4 mr-1" />
-                  <span>{new Date(post.publishedDate).toLocaleDateString()}</span>
+                  <span>{new Date(blogPost.publishedDate).toLocaleDateString()}</span>
                 </div>
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                {post.title}
+                {blogPost.title}
               </h1>
+
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                {blogPost.description}
+              </p>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                    {post.author.split(' ')[0].charAt(0)}{post.author.split(' ')[1]?.charAt(0)}
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                    {blogPost.author.split(' ')[0].charAt(0)}{blogPost.author.split(' ')[1]?.charAt(0)}
                   </div>
                   <div>
-                    <div className="text-white font-semibold">{post.author}</div>
-                    <div className="text-gray-400 text-sm">Author & Entrepreneur</div>
+                    <div className="text-white font-semibold">{blogPost.author}</div>
+                    <div className="text-gray-400 text-sm">Author & Software Engineer</div>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <button className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <button
+                    onClick={() => handleShare('twitter')}
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
                     <Twitter className="w-5 h-5" />
                   </button>
-                  <button className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <button
+                    onClick={() => handleShare('linkedin')}
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
                     <Linkedin className="w-5 h-5" />
                   </button>
-                  <button className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <button
+                    onClick={() => handleShare('facebook')}
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
                     <Facebook className="w-5 h-5" />
                   </button>
-                  <button className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <button className="text-gray-400 hover:text-white transition-colors">
                     <Share2 className="w-5 h-5" />
                   </button>
                 </div>
@@ -1201,7 +521,7 @@ export function BlogPostContent({ slug }: BlogPostContentProps) {
         </div>
       </section>
 
-      {/* Blog Post Content */}
+      {/* Article Content */}
       <section className="pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1211,7 +531,7 @@ export function BlogPostContent({ slug }: BlogPostContentProps) {
             className="prose prose-lg prose-invert max-w-none"
           >
             <div className="bg-slate-800/30 backdrop-blur-sm border border-white/10 rounded-xl p-8 md:p-12">
-              {post.content.split('\n').map((paragraph, index) => {
+              {blogPost.content.split('\n').map((paragraph, index) => {
                 if (paragraph.startsWith('# ')) {
                   return <h1 key={index} className="text-3xl font-bold text-white mb-6 mt-8 first:mt-0">{paragraph.substring(2)}</h1>
                 } else if (paragraph.startsWith('## ')) {
@@ -1239,7 +559,7 @@ export function BlogPostContent({ slug }: BlogPostContentProps) {
             </div>
           </motion.div>
 
-          {/* Blog Post Footer */}
+          {/* Article Footer */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1248,21 +568,30 @@ export function BlogPostContent({ slug }: BlogPostContentProps) {
           >
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">Written by {post.author}</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">Written by {blogPost.author}</h3>
                 <p className="text-gray-400">
-                  Software Engineer, Business Strategist, and Entrepreneur passionate about creating innovative solutions and sharing knowledge.
+                  Software Engineer & Business Strategist passionate about creating innovative solutions and driving growth.
                 </p>
               </div>
 
               <div className="flex items-center space-x-4">
-                <span className="text-gray-400 text-sm">Share this post:</span>
-                <button className="text-gray-400 hover:text-blue-400 transition-colors">
+                <span className="text-gray-400 text-sm">Share this article:</span>
+                <button
+                  onClick={() => handleShare('twitter')}
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </button>
-                <button className="text-gray-400 hover:text-blue-400 transition-colors">
+                <button
+                  onClick={() => handleShare('linkedin')}
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </button>
-                <button className="text-gray-400 hover:text-blue-400 transition-colors">
+                <button
+                  onClick={() => handleShare('facebook')}
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </button>
               </div>

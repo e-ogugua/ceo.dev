@@ -14,13 +14,13 @@ export function LearnHero() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
             Learn &{' '}
-            <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Grow
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             Dive deep into the world of software engineering, business strategy, and personal development. Explore curated insights, practical tutorials, and actionable knowledge from my journey as a full-stack developer and strategic business leader.
           </p>
         </motion.div>
@@ -34,12 +34,12 @@ export function LearnHero() {
             viewport={{ once: true }}
             className="text-center group"
           >
-            <div className="bg-blue-500/10 backdrop-blur-sm border border-blue-400/20 rounded-xl p-6 hover:border-blue-400/40 transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Code className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Software Engineering</h3>
-              <p className="text-gray-400 text-sm">Modern development practices, frameworks, and best practices</p>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Software Engineering</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">Modern development practices, frameworks, and best practices</p>
             </div>
           </motion.div>
 
@@ -50,12 +50,12 @@ export function LearnHero() {
             viewport={{ once: true }}
             className="text-center group"
           >
-            <div className="bg-purple-500/10 backdrop-blur-sm border border-purple-400/20 rounded-xl p-6 hover:border-purple-400/40 transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="bg-secondary/10 backdrop-blur-sm border border-secondary/20 rounded-xl p-6 hover:border-secondary/40 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Briefcase className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Business Strategy</h3>
-              <p className="text-gray-400 text-sm">Entrepreneurial insights, market analysis, and growth strategies</p>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Business Strategy</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">Entrepreneurial insights, market analysis, and growth strategies</p>
             </div>
           </motion.div>
 
@@ -70,8 +70,8 @@ export function LearnHero() {
               <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Leadership & Growth</h3>
-              <p className="text-gray-400 text-sm">Personal development, team building, and career advancement</p>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Leadership & Growth</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">Personal development, team building, and career advancement</p>
             </div>
           </motion.div>
         </div>
@@ -113,13 +113,13 @@ export function LearnHero() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="inline-flex items-center space-x-6 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+          <div className="inline-flex items-center space-x-6 bg-slate-800/50 dark:bg-slate-800/70 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-xl p-8">
             <div className="text-5xl">🚀</div>
             <div className="text-left">
               <div className="text-xl font-semibold text-white mb-2">Ready to Level Up?</div>
-              <div className="text-gray-400">Explore curated learning paths and actionable insights</div>
+              <div className="text-slate-300 dark:text-slate-400">Explore curated learning paths and actionable insights</div>
             </div>
-            <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
+            <button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105">
               Start Learning
             </button>
           </div>

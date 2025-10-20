@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Code, Globe, Smartphone, Database } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
+import { ServiceContactForm } from '@/components/ServiceContactForm'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -100,31 +101,20 @@ export default function WebDevelopmentPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-slate-300 mb-8 text-lg">
-              Let&apos;s discuss how we can bring your web development vision to life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="bg-white text-slate-900 px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors duration-200"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="/portfolio-ventures"
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-200"
-              >
-                View Portfolio
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* CTA Section with Form */}
+        <div className="bg-slate-900">
+          <ServiceContactForm
+            serviceName="Web Development"
+            serviceType="web-development"
+            features={[
+              'Custom Web Applications',
+              'Responsive Design',
+              'E-commerce Solutions',
+              'API Integration',
+              'Performance Optimization'
+            ]}
+          />
+        </div>
       </div>
       <Footer />
     </>

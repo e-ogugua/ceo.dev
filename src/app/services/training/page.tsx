@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, GraduationCap, Users, Calendar, Award, BookOpen, Zap } from 'lucide-react'
+import { Navigation } from '@/components/Navigation'
+import { ServiceContactForm } from '@/components/ServiceContactForm'
+import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Training Services | Emmanuel Chukwuka Ogugua',
@@ -9,7 +12,9 @@ export const metadata: Metadata = {
 
 export default function TrainingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100">
+    <>
+      <Navigation />
+      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100">
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -137,31 +142,22 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Invest in Your Team?
-          </h2>
-          <p className="text-slate-300 mb-8 text-lg">
-            Let&apos;s discuss how professional training can accelerate your team&apos;s growth and success.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-white text-slate-900 px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors duration-200"
-            >
-              Discuss Training
-            </Link>
-            <Link
-              href="/learn"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-200"
-            >
-              Learning Resources
-            </Link>
-          </div>
+        {/* CTA Section with Form */}
+        <div className="bg-slate-900">
+          <ServiceContactForm
+            serviceName="Professional Training"
+            serviceType="training"
+            features={[
+              'Technical Workshops',
+              'Business Strategy Training',
+              'Leadership Development',
+              'Custom Training Programs',
+              'Mentorship'
+            ]}
+          />
         </div>
-      </section>
-    </div>
+      </div>
+      <Footer />
+    </>
   )
 }
