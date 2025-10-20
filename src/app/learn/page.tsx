@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer'
 
 export default function Learn() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <main className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100">
       <Navigation />
       <LearnHero />
       <LearningCards />
