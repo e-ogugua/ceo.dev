@@ -475,6 +475,45 @@
   @apply text-slate-300;
 }
 
-.dark .text-slate-600 {
-  @apply text-slate-400;
+/* === Focus Styles for Accessibility === */
+.focus-visible\:outline:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+/* Enhanced focus styles for interactive elements */
+button:focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2;
+}
+
+a:focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Skip link styles (already defined in layout.tsx) */
+
+/* === Reduced Motion Support === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable framer-motion animations when reduced motion is preferred */
+  [data-framer-appear-id],
+  [data-framer-component-type] {
+    animation: none !important;
+    transition: none !important;
+  }
 }

@@ -173,13 +173,20 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 text-slate-900 antialiased`}>
+        {/* Skip to content link for keyboard navigation */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider>
           <div className="relative">
             {/* Subtle background pattern */}
             <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30 pointer-events-none" />
 
             {/* Main content */}
-            <div className="relative z-10">
+            <div id="main-content" className="relative z-10">
               {children}
             </div>
           </div>

@@ -4,6 +4,48 @@ This document tracks files that have been moved to the `archive/` folder during 
 
 ## Archived Files
 
+### Phase A: Image Optimization (2025-10-21)
+
+**15 large PNG/JPEG images were moved to archive** during the image optimization process:
+
+#### Original Images Archived (52MB total)
+```
+archive/images/2025-10-21/
+├── EmmdraScreenshot1.png (4.1MB) → optimized/EmmdraScreenshot1.webp + .avif
+├── EmmdraLogo.png (4.1MB) → optimized/EmmdraLogo.webp + .avif
+├── ZerethScreenshot1.png (3.7MB) → optimized/ZerethScreenshot1.webp + .avif
+├── Zereth-logo1.jpeg (3.7MB) → optimized/Zereth-logo1.webp + .avif
+├── JepligomMinistryPortalScreenshot1.png (3.4MB) → optimized/JepligomMinistryPortalScreenshot1.webp + .avif
+├── ceotrScreenshot1.png (3.3MB) → optimized/ceotrScreenshot1.webp + .avif
+├── ceotr-logo-white.png (3.3MB) → optimized/ceotr-logo-white.webp + .avif
+├── JepligomMinistryPortalLogo.png (3.0MB) → optimized/JepligomMinistryPortalLogo.webp + .avif
+├── poshpouleFarmsErpSuiteScreenshot4.png (2.9MB) → optimized/poshpouleFarmsErpSuiteScreenshot4.webp + .avif
+├── poshpoule-logo1.png (2.9MB) → optimized/poshpoule-logo1.webp + .avif
+├── bizStrategistHeroimage1.png (2.1MB) → optimized/bizStrategistHeroimage1.webp + .avif
+├── bizStrategistHeroimage.png (2.1MB) → optimized/bizStrategistHeroimage.webp + .avif
+├── codementorLogo.png (1.9MB) → optimized/codementorLogo.webp + .avif
+├── Eco-FriendlyAccessoriesWorkshop.png (1.6MB) → optimized/Eco-FriendlyAccessoriesWorkshop.webp + .avif
+└── DevEngineerHeroimage2.png (1.6MB) → optimized/DevEngineerHeroimage2.webp + .avif
+```
+
+**Rationale**: These original large images were converted to optimized WebP/AVIF formats for better performance. The optimized versions are 95% smaller while maintaining visual quality.
+
+**Impact**: Reduced total image directory from 100MB to 4.9MB (95% reduction)
+
+**Restoration Commands**:
+```bash
+# Restore all original images
+cp archive/images/2025-10-21/* public/images/
+
+# Restore specific image
+cp archive/images/2025-10-21/EmmdraLogo.png public/images/EmmdraLogo.png
+
+# Remove optimized versions if rolling back completely
+rm -rf public/images/optimized/
+```
+
+### Previous Refactoring (Pre-Phase A)
+
 No files have been moved to the archive folder yet. During this refactoring process, we focused on:
 
 1. **Externalizing hardcoded content** from components to JSON files

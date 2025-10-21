@@ -5,11 +5,14 @@ import { Footer } from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
-      <Navigation />
-      <HeroSection />
-      <LatestWorks />
-      <Footer />
-    </main>
+    <>
+      <h1 className="sr-only">Emmanuel Chukwuka Ogugua - Software Engineer & Business Strategist Portfolio</h1>
+      <main className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
+        <Navigation />
+        <HeroSection />
+        <LatestWorks />
+        <Footer />
+      </main>
+    </>
   )
 }
