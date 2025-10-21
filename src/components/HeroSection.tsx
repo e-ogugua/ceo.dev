@@ -19,7 +19,7 @@ const personas = [
     icon: Code,
     gradient: 'from-primary via-slate-800 to-primary',
     bgGradient: 'from-white/95 to-slate-50/95',
-    image: '/images/DevEngineerHeroimage2.webp',
+    image: '/images/optimized/DevEngineerHeroimage2.webp',
     accent: 'from-primary to-secondary',
     stats: [
       { label: 'Years Experience', value: '15+' },
@@ -39,7 +39,7 @@ const personas = [
     icon: Sparkles,
     gradient: 'from-secondary via-purple-900 to-secondary',
     bgGradient: 'from-purple-50/95 to-slate-50/95',
-    image: '/images/bizStrategistHeroimage.webp',
+    image: '/images/optimized/bizStrategistHeroimage.webp',
     accent: 'from-secondary to-purple-500',
     stats: [
       { label: 'Dual Expertise', value: '65% / 35%' },

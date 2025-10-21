@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Code, Smartphone, Shield } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
-import { ServiceContactForm } from '@/components/ServiceContactForm'
+import { DynamicServiceContactForm } from '@/components/DynamicComponents'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -130,7 +130,7 @@ export default function CustomDevelopmentPage() {
 
         {/* CTA Section with Form */}
         <div className="bg-slate-900 dark:bg-slate-800">
-          <ServiceContactForm
+          <DynamicServiceContactForm
             serviceName="Custom Development"
             serviceType="custom-development"
             features={[

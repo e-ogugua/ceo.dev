@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Users, MessageCircle, BookOpen, Handshake } from 'lucide-react'
+import { ArrowLeft, Users, Lightbulb, ArrowRight, CheckCircle, MessageCircle, BookOpen, Handshake } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
-import { ServiceContactForm } from '@/components/ServiceContactForm'
+import { DynamicServiceContactForm } from '@/components/DynamicComponents'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -130,7 +130,7 @@ export default function ConsultingPage() {
 
         {/* CTA Section with Form */}
         <div className="bg-slate-900 dark:bg-slate-800">
-          <ServiceContactForm
+          <DynamicServiceContactForm
             serviceName="Technical Consulting"
             serviceType="consulting"
             features={[

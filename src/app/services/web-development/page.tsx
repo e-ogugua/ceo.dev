@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Code, Globe, Smartphone, Database } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
-import { ServiceContactForm } from '@/components/ServiceContactForm'
+import { DynamicServiceContactForm } from '@/components/DynamicComponents'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -130,15 +130,20 @@ export default function WebDevelopmentPage() {
 
         {/* CTA Section with Form */}
         <div className="bg-slate-900 dark:bg-slate-800">
-          <ServiceContactForm
+          <DynamicServiceContactForm
             serviceName="Web Development"
             serviceType="web-development"
             features={[
               'Custom Web Applications',
               'Responsive Design',
               'E-commerce Solutions',
-              'API Integration',
-              'Performance Optimization'
+              'Progressive Web Apps',
+              'Performance Optimization',
+              'SEO Optimization',
+              'Accessibility (WCAG)',
+              'Cross-browser Compatibility',
+              'Modern Frameworks',
+              'Ongoing Maintenance'
             ]}
           />
         </div>

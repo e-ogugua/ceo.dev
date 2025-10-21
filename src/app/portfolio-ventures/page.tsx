@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import { Navigation } from '@/components/Navigation'
 import { PortfolioHero } from '@/components/PortfolioHero'
-import { DevelopmentPortfolio } from '@/components/DevelopmentPortfolio'
-import { BusinessVentures } from '@/components/BusinessVentures'
+import { DynamicDevelopmentPortfolio } from '@/components/DynamicComponents'
+import { DynamicBusinessVentures } from '@/components/DynamicComponents'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -32,8 +32,8 @@ export default function PortfolioVentures() {
     <main className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
       <Navigation />
       <PortfolioHero />
-      <DevelopmentPortfolio />
-      <BusinessVentures />
+      <DynamicDevelopmentPortfolio />
+      <DynamicBusinessVentures />
       <Footer />
     </main>
   )
