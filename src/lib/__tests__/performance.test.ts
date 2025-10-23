@@ -1,3 +1,6 @@
+import { reportWebVitals, initializeWebVitals, measurePerformance, logBundleSize } from '../performance'
+import { onCLS, onFCP, onLCP, onTTFB } from 'web-vitals'
+
 // Mock web-vitals
 jest.mock('web-vitals', () => ({
   onCLS: jest.fn(),
@@ -37,13 +40,12 @@ describe('Performance Utilities', () => {
         writable: true,
       })
 
-      const mockMetric = {
+      const mockMetric: any = {
         name: 'CLS',
         value: 0.1,
         id: 'v3-123',
       }
 
-      const { reportWebVitals } = require('../performance')
       reportWebVitals(mockMetric)
 
       expect(console.log).toHaveBeenCalledWith('Web Vitals:', mockMetric)
@@ -55,13 +57,12 @@ describe('Performance Utilities', () => {
         writable: true,
       })
 
-      const mockMetric = {
+      const mockMetric: any = {
         name: 'LCP',
         value: 2500,
         id: 'v3-456',
       }
 
-      const { reportWebVitals } = require('../performance')
       reportWebVitals(mockMetric)
 
       expect((window as any).gtag).toHaveBeenCalledWith('event', 'LCP', {
@@ -76,7 +77,7 @@ describe('Performance Utilities', () => {
       // Remove gtag mock
       delete (window as any).gtag
 
-      const mockMetric = {
+      const mockMetric: any = {
         name: 'FCP',
         value: 1800,
         id: 'v3-789',
@@ -87,8 +88,6 @@ describe('Performance Utilities', () => {
         writable: true,
       })
 
-      const { reportWebVitals } = require('../performance')
-
       // Should not throw error
       expect(() => reportWebVitals(mockMetric)).not.toThrow()
     })
@@ -96,9 +95,6 @@ describe('Performance Utilities', () => {
 
   describe('initializeWebVitals', () => {
     it('initializes web vitals reporting', () => {
-      const { onCLS, onFCP, onLCP, onTTFB } = require('web-vitals')
-      const { initializeWebVitals } = require('../performance')
-
       initializeWebVitals()
 
       expect(onCLS).toHaveBeenCalled()
@@ -111,9 +107,6 @@ describe('Performance Utilities', () => {
       // Mock window as undefined (server environment)
       const originalWindow = global.window
       delete (global as any).window
-
-      const { onCLS, onFCP, onLCP, onTTFB } = require('web-vitals')
-      const { initializeWebVitals } = require('../performance')
 
       initializeWebVitals()
 
@@ -139,8 +132,6 @@ describe('Performance Utilities', () => {
     })
 
     it('measures synchronous function performance', () => {
-      const { measurePerformance } = require('../performance')
-
       const testFunction = jest.fn()
       measurePerformance('test-operation', testFunction)
 
@@ -149,8 +140,6 @@ describe('Performance Utilities', () => {
     })
 
     it('measures asynchronous function performance', async () => {
-      const { measurePerformance } = require('../performance')
-
       const asyncFunction = jest.fn().mockResolvedValue('result')
       const promise = measurePerformance('async-operation', asyncFunction)
 
@@ -164,8 +153,6 @@ describe('Performance Utilities', () => {
       // Mock window as undefined (server environment)
       const originalWindow = global.window
       delete (global as any).window
-
-      const { measurePerformance } = require('../performance')
 
       const testFunction = jest.fn()
       measurePerformance('server-operation', testFunction)
@@ -184,7 +171,6 @@ describe('Performance Utilities', () => {
         writable: true,
       })
 
-      const { logBundleSize } = require('../performance')
       logBundleSize()
 
       expect(console.log).toHaveBeenCalledWith('Bundle analysis should be run with: npm run analyze')
@@ -196,7 +182,6 @@ describe('Performance Utilities', () => {
         writable: true,
       })
 
-      const { logBundleSize } = require('../performance')
       logBundleSize()
 
       expect(console.log).not.toHaveBeenCalled()
@@ -211,7 +196,6 @@ describe('Performance Utilities', () => {
         writable: true,
       })
 
-      const { logBundleSize } = require('../performance')
       logBundleSize()
 
       expect(console.log).not.toHaveBeenCalled()

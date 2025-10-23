@@ -1,15 +1,24 @@
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { ThemeProvider } from '../ThemeProvider'
 import { ThemeToggle } from '../ThemeToggle'
 
 // Mock framer-motion
+const MockButton = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
+  <button {...props}>{children}</button>
+)
+MockButton.displayName = 'MockButton'
+
+const MockDiv = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
+  <div {...props}>{children}</div>
+)
+MockDiv.displayName = 'MockDiv'
+
 jest.mock('framer-motion', () => ({
   motion: {
-    button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+    button: MockButton,
+    div: MockDiv,
   },
-  AnimatePresence: ({ children }: any) => children,
+  AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
 }))
 
 // Mock lucide-react
