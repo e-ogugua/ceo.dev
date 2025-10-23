@@ -15,13 +15,13 @@ export function ServicesHero() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Professional{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Services
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             Comprehensive solutions in web development, business strategy, consulting, and training to help you achieve your goals with expertise and innovation.
           </p>
         </motion.div>
@@ -39,8 +39,8 @@ export function ServicesHero() {
               <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Briefcase className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Web Development</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Custom websites and applications built with modern technologies</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Web Development</h3>
+              <p className="text-slate-400 text-sm mb-4">Custom websites and applications built with modern technologies</p>
               <Link href="/services/web-development">
                 <motion.button
                   className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-4 py-2 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200"
@@ -65,8 +65,8 @@ export function ServicesHero() {
               <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Business Strategy</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Strategic planning and consulting for business growth</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Business Strategy</h3>
+              <p className="text-slate-400 text-sm mb-4">Strategic planning and consulting for business growth</p>
               <Link href="/services/business-strategy">
                 <motion.button
                   className="w-full bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white px-4 py-2 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200"
@@ -91,8 +91,8 @@ export function ServicesHero() {
               <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Training & Consulting</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Expert training and guidance for teams and individuals</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Training & Consulting</h3>
+              <p className="text-slate-400 text-sm mb-4">Expert training and guidance for teams and individuals</p>
               <Link href="/services/training">
                 <motion.button
                   className="w-full bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white px-4 py-2 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200"

@@ -2,46 +2,46 @@
 
 A comprehensive business platform and portfolio website for Emmanuel Chukwuka Ogugua, showcasing expertise as a Software Engineer and Business Strategist. Built with Next.js 15, TypeScript, and Tailwind CSS, this platform enables seamless client engagement and business development.
 
-## 🌟 Key Features
+## Key Features
 
-### **Business Services Platform**
-- **Multi-Service Forms**: Dedicated contact forms for Web Development, Business Strategy Consulting, Technical Consulting, and Professional Training
-- **Budget-Aware Pricing**: Forms capture client budget ranges and project requirements
-- **Client Type Support**: Forms tailored for customers, employers, collaborators, and investors
-- **Email Integration**: Automatic notifications sent to `emmachuka@gmail.com`
+### Business Services Platform
+- Multi-Service Forms: Dedicated contact forms for Web Development, Business Strategy Consulting, Technical Consulting, and Professional Training
+- Budget-Aware Pricing: Forms capture client budget ranges and project requirements
+- Client Type Support: Forms tailored for customers, employers, collaborators, and investors
+- Email Integration: Automatic notifications sent to emmachuka@gmail.com
 
-### **Subscription System**
-- **Newsletter Subscription**: Stay updated with insights and updates
-- **Blog Updates**: Get notified about new articles and tutorials
-- **Learning Hub**: Access to educational content and resources
-- **Supabase Integration**: All subscriptions stored securely in database
+### Subscription System
+- Newsletter Subscription: Stay updated with insights and updates
+- Blog Updates: Get notified about new articles and tutorials
+- Learning Hub: Access to educational content and resources
+- Supabase Integration: All subscriptions stored securely in database
 
-### **Interactive Portfolio**
-- **Hero Section**: Dynamic showcase of developer and strategist personas
-- **Service Pages**: Detailed information for each service offering
-- **Project Portfolio**: Showcase of development work and business ventures
-- **Blog & Articles**: Technical insights and business strategy content
-- **Learning Resources**: Educational content and tutorials
+### Interactive Portfolio
+- Hero Section: Dynamic showcase of developer and strategist personas
+- Service Pages: Detailed information for each service offering
+- Project Portfolio: Showcase of development work and business ventures
+- Blog and Articles: Technical insights and business strategy content
+- Learning Resources: Educational content and tutorials
 
-### **Modern UI/UX**
-- **Responsive Design**: Mobile-first approach, works on all devices
-- **Glassmorphism Design**: Modern, elegant visual design
-- **Smooth Animations**: Framer Motion powered interactions
-- **Dark Mode Support**: Theme switching capability
+### Modern UI/UX
+- Responsive Design: Mobile-first approach, works on all devices
+- Glassmorphism Design: Modern, elegant visual design
+- Smooth Animations: Framer Motion powered interactions
+- Dark Mode Support: Theme switching capability
 
-## 🛠 Tech Stack
+## Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Database**: Supabase (PostgreSQL)
-- **Email**: Nodemailer with Gmail SMTP
-- **Deployment**: Vercel
-- **Forms**: Custom React components with validation
+- Framework: Next.js 15 (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- Animations: Framer Motion
+- Icons: Lucide React
+- Database: Supabase (PostgreSQL)
+- Email: Nodemailer with Gmail SMTP
+- Deployment: Vercel
+- Forms: Custom React components with validation
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+
@@ -50,23 +50,23 @@ A comprehensive business platform and portfolio website for Emmanuel Chukwuka Og
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone the repository
 ```bash
 git clone https://github.com/e-ogugua/ceo.dev.git
 cd ceo.dev
 ```
 
-2. **Install dependencies**
+2. Install dependencies
 ```bash
 npm install
 ```
 
-3. **Set up environment variables**
+3. Set up environment variables
 ```bash
 cp .env.example .env.local
 ```
 
-Edit `.env.local` with your actual values:
+Edit .env.local with your actual values:
 ```bash
 # Email Configuration (Required)
 SMTP_USER=e.ogugua.dev@gmail.com
@@ -84,85 +84,85 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your-template-id
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your-public-key
 ```
 
-4. **Set up Supabase Database**
+4. Set up Supabase Database
 ```bash
 # Run the database setup script in Supabase dashboard
 # File: supabase-setup.sql
 ```
 
-5. **Run development server**
+5. Run development server
 ```bash
 npm run dev
 ```
 
-6. **Build for production**
+6. Build for production
 ```bash
 npm run build
 ```
 
-## 📋 Service Offerings
+## Service Offerings
 
-### **Web Development Services**
+### Web Development Services
 - Custom Web Applications
 - Responsive Design
 - E-commerce Solutions
 - API Integration
 - Performance Optimization
 
-### **Business Strategy Consulting**
+### Business Strategy Consulting
 - Business Model Analysis
 - Growth Strategy Development
 - Market Research
 - Competitive Analysis
 - Strategic Planning
 
-### **Technical Consulting**
+### Technical Consulting
 - Technology Assessment
 - Architecture Review
 - Performance Optimization
 - Security Consulting
 - Team Training
 
-### **Professional Training**
+### Professional Training
 - Technical Workshops
 - Business Strategy Training
 - Leadership Development
 - Custom Training Programs
 - Mentorship
 
-## 💼 Client Engagement
+## Client Engagement
 
-### **For Customers**
+### For Customers
 - Fill out project-specific forms with budget requirements
 - Get detailed proposals within 24 hours
 - Direct communication for project discussions
 
-### **For Employers**
+### For Employers
 - Submit hiring requirements and team needs
 - Receive candidate assessment within 48 hours
 - Discuss team integration and onboarding
 
-### **For Collaborators**
+### For Collaborators
 - Propose joint projects and partnerships
 - Share collaboration opportunities
 - Connect for mutual growth initiatives
 
-### **For Investors**
+### For Investors
 - Submit investment opportunities
 - Discuss partnership structures
 - Explore joint venture possibilities
 
-## 📧 Contact & Notifications
+## Contact and Notifications
 
-- **Primary Email**: emmachuka@gmail.com
-- **Business Email**: e.ogugua.dev@gmail.com
-- **Location**: Enugu, Nigeria
+- Primary Email: emmachuka@gmail.com
+- Business Email: e.ogugua.dev@gmail.com
+- Location: Enugu, Nigeria
 
 All form submissions automatically send email notifications with complete project details and client requirements.
 
-## 🌐 Deployment
+## Deployment
 
-### **Production Deployment**
+### Production Deployment
 ```bash
 # Deploy to Vercel
 vercel --prod
@@ -170,13 +170,13 @@ vercel --prod
 # Or via GitHub integration (automatic on push to main)
 ```
 
-### **Environment Setup**
+### Environment Setup
 1. Create Gmail App Password for SMTP
-2. Set up Supabase project and run `supabase-setup.sql`
+2. Set up Supabase project and run supabase-setup.sql
 3. Configure environment variables in Vercel dashboard
 4. Deploy and test all forms and subscriptions
 
-## 📊 Project Structure
+## Project Structure
 
 ```
 ceo.dev/
@@ -192,22 +192,22 @@ ceo.dev/
 └── .env.example          # Environment variables template
 ```
 
-## 🔄 Development Workflow
+## Development Workflow
 
-1. **Feature Development**: Create branches for new features
-2. **Testing**: Test all forms and subscriptions locally
-3. **Commit**: Use conventional commit messages
-4. **Deploy**: Push to main for automatic deployment
-5. **Monitor**: Check email notifications and Supabase dashboard
+1. Feature Development: Create branches for new features
+2. Testing: Test all forms and subscriptions locally
+3. Commit: Use conventional commit messages
+4. Deploy: Push to main for automatic deployment
+5. Monitor: Check email notifications and Supabase dashboard
 
-## 📈 Performance & SEO
+## Performance and SEO
 
-- **Lighthouse Score**: 95+ across all metrics
-- **Core Web Vitals**: Optimized for excellent user experience
-- **SEO Ready**: Proper meta tags and structured data
-- **Mobile First**: Responsive design for all devices
+- Lighthouse Score: 95+ across all metrics
+- Core Web Vitals: Optimized for excellent user experience
+- SEO Ready: Proper meta tags and structured data
+- Mobile First: Responsive design for all devices
 
-## 🤝 Contributing
+## Contributing
 
 For collaborations or contributions:
 1. Fork the repository
@@ -216,18 +216,18 @@ For collaborations or contributions:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📜 License
+## License
 
 ISC License - See LICENSE file for details
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-Built with passion and dedication to bridging the gap between technical excellence and business success.
+Built by EmmanuelOS - CEO, Chukwuka Emmanuel Ogugua
 
 ---
 
-**Ready to start a project?** Visit the live site or fill out one of the service-specific forms to get started!
+Visit the live site or fill out one of the service-specific forms to get started.
 
-**Live Demo**: [https://ceodev.vercel.app/](https://ceodev.vercel.app/)
+Live Demo: https://ceodev.vercel.app/
 
-**Contact**: emmachuka@gmail.com | e.ogugua.dev@gmail.com
+Contact: emmachuka@gmail.com | e.ogugua.dev@gmail.com

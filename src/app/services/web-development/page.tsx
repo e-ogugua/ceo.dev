@@ -14,13 +14,13 @@ export default function WebDevelopmentPage() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-all duration-500">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <Link
               href="/"
-              className="inline-flex items-center text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 mb-8 transition-colors duration-200"
+              className="inline-flex items-center text-slate-400 hover:text-slate-100 mb-8 transition-colors duration-200"
             >
               <ArrowLeft size={16} className="mr-2" />
               Back to Home
@@ -32,14 +32,14 @@ export default function WebDevelopmentPage() {
               </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Web Development
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                 Services
               </span>
             </h1>
 
-            <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
               Crafting exceptional digital experiences through modern web technologies,
               responsive design, and scalable architectures.
             </p>
@@ -51,15 +51,15 @@ export default function WebDevelopmentPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Full-Stack Development */}
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+              <div className="bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-700 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <Globe className="text-blue-600 dark:text-blue-500 mr-3" size={24} />
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Full-Stack Development</h3>
+                  <Globe className="text-blue-500 mr-3" size={24} />
+                  <h3 className="text-xl font-bold text-white">Full-Stack Development</h3>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                <p className="text-slate-300 mb-4 leading-relaxed">
                   Complete web applications built with modern frameworks like React, Next.js, Node.js, and databases.
                 </p>
-                <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                <ul className="text-sm text-slate-400 space-y-2">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">•</span>
                     <span>Frontend & Backend Development</span>
@@ -76,15 +76,15 @@ export default function WebDevelopmentPage() {
               </div>
 
               {/* Responsive Design */}
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+              <div className="bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-700 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <Smartphone className="text-green-600 dark:text-green-500 mr-3" size={24} />
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Responsive Design</h3>
+                  <Smartphone className="text-green-500 mr-3" size={24} />
+                  <h3 className="text-xl font-bold text-white">Responsive Design</h3>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                <p className="text-slate-300 mb-4 leading-relaxed">
                   Mobile-first responsive websites that work perfectly across all devices and screen sizes.
                 </p>
-                <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                <ul className="text-sm text-slate-400 space-y-2">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">•</span>
                     <span>Mobile-First Approach</span>
@@ -101,15 +101,15 @@ export default function WebDevelopmentPage() {
               </div>
 
               {/* E-commerce Solutions */}
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+              <div className="bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-700 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <Database className="text-purple-600 dark:text-purple-500 mr-3" size={24} />
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">E-commerce Solutions</h3>
+                  <Database className="text-purple-500 mr-3" size={24} />
+                  <h3 className="text-xl font-bold text-white">E-commerce Solutions</h3>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                <p className="text-slate-300 mb-4 leading-relaxed">
                   Custom online stores with payment integration, inventory management, and admin dashboards.
                 </p>
-                <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-2">
+                <ul className="text-sm text-slate-400 space-y-2">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">•</span>
                     <span>Payment Gateway Integration</span>
@@ -129,7 +129,7 @@ export default function WebDevelopmentPage() {
         </section>
 
         {/* CTA Section with Form */}
-        <div className="bg-slate-900 dark:bg-slate-800">
+        <div className="bg-slate-800">
           <DynamicServiceContactForm
             serviceName="Web Development"
             serviceType="web-development"

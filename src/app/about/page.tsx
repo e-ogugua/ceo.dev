@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-all duration-500">
       <Navigation />
       <AboutHero />
       <Timeline />

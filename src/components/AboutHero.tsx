@@ -17,14 +17,14 @@ export function AboutHero() {
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <h1 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-100 mb-2">
               About{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Emmanuel
               </span>
             </h1>
 
-            <div className="space-y-1.5 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <div className="space-y-1.5 text-sm text-slate-300 leading-relaxed">
               <p>
                 I bridge complex technical solutions with strategic business growth, crafting innovative digital experiences and driving entrepreneurial ventures.
               </p>
