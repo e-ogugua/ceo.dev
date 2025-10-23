@@ -16,14 +16,14 @@ export function StoryHero() {
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               My Full{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Story
               </span>
             </h1>
 
-            <div className="space-y-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
               <p>
                 Journey through my evolution from a curious kid with a passion for problem-solving to becoming a software engineer and business strategist. Each chapter represents a pivotal moment in my development.
               </p>
@@ -53,7 +53,7 @@ export function StoryHero() {
                 width={600}
                 height={400}
                 loading="lazy"
-                className="w-full h-auto rounded-2xl backdrop-blur-sm border border-white/10"
+                className="w-full h-auto rounded-2xl backdrop-blur-sm border border-slate-700/50"
               />
 
               {/* Decorative elements */}

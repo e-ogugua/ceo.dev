@@ -67,7 +67,7 @@ export function InteractiveStory() {
   const [activeChapter, setActiveChapter] = useState(0)
 
   return (
-    <section className="py-20 bg-slate-900/30">
+    <section className="py-20 bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,18 +76,18 @@ export function InteractiveStory() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Interactive Journey{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Timeline
             </span>
           </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Click on any chapter to explore my story in detail
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Interactive Timeline */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -103,24 +103,24 @@ export function InteractiveStory() {
                 className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
                   activeChapter === index
                     ? 'bg-gradient-to-r from-primary/20 to-secondary/20 border-primary/50'
-                    : 'bg-slate-800/30 dark:bg-slate-800/50 border-white/10 dark:border-slate-700/50 hover:border-primary/30 hover:bg-slate-800/70'
+                    : 'bg-slate-800/30 border-slate-700/50 hover:border-primary/30 hover:bg-slate-800/70'
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className={`font-bold text-lg ${activeChapter === index ? 'text-white' : 'text-gray-300'}`}>
+                  <h3 className={`font-bold text-lg ${activeChapter === index ? 'text-white' : 'text-slate-300'}`}>
                     {chapter.title}
                   </h3>
                   <span className={`text-sm px-2 py-1 rounded ${
                     activeChapter === index
                       ? 'bg-blue-500/20 text-blue-400'
-                      : 'bg-gray-500/20 text-gray-400'
+                      : 'bg-slate-500/20 text-slate-400'
                   }`}>
                     {chapter.year}
                   </span>
                 </div>
-                <p className={`text-sm ${activeChapter === index ? 'text-gray-200' : 'text-gray-400'}`}>
+                <p className={`text-sm ${activeChapter === index ? 'text-slate-200' : 'text-slate-400'}`}>
                   {chapter.lesson}
                 </p>
               </motion.button>
@@ -135,21 +135,23 @@ export function InteractiveStory() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-8"
           >
-            <div className="bg-slate-800/50 dark:bg-slate-800/70 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-xl p-8">
-              <div className="mb-6">
-                <Image
-                  src={storyChapters[activeChapter].image}
-                  alt={storyChapters[activeChapter].title}
-                  width={600}
-                  height={400}
-                  loading="lazy"
-                  className="w-full h-64 object-cover rounded-lg"
-                />
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8">
+              <div className="mb-8">
+                <div className="relative w-full max-w-2xl mx-auto">
+                  <Image
+                    src={storyChapters[activeChapter].image}
+                    alt={storyChapters[activeChapter].title}
+                    width={600}
+                    height={500}
+                    loading="lazy"
+                    className="w-full h-auto object-contain rounded-lg shadow-lg"
+                  />
+                </div>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-2xl font-bold text-white">
                     {storyChapters[activeChapter].title}
                   </h3>
                   <span className="px-3 py-1 bg-gradient-to-r from-primary to-secondary text-white text-sm rounded-full">
@@ -157,12 +159,12 @@ export function InteractiveStory() {
                   </span>
                 </div>
 
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-slate-300 leading-relaxed">
                   {storyChapters[activeChapter].story}
                 </p>
 
-                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-primary/5 dark:to-secondary/5 backdrop-blur-sm border border-primary/20 dark:border-primary/10 rounded-lg p-4">
-                  <p className="text-primary dark:text-primary/80 italic font-medium">
+                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 backdrop-blur-sm border border-primary/20 rounded-lg p-4">
+                  <p className="text-primary/80 italic font-medium">
                     &quot;{storyChapters[activeChapter].lesson}&quot;
                   </p>
                 </div>
@@ -177,7 +179,7 @@ export function InteractiveStory() {
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       activeChapter === index
                         ? 'bg-gradient-to-r from-primary to-secondary w-8'
-                        : 'bg-slate-500 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500'
+                        : 'bg-slate-500 hover:bg-slate-400'
                     }`}
                     aria-label={`Go to chapter ${index + 1}`}
                   />

@@ -54,7 +54,7 @@ const latestWorks = [
 
 export function LatestWorks() {
   return (
-    <section className="py-8 lg:py-12 bg-slate-50/40 dark:bg-slate-900/90 transition-all duration-500" aria-labelledby="latest-works-heading">
+    <section className="py-8 lg:py-12 bg-slate-900/90 transition-all duration-500" aria-labelledby="latest-works-heading">
       <div className="container-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export function LatestWorks() {
         >
           <motion.h2
             id="latest-works-heading"
-            className="text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-slate-100 mb-3"
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-100 mb-3"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -101,26 +101,26 @@ export function LatestWorks() {
                 y: -12,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              className="group relative bg-white/95 backdrop-blur-sm border border-slate-200/60 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-primary/50 focus-within:ring-offset-2 shadow-xl hover:shadow-2xl transition-all duration-500 dark:bg-slate-800/95 dark:border-slate-700/60 hover:-translate-y-2"
+              className="group relative bg-slate-800/95 backdrop-blur-sm border border-slate-700/60 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-primary/50 focus-within:ring-offset-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               role="gridcell"
               tabIndex={0}
             >
               {/* Enhanced Image Section */}
-              <div className="relative h-44 overflow-hidden">
+              <div className="relative overflow-hidden">
                 <Image
                   src={work.image}
                   alt={`${work.title} - ${work.description}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  width={400}
+                  height={300}
                   loading="lazy"
-                  className="object-cover transition-all duration-500 group-hover:scale-110"
+                  className="w-full h-auto object-contain transition-all duration-500 group-hover:scale-105"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t ${work.gradient} opacity-20 group-hover:opacity-10 transition-opacity duration-300`}></div>
 
                 {/* Enhanced Category badge */}
-                <div className="absolute top-3 right-3">
+                <div className="absolute top-2 right-2">
                   <motion.span
-                    className="px-3 py-1.5 bg-white/95 backdrop-blur-md text-slate-800 text-xs font-bold rounded-full border border-slate-200/60 shadow-lg dark:bg-slate-800/95 dark:text-slate-200 dark:border-slate-600/60"
+                    className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-slate-800/95 backdrop-blur-md text-slate-200 text-xs font-bold rounded-full border border-slate-600/60 shadow-lg"
                     whileHover={{ scale: 1.05 }}
                   >
                     {work.category}
@@ -128,27 +128,32 @@ export function LatestWorks() {
                 </div>
 
                 {/* Tech stack indicators */}
-                <div className="absolute bottom-3 left-3 flex gap-1.5">
-                  {work.tech.slice(0, 3).map((tech, i) => (
+                <div className="absolute bottom-2 left-2 flex gap-0.5 sm:gap-1">
+                  {work.tech.slice(0, 2).map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 bg-white/85 backdrop-blur-sm text-slate-700 text-xs font-semibold rounded-full border border-slate-200/50 shadow-sm dark:bg-slate-800/85 dark:text-slate-300 dark:border-slate-600/50"
+                      className="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-slate-800/85 backdrop-blur-sm text-slate-300 text-xs font-semibold rounded-full border border-slate-600/50 shadow-sm"
                     >
                       {tech}
                     </span>
                   ))}
+                  {work.tech.length > 2 && (
+                    <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-slate-800/85 backdrop-blur-sm text-slate-300 text-xs font-semibold rounded-full border border-slate-600/50 shadow-sm">
+                      +{work.tech.length - 2}
+                    </span>
+                  )}
                 </div>
               </div>
 
               {/* Enhanced Content Section */}
               <div className="p-5">
                 <motion.h3
-                  className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-1 text-slate-900 dark:text-slate-100 leading-tight"
+                  className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-1 text-slate-100 leading-tight"
                   whileHover={{ x: 4 }}
                 >
                   {work.title}
                 </motion.h3>
-                <p className="text-sm mb-5 line-clamp-2 leading-relaxed text-slate-600 dark:text-slate-300 font-medium">
+                <p className="text-sm mb-5 line-clamp-2 leading-relaxed text-slate-300 font-medium">
                   {work.description}
                 </p>
 
@@ -156,7 +161,7 @@ export function LatestWorks() {
                 <div className="flex gap-3">
                   <Link href={work.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <motion.button
-                      className="w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-primary hover:via-primary/90 hover:to-primary text-white px-4 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 group/btn shadow-lg hover:shadow-xl"
+                      className="w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-primary hover:via-primary/90 hover:to-primary text-white px-3 py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 group/btn shadow-lg hover:shadow-xl"
                       whileHover={{
                         scale: 1.02,
                         boxShadow: "0 15px 30px rgba(0, 163, 255, 0.3)"
@@ -171,7 +176,7 @@ export function LatestWorks() {
 
                   <Link href={work.detailsUrl} className="flex-1">
                     <motion.button
-                      className="w-full border-2 border-slate-300 hover:border-primary hover:bg-primary/5 text-slate-800 hover:text-primary px-4 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 group/btn dark:border-slate-600 dark:text-slate-200 dark:hover:bg-primary/10 dark:hover:text-primary shadow-md hover:shadow-lg"
+                      className="w-full border-2 border-slate-600 hover:border-primary hover:bg-primary/5 text-slate-200 hover:text-primary px-3 py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 group/btn shadow-md hover:shadow-lg"
                       whileHover={{
                         scale: 1.02,
                         borderColor: "rgb(0, 163, 255)"

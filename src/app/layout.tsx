@@ -172,7 +172,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 text-slate-900 antialiased`}>
+      <body suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 antialiased`}>
         {/* Skip to content link for keyboard navigation */}
         <a
           href="#main-content"
@@ -182,8 +182,8 @@ export default function RootLayout({
         </a>
         <ThemeProvider>
           <div className="relative">
-            {/* Subtle background pattern */}
-            <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30 pointer-events-none" />
+            {/* Subtle background pattern - always dark for consistency */}
+            <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,rgba(15,23,42,0.8),rgba(15,23,42,0.4))] dark:[mask-image:linear-gradient(180deg,rgba(15,23,42,0.8),rgba(15,23,42,0.4))] opacity-40 pointer-events-none" />
 
             {/* Main content */}
             <div id="main-content" className="relative z-10">

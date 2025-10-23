@@ -12,19 +12,23 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>('dark') // Always default to dark
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    // Check for saved theme preference or default to light
+    // Force dark mode always - ignore system preferences
     const savedTheme = localStorage.getItem('theme') as Theme
-    if (savedTheme) {
-      setTheme(savedTheme)
+    if (savedTheme && savedTheme !== 'dark') {
+      // If user previously chose light mode, override to dark
+      setTheme('dark')
+      localStorage.setItem('theme', 'dark')
+    } else if (!savedTheme) {
+      // New users always get dark mode
+      setTheme('dark')
+      localStorage.setItem('theme', 'dark')
     } else {
-      // Check system preference
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      setTheme(systemPrefersDark ? 'dark' : 'light')
+      setTheme('dark') // Ensure it's always dark
     }
   }, [])
 
@@ -41,7 +45,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [theme, mounted])
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light')
+    // Disabled - always maintain dark mode for consistent branding
+    // setTheme(prev => prev === 'light' ? 'dark' : 'light')
   }
 
   if (!mounted) {

@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const footerNavigation = [
   { name: 'About', href: '/about' },
-  { name: 'Portfolio', href: '/portfolio-ventures' },
+  { name: 'Ventures & Portfolio', href: '/portfolio-ventures' },
   { name: 'Blog', href: '/blog' },
   { name: 'Learn', href: '/learn' },
   { name: 'Contact', href: '/contact' },
@@ -28,7 +28,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-slate-900/70 via-slate-900/80 to-slate-900/95 dark:bg-slate-900/95 border-t border-primary/20 dark:border-slate-700/70 transition-all duration-500">
+    <footer className="bg-gradient-to-br from-slate-900/70 via-slate-900/80 to-slate-900/95 border-t border-primary/20 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Brand Section - Left Side */}
@@ -46,10 +46,10 @@ export function Footer() {
 
               <div>
                 <div className="space-y-0.5">
-                  <p className="text-white dark:text-slate-100 font-bold text-lg leading-tight">
+                  <p className="text-white font-bold text-lg leading-tight">
                     Chukwuka Emmanuel Ogugua
                   </p>
-                  <p className="text-slate-400 dark:text-slate-300 font-medium text-sm">Software Engineer & Business Strategist</p>
+                  <p className="text-slate-400 font-medium text-sm">Software Engineer & Business Strategist</p>
                 </div>
               </div>
             </Link>
@@ -70,13 +70,13 @@ export function Footer() {
             <div className="grid grid-cols-2 gap-6">
               {/* Navigation Links */}
               <div>
-                <h3 className="text-white dark:text-slate-100 font-bold text-xs mb-3 uppercase tracking-wider">Navigate</h3>
+                <h3 className="text-white font-bold text-xs mb-3 uppercase tracking-wider">Navigate</h3>
                 <nav className="space-y-2">
                   {footerNavigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:px-2 hover:py-1 hover:rounded"
+                      className="block text-slate-400 hover:text-white transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:px-2 hover:py-1 hover:rounded"
                     >
                       {item.name}
                     </Link>
@@ -86,13 +86,13 @@ export function Footer() {
 
               {/* Services Links */}
               <div>
-                <h3 className="text-white dark:text-slate-100 font-bold text-xs mb-3 uppercase tracking-wider">Services</h3>
+                <h3 className="text-white font-bold text-xs mb-3 uppercase tracking-wider">Services</h3>
                 <nav className="space-y-2">
                   {servicesNavigation.slice(0, 4).map((service) => (
                     <Link
                       key={service.name}
                       href={service.href}
-                      className="block text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:px-2 hover:py-1 hover:rounded"
+                      className="block text-slate-400 hover:text-white transition-colors duration-200 text-sm font-medium hover:translate-x-1 transform hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:px-2 hover:py-1 hover:rounded"
                     >
                       {service.name}
                     </Link>
@@ -104,7 +104,7 @@ export function Footer() {
 
           {/* Social & Connect - Right Side */}
           <div className="lg:col-span-3">
-            <h3 className="text-white dark:text-slate-100 font-bold text-xs mb-3 uppercase tracking-wider">Connect</h3>
+            <h3 className="text-white font-bold text-xs mb-3 uppercase tracking-wider">Connect</h3>
 
             {/* Social Links */}
             <div className="flex items-center space-x-2 mb-4">
@@ -114,7 +114,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 dark:text-slate-300 hover:text-white dark:hover:text-slate-100 transition-all duration-300 p-1.5 rounded hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:backdrop-blur-sm hover:scale-110 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:ring-offset-2"
+                  className="text-slate-400 hover:text-white transition-all duration-300 p-1.5 rounded hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:backdrop-blur-sm hover:scale-110 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:ring-offset-2"
                   aria-label={`Visit ${social.name}`}
                 >
                   <social.icon size={16} />
@@ -122,9 +122,12 @@ export function Footer() {
               ))}
             </div>
 
-            <div className="text-slate-400 dark:text-slate-300 text-sm">
+            <div className="text-slate-400 text-sm">
               <p className="font-medium">Enugu, Nigeria</p>
-              <a href="mailto:emmachuka@gmail.com" className="hover:text-white dark:hover:text-slate-100 transition-colors duration-200 font-medium">
+              <a href="tel:+2348064508595" className="hover:text-white transition-colors duration-200 font-medium">
+                +234 806 450 8595
+              </a>
+              <a href="mailto:emmachuka@gmail.com" className="hover:text-white transition-colors duration-200 font-medium block mt-1">
                 emmachuka@gmail.com
               </a>
             </div>
@@ -132,8 +135,8 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-slate-800/50 dark:border-slate-700/50 mt-8 pt-6 text-center">
-          <p className="text-slate-500 dark:text-slate-400 text-xs font-medium">
+        <div className="border-t border-slate-800/50 mt-8 pt-6 text-center">
+          <p className="text-slate-500 text-xs font-medium">
             © {new Date().getFullYear()} Emmanuel Chukwuka Ogugua. All rights reserved.
           </p>
         </div>

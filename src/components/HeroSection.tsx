@@ -129,7 +129,7 @@ export function HeroSection() {
               >
                 {/* Stats Pills */}
                 <motion.div
-                  className={`flex flex-wrap gap-4 ${
+                  className={`flex flex-wrap gap-1.5 sm:gap-3 ${
                     currentPersonaData.id === 1 
                       ? 'justify-start md:justify-start' 
                       : currentPersonaData.id === 0 
@@ -143,7 +143,7 @@ export function HeroSection() {
                   {currentPersonaData.stats.map((stat) => (
                     <motion.div
                       key={stat.label}
-                      className={`bg-gradient-to-r ${currentPersonaData.id === 0 ? 'from-primary/80 to-secondary/80' : 'from-secondary/80 to-primary/80'} backdrop-blur-xl text-white px-5 py-3 rounded-full text-sm font-semibold border-2 ${currentPersonaData.id === 0 ? 'border-primary/60 hover:border-primary/80' : 'border-secondary/60 hover:border-secondary/80'} shadow-lg hover:shadow-xl`}
+                      className={`bg-gradient-to-r ${currentPersonaData.id === 0 ? 'from-primary/80 to-secondary/80' : 'from-secondary/80 to-primary/80'} backdrop-blur-xl text-white px-2 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold border-2 ${currentPersonaData.id === 0 ? 'border-primary/60 hover:border-primary/80' : 'border-secondary/60 hover:border-secondary/80'} shadow-lg hover:shadow-xl`}
                       whileHover={{ 
                         scale: 1.05, 
                         backgroundColor: currentPersonaData.id === 0 ? "rgba(0, 163, 255, 0.9)" : "rgba(90, 200, 250, 0.9)",
@@ -160,7 +160,7 @@ export function HeroSection() {
 
                 {/* CTA Buttons */}
                 <motion.div
-                  className={`flex flex-col sm:flex-row gap-4 ${
+                  className={`flex flex-col sm:flex-row gap-3 ${
                     currentPersonaData.id === 1 
                       ? 'justify-start md:justify-start' 
                       : currentPersonaData.id === 0 
@@ -173,7 +173,7 @@ export function HeroSection() {
                 >
                   <Link href={currentPersonaData.primaryCtaLink}>
                     <motion.button
-                      className={`bg-gradient-to-r ${currentPersonaData.id === 0 ? 'from-primary to-secondary' : 'from-secondary to-primary'} backdrop-blur-xl hover:opacity-90 text-white border-2 ${currentPersonaData.id === 0 ? 'border-primary/60 hover:border-primary/80' : 'border-secondary/60 hover:border-secondary/80'} px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl`}
+                      className={`bg-gradient-to-r ${currentPersonaData.id === 0 ? 'from-primary to-secondary' : 'from-secondary to-primary'} backdrop-blur-xl hover:opacity-90 text-white border-2 ${currentPersonaData.id === 0 ? 'border-primary/60 hover:border-primary/80' : 'border-secondary/60 hover:border-secondary/80'} px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl`}
                       whileHover={{
                         scale: 1.05,
                         boxShadow: currentPersonaData.id === 0 ? "0 25px 50px rgba(0, 163, 255, 0.4)" : "0 25px 50px rgba(90, 200, 250, 0.4)",
@@ -192,7 +192,7 @@ export function HeroSection() {
                     // Special case for business strategist - show Contact button (secondary CTA)
                     <Link href={currentPersonaData.secondaryCtaLink}>
                       <motion.button
-                        className="bg-gradient-to-r from-secondary/20 to-primary/20 backdrop-blur-xl hover:opacity-80 text-white border-2 border-secondary/60 hover:border-secondary/80 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                        className="bg-gradient-to-r from-secondary/20 to-primary/20 backdrop-blur-xl hover:opacity-80 text-white border-2 border-secondary/60 hover:border-secondary/80 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                         whileHover={{
                           scale: 1.05,
                           borderColor: "rgba(90, 200, 250, 0.9)",
@@ -209,7 +209,7 @@ export function HeroSection() {
                   ) : (
                     <Link href={currentPersonaData.secondaryCtaLink}>
                       <motion.button
-                        className="bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-xl hover:opacity-80 text-white border-2 border-primary/60 hover:border-primary/80 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                        className="bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-xl hover:opacity-80 text-white border-2 border-primary/60 hover:border-primary/80 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                         whileHover={{
                           scale: 1.05,
                           borderColor: "rgba(0, 163, 255, 0.9)",
@@ -229,7 +229,7 @@ export function HeroSection() {
 
               {/* Persona Indicators */}
               <motion.div
-                className="flex justify-center mt-8 space-x-3"
+                className="flex justify-center mt-6 space-x-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
@@ -238,7 +238,7 @@ export function HeroSection() {
                   <motion.button
                     key={index}
                     onClick={() => handlePersonaChange(index)}
-                    className={`w-4 h-4 rounded-full transition-all duration-300 shadow-lg ${
+                    className={`w-3 h-3 rounded-full transition-all duration-300 shadow-lg ${
                       index === currentPersona
                         ? `bg-gradient-to-r from-primary to-secondary scale-125 shadow-primary/50`
                         : 'bg-gradient-to-r from-primary/50 to-secondary/50 hover:from-primary/70 hover:to-secondary/70 shadow-primary/30'
@@ -266,7 +266,7 @@ export function HeroSection() {
           ease: "easeInOut",
         }}
       >
-        <div className="w-7 h-12 border-2 border-primary/70 rounded-full flex justify-center shadow-lg">
+        <div className="w-6 h-10 border-2 border-primary/70 rounded-full flex justify-center shadow-lg">
           <motion.div
             className="w-1.5 h-4 bg-gradient-to-b from-primary to-secondary rounded-full mt-3 shadow-sm"
             animate={{

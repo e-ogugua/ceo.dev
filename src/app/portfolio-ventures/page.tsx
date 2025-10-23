@@ -6,34 +6,34 @@ import { DynamicBusinessVentures } from '@/components/DynamicComponents'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Portfolio & Ventures',
-  description: 'Explore Emmanuel Chukwuka Ogugua\'s comprehensive portfolio featuring 6 innovative software projects including EmmanuelOS SWART Dashboard, FarmTrack, Bible Game Hub, FinanceFlow Pro, CodeMentor Academy, and Jepligom Ministry Portal. Also discover 6 successful business ventures including Emmdra Empire, PoshPOULE Farms, CEOTR Ltd, Zereth Foods, Roka Table Water, and CEOWrites.',
+  title: 'Business Ventures & Portfolio - Emmanuel Chukwuka Ogugua',
+  description: 'Explore Emmanuel Chukwuka Ogugua\'s comprehensive portfolio featuring 6 successful business ventures including Emmdra Empire, PoshPOULE Farms, CEOTR Ltd, Zereth Foods, Roka Table Water, and CEOWrites. Also discover 6 innovative software projects including EmmanuelOS SWART Dashboard, FarmTrack, Bible Game Hub, FinanceFlow Pro, CodeMentor Academy, and Jepligom Ministry Portal.',
   keywords: [
-    'Software Portfolio', 'Business Ventures', 'Emmanuel Ogugua Projects',
+    'Business Ventures', 'Software Portfolio', 'Emmanuel Ogugua Projects',
+    'Emmdra Empire', 'PoshPOULE Farms', 'CEOTR Ltd', 'Zereth Foods', 'Roka Table Water', 'CEOWrites',
     'EmmanuelOS Dashboard', 'FarmTrack App', 'Bible Game Hub', 'FinanceFlow Pro',
-    'CodeMentor Academy', 'Jepligom Ministry', 'Emmdra Empire', 'PoshPOULE Farms',
-    'CEOTR Ltd', 'Zereth Foods', 'Roka Table Water', 'CEOWrites Blog',
-    'Full Stack Developer Portfolio', 'Tech Entrepreneur Ventures'
+    'CodeMentor Academy', 'Jepligom Ministry', 'Tech Entrepreneur Ventures',
+    'Full Stack Developer Portfolio', 'Business Leadership Portfolio'
   ],
   openGraph: {
-    title: 'Portfolio & Ventures - Emmanuel Chukwuka Ogugua',
-    description: 'Comprehensive showcase of software engineering projects and business ventures by Emmanuel Chukwuka Ogugua. View 6 innovative web applications and 6 successful entrepreneurial ventures.',
+    title: 'Business Ventures & Portfolio - Emmanuel Chukwuka Ogugua',
+    description: 'Comprehensive showcase of business ventures and software engineering projects by Emmanuel Chukwuka Ogugua. View 6 successful entrepreneurial ventures and 6 innovative web applications.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio & Ventures - Emmanuel Chukwuka Ogugua',
-    description: 'Comprehensive showcase of software engineering projects and business ventures by Emmanuel Chukwuka Ogugua.',
+    title: 'Business Ventures & Portfolio - Emmanuel Chukwuka Ogugua',
+    description: 'Comprehensive showcase of business ventures and software engineering projects by Emmanuel Chukwuka Ogugua.',
   },
 }
 
 export default function PortfolioVentures() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-all duration-500">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-all duration-500">
       <Navigation />
       <PortfolioHero />
-      <DynamicDevelopmentPortfolio />
       <DynamicBusinessVentures />
+      <DynamicDevelopmentPortfolio />
       <Footer />
     </main>
   )

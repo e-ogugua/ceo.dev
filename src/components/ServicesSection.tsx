@@ -184,10 +184,10 @@ export function ServicesSection() {
             <p className="text-gray-300 mb-6">
               Every project is unique. Let&apos;s discuss your specific requirements and create a tailored solution that perfectly fits your needs and budget.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/contact?service=custom-solution">
                 <motion.button
-                  className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200"
+                  className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -197,11 +197,11 @@ export function ServicesSection() {
 
               <Link href="/portfolio-ventures">
                 <motion.button
-                  className="border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200"
+                  className="border border-white/20 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  View Portfolio
+                  View Ventures & Portfolio
                 </motion.button>
               </Link>
             </div>

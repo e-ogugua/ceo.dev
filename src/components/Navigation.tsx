@@ -24,7 +24,7 @@ import { ThemeToggle } from './ThemeToggle'
 const navigationItems = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About', href: '/about', icon: User },
-  { name: 'Portfolio & Ventures', href: '/portfolio-ventures', icon: Briefcase },
+  { name: 'Ventures & Portfolio', href: '/portfolio-ventures', icon: Briefcase },
   { name: 'Learn', href: '/learn', icon: BookOpen },
   { name: 'Blog', href: '/blog', icon: FileText },
   { name: 'Contact', href: '/contact', icon: Mail },
