@@ -2,6 +2,7 @@
   "name": "ceoportfolio",
   "version": "4.5.0",
   "description": "CEO Portfolio - Chukwuka Emmanuel Ogugua",
+  "type": "module",
   "main": "next.config.js",
   "scripts": {
     "dev": "next dev",
