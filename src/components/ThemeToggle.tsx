@@ -1,11 +1,11 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
+import { Moon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from './ThemeProvider'
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme()
+  const { toggleTheme } = useTheme()
 
   return (
     <motion.button
@@ -17,7 +17,7 @@ export function ThemeToggle() {
         boxShadow: "0 8px 25px rgba(0, 163, 255, 0.15)"
       }}
       whileTap={{ scale: 0.95 }}
-      aria-label="Theme settings (currently dark mode)"
+      aria-label="Theme preferences (dark mode)"
     >
       <AnimatePresence mode="wait">
         <motion.div
