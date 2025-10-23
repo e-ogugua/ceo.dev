@@ -135,21 +135,71 @@ ceo.dev/
 | `npm run build` | Create optimized production build |
 | `npm run start` | Start production server |
 | `npm run lint` | Run ESLint for code quality |
+| `npm run test` | Run Jest test suite |
 | `npm run analyze` | Analyze bundle size and dependencies |
+| `npm run deploy` | Deploy to Vercel production environment |
 
 ## Deployment
 
-### Vercel Deployment
-The project is configured for automatic deployment on Vercel through GitHub integration. Each push to the main branch triggers a production deployment.
+### Automatic Production Deployment
+The project is configured for **automatic production deployment** through GitHub Actions. Every push to the `main` branch triggers:
 
-### Manual Deployment
+1. **Automated Testing**: All tests run to ensure code quality
+2. **Production Build**: Optimized build is created
+3. **Vercel Deployment**: Deployed to production environment (not preview)
+
+### GitHub Actions Workflow
+- **File**: `.github/workflows/deploy-production.yml`
+- **Trigger**: Push to `main` branch or manual workflow dispatch
+- **Environment**: Production deployment with all environment variables
+- **Testing**: Full test suite runs before deployment
+
+### Manual Deployment Options
+
+#### Vercel CLI (Alternative)
 ```bash
-# Deploy to Vercel production
+# Install Vercel CLI globally
+npm i -g vercel
+
+# Deploy to production
 vercel --prod
 
-# Set environment variables in Vercel dashboard
-# Required: SMTP_USER, SMTP_PASS, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
+# Set production environment variables
+vercel env add SMTP_USER production
+vercel env add SMTP_PASS production
+vercel env add NEXT_PUBLIC_SUPABASE_URL production
+vercel env add NEXT_PUBLIC_SUPABASE_ANON_KEY production
 ```
+
+#### Direct Push Method
+```bash
+# Push to main branch (triggers automatic deployment)
+git add .
+git commit -m "feat: update for production deployment"
+git push origin main
+```
+
+### Environment Variables Setup
+
+**Required for Production:**
+```bash
+# Email Configuration (Gmail SMTP)
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-gmail-app-password
+ORDER_EMAIL_FROM=your-email@gmail.com
+ORDER_NOTIFICATIONS_EMAIL=admin@yourdomain.com
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+# Vercel Configuration (for GitHub Actions)
+VERCEL_TOKEN=your-vercel-token
+VERCEL_ORG_ID=your-org-id
+VERCEL_PROJECT_ID=your-project-id
+```
+
+**Note:** Set these as GitHub repository secrets for automatic deployment to work properly.
 
 ### Performance Considerations
 - **Image Optimization**: Next.js Image component with WebP/AVIF formats

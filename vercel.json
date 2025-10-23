@@ -1,0 +1,33 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm ci",
+  "devCommand": "npm run dev",
+  "regions": ["fra1"],
+  "functions": {
+    "src/pages/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    },
+    "src/pages/api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/old-path",
+      "destination": "/new-path",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ],
+  "github": {
+    "silent": true
+  },
+  "scope": "ceodev"
+}
