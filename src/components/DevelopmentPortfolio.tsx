@@ -10,7 +10,7 @@ const developmentProjects = [
     id: 1,
     title: 'EmmanuelOS SWART Dashboard',
     description: 'My personal developer command center that showcases, monitors, and manages some of the apps I\'ve built — a unified system-wide analytics and portfolio dashboard.',
-    image: '/images/eogugua_emmanuelOSLogo.png',
+    image: '/images/emmanuelosScreenshot1.png',
     category: 'Developer Productivity / Portfolio Management',
     status: 'In Production (v3.0)',
     techStack: ['Next.js 15', 'React 18', 'Tailwind CSS', 'Supabase', 'Framer Motion'],
@@ -163,13 +163,9 @@ export function DevelopmentPortfolio() {
                     <Image
                       src={project.image}
                       alt={project.title}
-                      width={200}
-                      height={150}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
-                      style={{
-                        width: 'auto',
-                        height: 'auto'
-                      }}
                       onError={(e) => {
                         // Fallback to placeholder if image fails to load
                         const target = e.currentTarget as HTMLImageElement;
@@ -185,7 +181,7 @@ export function DevelopmentPortfolio() {
                       <div className="text-5xl font-bold text-white/20 mb-2">
                         {project.title.split(' ')[0].charAt(0)}
                       </div>
-                      <div className="text-sm text-gray-400">
+                      <div className="text-sm text-slate-400">
                         {project.category}
                       </div>
                     </div>
@@ -285,17 +281,17 @@ export function DevelopmentPortfolio() {
           viewport={{ once: true }}
           className="text-center mt-8"
         >
-          <div className="inline-flex items-center space-x-6 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-4">
+          <div className="inline-flex items-center space-x-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4">
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-400 mb-1">{developmentProjects.length}</div>
-              <div className="text-xs text-gray-400">Projects Completed Recently</div>
+              <div className="text-xs text-slate-400">Projects Completed Recently</div>
             </div>
 
-            <div className="w-px h-8 bg-white/20"></div>
+            <div className="w-px h-8 bg-slate-700/50"></div>
 
             <div className="text-center">
               <div className="text-sm font-semibold text-white mb-1">Always Learning</div>
-              <div className="text-xs text-gray-400">New technologies & frameworks</div>
+              <div className="text-xs text-slate-400">New technologies & frameworks</div>
             </div>
           </div>
         </motion.div>
