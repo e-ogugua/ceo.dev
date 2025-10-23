@@ -198,14 +198,14 @@ export function BusinessDealForm({
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title || config.title}
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-slate-300 text-lg">
             {description || config.description}
           </p>
         </motion.div>
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white/5 dark:bg-slate-800/30 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-xl p-8 space-y-6"
+          className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8 space-y-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -265,7 +265,7 @@ export function BusinessDealForm({
           {/* Basic Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                 Full Name <span className="text-red-400">*</span>
               </label>
               <input
@@ -275,7 +275,7 @@ export function BusinessDealForm({
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.name ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-4 py-3 bg-slate-800/50 border rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.name ? 'border-red-400' : 'border-slate-700/50'}`}
                 placeholder="Your full name"
               />
               {errors.name && (
@@ -284,7 +284,7 @@ export function BusinessDealForm({
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                 Email <span className="text-red-400">*</span>
               </label>
               <input
@@ -294,7 +294,7 @@ export function BusinessDealForm({
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.email ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-4 py-3 bg-slate-800/50 border rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.email ? 'border-red-400' : 'border-slate-700/50'}`}
                 placeholder="your@email.com"
               />
               {errors.email && (
@@ -305,7 +305,7 @@ export function BusinessDealForm({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-2">
                 Company/Organization
               </label>
               <input
@@ -314,13 +314,13 @@ export function BusinessDealForm({
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Your company or organization"
               />
             </div>
 
             <div>
-              <label htmlFor="projectType" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="projectType" className="block text-sm font-medium text-slate-300 mb-2">
                 {clientType === 'employer' ? 'Position/Role' :
                  clientType === 'collaborator' ? 'Collaboration Type' :
                  clientType === 'investor' ? 'Investment Focus' : 'Project Type'}
@@ -330,7 +330,7 @@ export function BusinessDealForm({
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">Select {clientType === 'employer' ? 'position' : clientType === 'collaborator' ? 'collaboration type' : clientType === 'investor' ? 'investment focus' : 'project type'}</option>
                 {clientType === 'customer' && (
@@ -380,7 +380,7 @@ export function BusinessDealForm({
           {clientType === 'customer' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="budget" className="block text-sm font-medium text-slate-300 mb-2">
                   Budget Range
                 </label>
                 <select
@@ -388,7 +388,7 @@ export function BusinessDealForm({
                   name="budget"
                   value={formData.budget}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select budget range</option>
                   <option value="under-10k">Under $10,000</option>
@@ -400,7 +400,7 @@ export function BusinessDealForm({
               </div>
 
               <div>
-                <label htmlFor="timeline" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="timeline" className="block text-sm font-medium text-slate-300 mb-2">
                   Timeline
                 </label>
                 <select
@@ -408,7 +408,7 @@ export function BusinessDealForm({
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select timeline</option>
                   <option value="asap">ASAP (Rush)</option>
@@ -424,7 +424,7 @@ export function BusinessDealForm({
           {clientType === 'employer' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="teamSize" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="teamSize" className="block text-sm font-medium text-slate-300 mb-2">
                   Team Size
                 </label>
                 <select
@@ -432,7 +432,7 @@ export function BusinessDealForm({
                   name="teamSize"
                   value={formData.teamSize}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 >
                   <option value="">Select team size</option>
                   <option value="startup">Startup (1-10)</option>
@@ -444,7 +444,7 @@ export function BusinessDealForm({
               </div>
 
               <div>
-                <label htmlFor="timeline" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="timeline" className="block text-sm font-medium text-slate-300 mb-2">
                   Start Date
                 </label>
                 <select
@@ -452,7 +452,7 @@ export function BusinessDealForm({
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 >
                   <option value="">Select start date</option>
                   <option value="immediate">Immediate</option>
@@ -466,7 +466,7 @@ export function BusinessDealForm({
 
           {clientType === 'collaborator' && (
             <div>
-              <label htmlFor="currentChallenges" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="currentChallenges" className="block text-sm font-medium text-slate-300 mb-2">
                 Current Challenges & Goals
               </label>
               <textarea
@@ -475,7 +475,7 @@ export function BusinessDealForm({
                 value={formData.currentChallenges}
                 onChange={handleInputChange}
                 rows={3}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                 placeholder="What challenges are you facing? What are your collaboration goals?"
               />
             </div>
@@ -484,7 +484,7 @@ export function BusinessDealForm({
           {clientType === 'investor' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="budget" className="block text-sm font-medium text-slate-300 mb-2">
                   Investment Range
                 </label>
                 <select
@@ -492,7 +492,7 @@ export function BusinessDealForm({
                   name="budget"
                   value={formData.budget}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 >
                   <option value="">Select investment range</option>
                   <option value="under-100k">Under $100,000</option>
@@ -504,7 +504,7 @@ export function BusinessDealForm({
               </div>
 
               <div>
-                <label htmlFor="timeline" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="timeline" className="block text-sm font-medium text-slate-300 mb-2">
                   Investment Timeline
                 </label>
                 <select
@@ -512,7 +512,7 @@ export function BusinessDealForm({
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 >
                   <option value="">Select timeline</option>
                   <option value="immediate">Ready to invest now</option>
@@ -525,7 +525,7 @@ export function BusinessDealForm({
           )}
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
               {clientType === 'employer' ? 'Why You Should Hire Me & Your Requirements' :
                clientType === 'collaborator' ? 'Collaboration Details & Vision' :
                clientType === 'investor' ? 'Investment Thesis & Requirements' :
@@ -538,7 +538,7 @@ export function BusinessDealForm({
               onChange={handleInputChange}
               required
               rows={5}
-              className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.message ? 'border-red-400' : 'border-white/20'}`}
+              className={`w-full px-4 py-3 bg-slate-800/50 border rounded-lg text-white placeholder-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.message ? 'border-red-400' : 'border-slate-700/50'}`}
               placeholder={
                 clientType === 'employer' ? 'Tell me about your company culture, tech stack, and what you\'re looking for in a team member...' :
                 clientType === 'collaborator' ? 'Describe the collaboration opportunity and what you hope to achieve together...' :
@@ -576,7 +576,7 @@ export function BusinessDealForm({
             )}
           </motion.button>
 
-          <p className="text-gray-400 text-sm text-center">
+          <p className="text-slate-400 text-sm text-center">
             {clientType === 'employer' ? 'I\'ll review your requirements and get back to you within 48 hours.' :
              clientType === 'collaborator' ? 'I\'ll review your collaboration proposal and respond within 24 hours.' :
              clientType === 'investor' ? 'I\'ll review your investment opportunity and get back to you soon.' :

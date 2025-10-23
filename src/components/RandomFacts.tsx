@@ -48,7 +48,7 @@ const facts = [
 
 export function RandomFacts() {
   return (
-    <section className="py-8 bg-slate-50/60 dark:bg-slate-900/85">
+    <section className="py-8 bg-slate-900/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -58,13 +58,13 @@ export function RandomFacts() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-1">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-100 mb-1">
             Random facts{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               about me
             </span>
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-300">
+          <p className="text-sm text-slate-300">
             Discover what makes me tick
           </p>
         </motion.div>
@@ -109,14 +109,15 @@ export function RandomFacts() {
                 whileHover={{ scale: 1.02, y: -1 }}
                 className="group"
               >
-                <div className="relative bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border border-slate-200/60 dark:border-slate-700/60 rounded-lg p-3 hover:border-slate-300/70 dark:hover:border-slate-600/70 transition-all duration-300 shadow-md hover:shadow-lg">
+                <div className="relative bg-slate-800/95 backdrop-blur-sm border border-slate-700/60 rounded-lg p-3 hover:border-slate-600/70 transition-all duration-300 shadow-md hover:shadow-lg">
+                  <div className="w-px h-6 bg-slate-700/50"></div>
                   {/* Icon */}
                   <div className="text-lg mb-2 text-center">
                     {fact.icon}
                   </div>
 
                   {/* Fact Text */}
-                  <p className="text-slate-700 dark:text-slate-200 text-xs leading-tight text-center font-medium">
+                  <p className="text-slate-200 text-xs leading-tight text-center font-medium">
                     {fact.fact}
                   </p>
 
@@ -136,8 +137,8 @@ export function RandomFacts() {
           viewport={{ once: true }}
           className="text-center mt-6"
         >
-          <div className="inline-flex items-center space-x-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 rounded-lg px-4 py-2">
-            <span className="text-slate-600 dark:text-slate-300 text-sm italic">
+          <div className="inline-flex items-center space-x-2 bg-slate-800/90 backdrop-blur-sm border border-slate-700/50 rounded-lg px-4 py-2">
+            <span className="text-slate-300 text-sm italic">
               &quot;Embracing life&apos;s diverse experiences.&quot;
             </span>
           </div>

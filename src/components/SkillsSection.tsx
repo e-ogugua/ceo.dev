@@ -27,7 +27,7 @@ const skillCategories = [
 
 export function SkillsSection() {
   return (
-    <section className="py-8 bg-slate-50/70 dark:bg-slate-900/90">
+    <section className="py-8 bg-slate-900/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-white dark:text-slate-100 mb-1">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-100 mb-1">
             Skills{' '}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Expertise
@@ -73,7 +73,11 @@ export function SkillsSection() {
                     className="group"
                   >
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-gray-300 dark:text-slate-300 font-medium text-sm">{skill.name}</span>
+                      <span className={`text-sm font-semibold ${
+                        categoryIndex === 0 ? 'text-blue-400' : 'text-purple-400'
+                      }`}>
+                        {skill.name}
+                      </span>
                       <span className={`text-sm font-semibold ${
                         categoryIndex === 0 ? 'text-blue-400' : 'text-purple-400'
                       }`}>
@@ -81,7 +85,7 @@ export function SkillsSection() {
                       </span>
                     </div>
 
-                    <div className="w-full bg-slate-700/60 dark:bg-slate-700/80 rounded-full h-2 overflow-hidden">
+                    <div className="w-full bg-slate-700/80 rounded-full h-2 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -109,24 +113,24 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className="mt-8 text-center"
         >
-          <div className="inline-flex items-center space-x-4 bg-slate-800/60 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-lg p-4">
+          <div className="inline-flex items-center space-x-4 bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
             <div className="text-center">
               <div className="text-xl font-bold text-blue-400 mb-1">95%</div>
-              <div className="text-xs text-gray-400 dark:text-slate-400">Technical</div>
+              <div className="text-xs text-slate-400">Technical</div>
             </div>
 
-            <div className="w-px h-6 bg-white/20"></div>
+            <div className="w-px h-6 bg-slate-700/50"></div>
 
             <div className="text-center">
               <div className="text-xl font-bold text-purple-400 mb-1">90%</div>
-              <div className="text-xs text-gray-400 dark:text-slate-400">Strategic</div>
+              <div className="text-xs text-slate-400">Strategic</div>
             </div>
 
-            <div className="w-px h-6 bg-white/20"></div>
+            <div className="w-px h-6 bg-slate-700/50"></div>
 
             <div className="text-center">
               <div className="text-xl font-bold text-green-400 mb-1">100%</div>
-              <div className="text-xs text-gray-400 dark:text-slate-400">Problem Solving</div>
+              <div className="text-xs text-slate-400">Problem Solving</div>
             </div>
           </div>
         </motion.div>

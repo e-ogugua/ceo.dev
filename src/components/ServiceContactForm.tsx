@@ -242,15 +242,15 @@ Timeline: ${formData.timeline}
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {title || config.title}
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
             {description || config.description}
           </p>
 
           {features.length > 0 && (
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {features.map((feature, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
-                  <p className="text-gray-300 text-sm">{feature}</p>
+                <div key={index} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
+                  <p className="text-slate-300 text-sm">{feature}</p>
                 </div>
               ))}
             </div>
@@ -259,7 +259,7 @@ Timeline: ${formData.timeline}
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white/5 dark:bg-slate-800/30 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-xl p-8 space-y-6"
+          className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8 space-y-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -317,7 +317,7 @@ Timeline: ${formData.timeline}
           {/* Basic Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                 Full Name <span className="text-red-400">*</span>
               </label>
               <input
@@ -327,7 +327,7 @@ Timeline: ${formData.timeline}
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.name ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-4 py-3 bg-slate-800/50 border rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.name ? 'border-red-400' : 'border-slate-700/50'}`}
                 placeholder="Your full name"
               />
               {errors.name && (
@@ -336,7 +336,7 @@ Timeline: ${formData.timeline}
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                 Email <span className="text-red-400">*</span>
               </label>
               <input
@@ -346,7 +346,7 @@ Timeline: ${formData.timeline}
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.email ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-4 py-3 bg-slate-800/50 border rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.email ? 'border-red-400' : 'border-slate-700/50'}`}
                 placeholder="your@email.com"
               />
               {errors.email && (
@@ -357,7 +357,7 @@ Timeline: ${formData.timeline}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-2">
                 Company/Organization
               </label>
               <input
@@ -366,13 +366,13 @@ Timeline: ${formData.timeline}
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Your company or organization"
               />
             </div>
 
             <div>
-              <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="budget" className="block text-sm font-medium text-slate-300 mb-2">
                 Budget Range <span className="text-red-400">*</span>
               </label>
               <select
@@ -380,7 +380,7 @@ Timeline: ${formData.timeline}
                 name="budget"
                 value={formData.budget}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               >
                 <option value="">Select your budget range</option>
@@ -397,7 +397,7 @@ Timeline: ${formData.timeline}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="timeline" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="timeline" className="block text-sm font-medium text-slate-300 mb-2">
                 Preferred Timeline
               </label>
               <select
@@ -405,7 +405,7 @@ Timeline: ${formData.timeline}
                 name="timeline"
                 value={formData.timeline}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">Select timeline preference</option>
                 <option value="asap">ASAP (Rush project)</option>
@@ -418,7 +418,7 @@ Timeline: ${formData.timeline}
             </div>
 
             <div>
-              <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="service" className="block text-sm font-medium text-slate-300 mb-2">
                 Service Interest
               </label>
               <input
@@ -427,14 +427,14 @@ Timeline: ${formData.timeline}
                 name="service"
                 value={formData.service}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 readOnly
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="projectDetails" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="projectDetails" className="block text-sm font-medium text-slate-300 mb-2">
               Project Details & Requirements <span className="text-red-400">*</span>
             </label>
             <textarea
@@ -444,7 +444,7 @@ Timeline: ${formData.timeline}
               onChange={handleInputChange}
               required
               rows={4}
-              className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.projectDetails ? 'border-red-400' : 'border-white/20'}`}
+              className={`w-full px-4 py-3 bg-slate-800/50 border rounded-lg text-white placeholder-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.projectDetails ? 'border-red-400' : 'border-slate-700/50'}`}
               placeholder={`Describe your ${serviceName.toLowerCase()} project in detail. What are you looking to achieve? What features do you need? Any specific technologies or platforms?`}
             />
             {errors.projectDetails && (
@@ -454,7 +454,7 @@ Timeline: ${formData.timeline}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label htmlFor="currentChallenges" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="currentChallenges" className="block text-sm font-medium text-slate-300 mb-2">
                 Current Challenges
               </label>
               <textarea
@@ -463,13 +463,13 @@ Timeline: ${formData.timeline}
                 value={formData.currentChallenges}
                 onChange={handleInputChange}
                 rows={3}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="What challenges are you facing?"
               />
             </div>
 
             <div>
-              <label htmlFor="goals" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="goals" className="block text-sm font-medium text-slate-300 mb-2">
                 Goals & Objectives
               </label>
               <textarea
@@ -478,13 +478,13 @@ Timeline: ${formData.timeline}
                 value={formData.goals}
                 onChange={handleInputChange}
                 rows={3}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="What are your goals for this project?"
               />
             </div>
 
             <div>
-              <label htmlFor="technicalRequirements" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="technicalRequirements" className="block text-sm font-medium text-slate-300 mb-2">
                 Technical Requirements
               </label>
               <textarea
@@ -493,7 +493,7 @@ Timeline: ${formData.timeline}
                 value={formData.technicalRequirements}
                 onChange={handleInputChange}
                 rows={3}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Any specific technical requirements?"
               />
             </div>
@@ -523,7 +523,7 @@ Timeline: ${formData.timeline}
             )}
           </motion.button>
 
-          <p className="text-gray-400 text-sm text-center">
+          <p className="text-slate-400 text-sm text-center">
             I&apos;ll review your requirements and provide a detailed proposal within 24 hours.
             All information is kept confidential and secure.
           </p>

@@ -154,14 +154,14 @@ export function ContactForm() {
               Details
             </span>
           </h2>
-          <p className="text-sm text-gray-300">
+          <p className="text-sm text-slate-300">
             Fill out the form below and I&apos;ll get back to you within 24 hours.
           </p>
         </motion.div>
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white/5 dark:bg-slate-800/30 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-lg p-6 space-y-4"
+          className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -219,7 +219,7 @@ export function ContactForm() {
           {/* Form Fields - Compact Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="name" className="block text-xs font-medium text-gray-300 mb-1">
+              <label htmlFor="name" className="block text-xs font-medium text-slate-300 mb-1">
                 Full Name <span className="text-red-400">*</span>
               </label>
               <input
@@ -229,7 +229,7 @@ export function ContactForm() {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-3 py-2 bg-white/10 border rounded text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.name ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-3 py-2 bg-slate-800/50 border rounded text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.name ? 'border-red-400' : 'border-slate-700/50'}`}
                 placeholder="Your full name"
               />
               {errors.name && (
@@ -238,7 +238,7 @@ export function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-xs font-medium text-gray-300 mb-1">
+              <label htmlFor="email" className="block text-xs font-medium text-slate-300 mb-1">
                 Email <span className="text-red-400">*</span>
               </label>
               <input
@@ -248,7 +248,7 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className={`w-full px-3 py-2 bg-white/10 border rounded text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.email ? 'border-red-400' : 'border-white/20'}`}
+                className={`w-full px-3 py-2 bg-slate-800/50 border rounded text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.email ? 'border-red-400' : 'border-slate-700/50'}`}
                 placeholder="your@email.com"
               />
               {errors.email && (
@@ -259,7 +259,7 @@ export function ContactForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="company" className="block text-xs font-medium text-gray-300 mb-1">
+              <label htmlFor="company" className="block text-xs font-medium text-slate-300 mb-1">
                 Company
               </label>
               <input
@@ -268,13 +268,13 @@ export function ContactForm() {
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
+                className="w-full px-3 py-2 bg-slate-800/50 border border-slate-700/50 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
                 placeholder="Your company"
               />
             </div>
 
             <div>
-              <label htmlFor="service" className="block text-xs font-medium text-gray-300 mb-1">
+              <label htmlFor="service" className="block text-xs font-medium text-slate-300 mb-1">
                 Service
               </label>
               <select
@@ -282,7 +282,7 @@ export function ContactForm() {
                 name="service"
                 value={formData.service}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
+                className="w-full px-3 py-2 bg-slate-800/50 border border-slate-700/50 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
               >
                 <option value="">Select service</option>
                 <option value="web-development">Web Development</option>
@@ -296,7 +296,7 @@ export function ContactForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="budget" className="block text-xs font-medium text-gray-300 mb-1">
+              <label htmlFor="budget" className="block text-xs font-medium text-slate-300 mb-1">
                 Budget Range
               </label>
               <select
@@ -304,7 +304,7 @@ export function ContactForm() {
                 name="budget"
                 value={formData.budget}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
+                className="w-full px-3 py-2 bg-slate-800/50 border border-slate-700/50 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
               >
                 <option value="">Select budget</option>
                 <option value="under-5k">Under $5,000</option>
@@ -316,7 +316,7 @@ export function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="timeline" className="block text-xs font-medium text-gray-300 mb-1">
+              <label htmlFor="timeline" className="block text-xs font-medium text-slate-300 mb-1">
                 Timeline
               </label>
               <select
@@ -324,7 +324,7 @@ export function ContactForm() {
                 name="timeline"
                 value={formData.timeline}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded text-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
+                className="w-full px-3 py-2 bg-slate-800/50 border border-slate-700/50 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
               >
                 <option value="">Select timeline</option>
                 <option value="asap">ASAP</option>
@@ -337,7 +337,7 @@ export function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-xs font-medium text-gray-300 mb-1">
+            <label htmlFor="message" className="block text-xs font-medium text-slate-300 mb-1">
               Project Details <span className="text-red-400">*</span>
             </label>
             <textarea
@@ -347,7 +347,7 @@ export function ContactForm() {
               onChange={handleInputChange}
               required
               rows={4}
-              className={`w-full px-3 py-2 bg-white/10 border rounded text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.message ? 'border-red-400' : 'border-white/20'}`}
+              className={`w-full px-3 py-2 bg-slate-800/50 border rounded text-white placeholder-slate-500 resize-none focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm ${errors.message ? 'border-red-400' : 'border-slate-700/50'}`}
               placeholder={formData.service === 'custom-solution' ? "Describe your custom project requirements, goals, and any specific features you need..." : "Tell me about your project, goals, and requirements..."}
             />
             {errors.message && (
@@ -375,7 +375,7 @@ export function ContactForm() {
             )}
           </motion.button>
 
-          <p className="text-gray-400 text-xs text-center">
+          <p className="text-slate-400 text-xs text-center">
             I&apos;ll respond within 24 hours. Your information is kept private and secure.
           </p>
         </motion.form>

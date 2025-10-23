@@ -31,16 +31,19 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-all duration-500">
-      <Navigation />
-      <AboutHero />
-      <Timeline />
-      <PersonaChart />
-      <RandomFacts />
-      <SkillsSection />
-      <FeaturedProject />
-      <BlogShowcase />
-      <Footer />
-    </main>
+    <>
+      <h1 className="sr-only">About Emmanuel Chukwuka Ogugua - Software Engineer & Business Strategist</h1>
+      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 transition-all duration-500">
+        <Navigation />
+        <AboutHero />
+        <Timeline />
+        <PersonaChart />
+        <RandomFacts />
+        <SkillsSection />
+        <FeaturedProject />
+        <BlogShowcase />
+        <Footer />
+      </main>
+    </>
   )
 }
