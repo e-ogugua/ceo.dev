@@ -92,7 +92,7 @@ export function FeaturedProject() {
               <Link href="https://emmanuelos.vercel.app/" target="_blank">
                 <motion.button
                   className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded text-sm font-semibold flex items-center gap-2 transition-all duration-200 min-h-[44px]"
-                  whileHover={!window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.05 } : {}}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <ExternalLink size={14} />
@@ -103,7 +103,7 @@ export function FeaturedProject() {
               <Link href="https://github.com/e-ogugua/emmanuelos" target="_blank">
                 <motion.button
                   className="border border-slate-600 hover:bg-slate-700/50 text-slate-100 px-6 py-3 rounded text-sm font-semibold flex items-center gap-2 transition-all duration-200 min-h-[44px]"
-                  whileHover={!window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.05 } : {}}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Github size={14} />

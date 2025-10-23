@@ -150,7 +150,7 @@ export function NewsletterSubscription({
             type="submit"
             disabled={status === 'loading'}
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            whileHover={status !== 'loading' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.02 } : {}}
+            whileHover={status !== 'loading' ? { scale: 1.02 } : {}}
             whileTap={status !== 'loading' ? { scale: 0.98 } : {}}
           >
             {status === 'loading' ? (
@@ -224,7 +224,7 @@ export function NewsletterSubscription({
           type="submit"
           disabled={status === 'loading'}
           className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-          whileHover={status !== 'loading' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.02 } : {}}
+          whileHover={status !== 'loading' ? { scale: 1.02 } : {}}
           whileTap={status !== 'loading' ? { scale: 0.98 } : {}}
         >
           {status === 'loading' ? (
