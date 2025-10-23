@@ -2,24 +2,35 @@ import { render, screen } from '@testing-library/react'
 import { ThemeProvider } from '../ThemeProvider'
 import { ThemeToggle } from '../ThemeToggle'
 
-// Mock framer-motion
-const MockButton = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
-  <button {...props}>{children}</button>
-)
-MockButton.displayName = 'MockButton'
-
-const MockDiv = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
-  <div {...props}>{children}</div>
-)
-MockDiv.displayName = 'MockDiv'
-
-jest.mock('framer-motion', () => ({
-  motion: {
-    button: MockButton,
-    div: MockDiv,
-  },
-  AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+// Mock the ThemeProvider context
+jest.mock('../ThemeProvider', () => ({
+  ThemeProvider: ({ children }: { children: React.ReactNode }) => children,
+  useTheme: () => ({
+    theme: 'dark',
+    toggleTheme: jest.fn(),
+  }),
 }))
+
+// Mock framer-motion
+jest.mock('framer-motion', () => {
+  const MockButton = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
+    <button {...props}>{children}</button>
+  )
+  MockButton.displayName = 'MockButton'
+
+  const MockDiv = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => (
+    <div {...props}>{children}</div>
+  )
+  MockDiv.displayName = 'MockDiv'
+
+  return {
+    motion: {
+      button: MockButton,
+      div: MockDiv,
+    },
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+  }
+})
 
 // Mock lucide-react
 jest.mock('lucide-react', () => ({

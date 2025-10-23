@@ -2,25 +2,29 @@ import { render, screen } from '@testing-library/react'
 import { Footer } from '../Footer'
 
 // Mock Next.js components
-const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
-  <a href={href}>{children}</a>
-)
-MockLink.displayName = 'MockLink'
+jest.mock('next/link', () => {
+  const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
+    <a href={href}>{children}</a>
+  )
+  MockLink.displayName = 'MockLink'
 
-const MockImage = ({ alt, ...props }: { alt: string; src: string; width: number; height: number }) => (
-  <img alt={alt} {...props} />
-)
-MockImage.displayName = 'MockImage'
+  return {
+    __esModule: true,
+    default: MockLink,
+  }
+})
 
-jest.mock('next/link', () => ({
-  __esModule: true,
-  default: MockLink,
-}))
+jest.mock('next/image', () => {
+  const MockImage = ({ alt, ...props }: { alt: string; src: string; width: number; height: number }) => (
+    <img alt={alt} {...props} />
+  )
+  MockImage.displayName = 'MockImage'
 
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: MockImage,
-}))
+  return {
+    __esModule: true,
+    default: MockImage,
+  }
+})
 
 // Mock lucide-react icons
 jest.mock('lucide-react', () => ({

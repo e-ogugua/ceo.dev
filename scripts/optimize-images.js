@@ -3,14 +3,14 @@
 // Image Optimization Script for CEO Portfolio
 // Converts large PNG/JPEG images to optimized WebP/AVIF formats
 
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
 
 async function optimizeImage(input, outputDir, archiveDir) {
   const filename = path.basename(input);
   const name = path.parse(filename).name;
-  const ext = path.parse(filename).ext;
+  // const ext = path.parse(filename).ext; // Removed unused variable
 
   console.log(`  📷 Processing: ${filename}`);
 
@@ -33,7 +33,8 @@ async function optimizeImage(input, outputDir, archiveDir) {
         .avif({ quality: 85 })
         .toFile(avifPath);
       console.log(`    ✅ Generated: ${name}.avif`);
-    } catch (avifError) {
+    } catch {
+      // AVIF not supported or error occurred
       console.log(`    ⚠️  AVIF not supported, skipping: ${name}.avif`);
     }
   } catch (error) {
