@@ -147,7 +147,7 @@ export function Navigation() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`px-3 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg ${
+                      className={`px-3 py-2.5 text-sm font-medium transition-all duration-300 rounded-lg min-h-[44px] ${
                         isActiveLink(item.href)
                           ? 'text-primary bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/30 shadow-sm'
                           : 'text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:border hover:border-primary/20'
@@ -185,7 +185,7 @@ export function Navigation() {
                 {/* Clean Mobile Menu Button */}
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className={`md:hidden p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+                  className={`md:hidden p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[44px] min-w-[44px] flex items-center justify-center ${
                     isMobileMenuOpen
                       ? 'text-white bg-gradient-to-r from-primary/30 to-secondary/30 backdrop-blur-sm shadow-sm'
                       : 'text-slate-400 hover:text-white hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:backdrop-blur-sm'
@@ -224,7 +224,7 @@ export function Navigation() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-all duration-200 ${
+                      className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-all duration-200 min-h-[44px] ${
                         isActiveLink(item.href)
                           ? 'text-primary bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/30'
                           : 'text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:backdrop-blur-sm hover:border hover:border-primary/20'

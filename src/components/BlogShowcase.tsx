@@ -110,8 +110,8 @@ export function BlogShowcase() {
             <div className="flex gap-3">
               <Link href="https://ceowrites-emmanuel-blog-hub.vercel.app/" target="_blank">
                 <motion.button
-                  className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-4 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-all duration-200"
-                  whileHover={{ scale: 1.05 }}
+                  className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded text-sm font-semibold flex items-center gap-2 transition-all duration-200 min-h-[44px]"
+                  whileHover={!window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.05 } : {}}
                   whileTap={{ scale: 0.95 }}
                 >
                   <ExternalLink size={14} />
@@ -121,8 +121,8 @@ export function BlogShowcase() {
 
               <Link href="/blog">
                 <motion.button
-                  className="border border-slate-600 hover:bg-slate-700/50 text-slate-100 px-4 py-2 rounded text-sm font-semibold flex items-center gap-2 transition-all duration-200"
-                  whileHover={{ scale: 1.05 }}
+                  className="border border-slate-600 hover:bg-slate-700/50 text-slate-100 px-6 py-3 rounded text-sm font-semibold flex items-center gap-2 transition-all duration-200 min-h-[44px]"
+                  whileHover={!window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.05 } : {}}
                   whileTap={{ scale: 0.95 }}
                 >
                   Posts

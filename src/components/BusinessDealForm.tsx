@@ -195,7 +195,7 @@ export function BusinessDealForm({
           <div className={`w-16 h-16 bg-gradient-to-r ${config.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
             <Icon className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-100 mb-4">
             {title || config.title}
           </h2>
           <p className="text-slate-300 text-lg">

@@ -73,8 +73,8 @@ export function AboutHero() {
               />
 
               {/* Subtle decorative elements */}
-              <div className="absolute -top-1 -right-1 w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full opacity-10 animate-pulse"></div>
-              <div className="absolute -bottom-1 -left-1 w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-10 animate-pulse delay-1000"></div>
+              <div className="absolute -top-1 -right-1 w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full opacity-10"></div>
+              <div className="absolute -bottom-1 -left-1 w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-10"></div>
             </div>
           </motion.div>
         </div>

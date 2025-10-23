@@ -28,7 +28,7 @@ export function Timeline() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08 }} // Staggered animation reduces motion sickness
               viewport={{ once: true }} // Animation runs once to prevent performance issues on scroll
-              whileHover={{ scale: 1.02, y: -2 }}
+              whileHover={!window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.02, y: -2 } : {}}
               className="group relative"
             >
               <div className="relative overflow-hidden rounded-lg bg-slate-800/70 backdrop-blur-sm border border-slate-700/50 aspect-square shadow-md hover:shadow-lg transition-all duration-300">

@@ -61,7 +61,7 @@ export function NewsletterSubscription({
 
   if (variant === 'minimal') {
     return (
-      <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 ${className}`}>
+      <div className={`bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 ${className}`}>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <input
@@ -69,7 +69,7 @@ export function NewsletterSubscription({
               placeholder="Your name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+              className="w-full px-3 py-2 bg-slate-800/50 border border-slate-700/50 rounded-md text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
               required
             />
           </div>
@@ -79,13 +79,13 @@ export function NewsletterSubscription({
               placeholder="your@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+              className="flex-1 px-3 py-2 bg-slate-800/50 border border-slate-700/50 rounded-md text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
               required
             />
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-md font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-md font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 min-h-[44px]"
             >
               {status === 'loading' ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -122,7 +122,7 @@ export function NewsletterSubscription({
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           {title}
         </h2>
-        <p className="text-gray-300 mb-8 text-lg">
+        <p className="text-slate-300 mb-8 text-lg">
           {description}
         </p>
 
@@ -133,7 +133,7 @@ export function NewsletterSubscription({
               placeholder="Your full name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
             <input
@@ -141,7 +141,7 @@ export function NewsletterSubscription({
               placeholder="your@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
           </div>
@@ -150,7 +150,7 @@ export function NewsletterSubscription({
             type="submit"
             disabled={status === 'loading'}
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            whileHover={status !== 'loading' ? { scale: 1.02 } : {}}
+            whileHover={status !== 'loading' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.02 } : {}}
             whileTap={status !== 'loading' ? { scale: 0.98 } : {}}
           >
             {status === 'loading' ? (
@@ -194,11 +194,11 @@ export function NewsletterSubscription({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 ${className}`}
+      className={`bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8 ${className}`}
     >
       <div className="text-center mb-6">
         <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-gray-300">{description}</p>
+        <p className="text-slate-300">{description}</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -207,7 +207,7 @@ export function NewsletterSubscription({
           placeholder="Your full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           required
         />
 
@@ -216,7 +216,7 @@ export function NewsletterSubscription({
           placeholder="your@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           required
         />
 
@@ -224,7 +224,7 @@ export function NewsletterSubscription({
           type="submit"
           disabled={status === 'loading'}
           className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-          whileHover={status !== 'loading' ? { scale: 1.02 } : {}}
+          whileHover={status !== 'loading' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? { scale: 1.02 } : {}}
           whileTap={status !== 'loading' ? { scale: 0.98 } : {}}
         >
           {status === 'loading' ? (
